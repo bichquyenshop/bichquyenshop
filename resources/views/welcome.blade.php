@@ -7,8 +7,9 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" type="text/css" href="/css/app.css">
-        <script type="text/javascript" href="/js/app.js"></script>
+        <script type="text/javascript" src="/js/app.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
@@ -22,3 +23,8 @@
         </div>  
     </body>
 </html>
+<script type="text/javascript">
+$(document).ready(function(){
+    alert("SADA");
+});
+</script>
