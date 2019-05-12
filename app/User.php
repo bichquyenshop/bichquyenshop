@@ -3,20 +3,20 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
     use Notifiable;
-
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'password'
     ];
 
     /**
@@ -25,15 +25,27 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password'
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public static function getUserById($user_id  = null)
+    {
+        return User::where('id',$user_id)->first();
+    }
+
+    public function updateUserPassword($user, $input)
+    {
+        $currentPassword = $user->password;
+        if(Hash::check($input['oldPassword'], $currentPassword))
+        {
+            $user->password = Hash::make($input['password']);;
+            $user->save();
+            return TRUE;
+        }
+        else{
+            return FALSE;
+        }
+
+    }
+
 }
