@@ -27,7 +27,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         if(Auth::check()){
-            return redirect()->route('product');
+            return redirect()->route('index');
         }else{
             return view('admin/auth/login',$this->data);
         }
