@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Menu;
+use App\Models\Categogy;
 use Illuminate\Http\Request;
 
-class CategogyController extends Controller
+class CategoryController extends Controller
 {
     private $data = [];
 
@@ -14,16 +14,16 @@ class CategogyController extends Controller
     }
     public function getList()
     {
-        $modelMenu = new Menu();
-        $menus = $modelMenu->getList();
-        $this->data['list'] = $menus;
-        return view('admin/menu/list',$this->data);
+        $modelCategogy = new Categogy();
+        $category = $modelCategogy->getList();
+        $this->data['list'] = $category;
+        return view('admin/category/list',$this->data);
     }
 
     public function getAdd()
     {
         $this->data['menu_active'] = 'menu-add';
-        return view('admin/menu/add',$this->data);
+        return view('admin/category/add',$this->data);
     }
 
     public function postAdd(Request $request)
@@ -35,8 +35,8 @@ class CategogyController extends Controller
             ]
         );
         $input = $request->all();
-        $modelMenu = new Menu();
-        $modelMenu->insertMenu($input);
+        $modelCategogy = new Categogy();
+        $modelCategogy->insertCategory($input);
 
         $request->session()->flash('message_success', 'Thêm mới menu thành công');
         return redirect(route('list_menu'));
@@ -48,24 +48,24 @@ class CategogyController extends Controller
             'id' => 'required',
         ]);
         $id = (int)$request->input('id');
-        $modelMenu = new Menu();
-        $menu = $modelMenu->find($id);
+        $modelCategogy = new Categogy();
+        $menu = $modelCategogy->find($id);
         if(!$menu){
             return response()->json(['error' => 1, 'message' => 'Menu không tồn tại']);
         }
-        $modelMenu->deleteMenu($id);
+        $modelCategogy->deleteCategory($id);
         return response()->json(['error' => 0, 'message' => 'Xóa menu thành công']);
     }
 
     public function getEdit($id)
     {
-        $modelMenu = new Menu();
-        $menu = $modelMenu->find($id);
-        if(!$menu){
+        $modelCategogy = new Categogy();
+        $category = $modelCategogy->find($id);
+        if(!$category){
             return abort(404);
         }
-        $this->data['menu'] = $menu;
-        return view('admin/menu/edit',$this->data);
+        $this->data['menu'] = $category;
+        return view('admin/category/edit',$this->data);
     }
 
     public function postEdit(Request $request, $id)
@@ -75,13 +75,13 @@ class CategogyController extends Controller
                 "name" => "required|max:50",
             ]
         );
-        $modelMenu = new Menu();
-        $menu = $modelMenu->find($id);
-        if(!$menu){
+        $modelCategogy = new Categogy();
+        $category = $modelCategogy->find($id);
+        if(!$category){
             return abort(404);
         }
         $input = $request->all();
-        $modelMenu->editMenu($menu, $input);
+        $modelCategogy->editCategory($category, $input);
         $request->session()->flash('message_success', 'Cập nhật menu thành công');
         return redirect(route('list_menu'));
     }

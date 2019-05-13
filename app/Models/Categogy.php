@@ -15,26 +15,26 @@ class Categogy extends Model
         return DB::table('category')->orderBy('id','desc')->get();
     }
 
-    public function insertMenu($params=[])
+    public function insertCategory($params=[])
     {
-        $modelMenu = new Categogy();
-        $modelMenu->name = $params['name'];
-        $modelMenu->save();
+        $modelCategory = new Categogy();
+        $modelCategory->name = $params['name'];
+        $modelCategory->save();
     }
 
-    public function deleteMenu($id)
+    public function deleteCategory($id)
     {
-        $menu = Categogy::find($id);
-        $menu->delete();
+        $category = Categogy::find($id);
+        $category->delete();
     }
 
-    public function editMenu($modelMenu,$params=[])
+    public function editCategory($modelCategory,$params=[])
     {
-        $modelMenu->name = $params['name'];
-        $modelMenu->save();
+        $modelCategory->name = $params['name'];
+        $modelCategory->save();
     }
 
-    public function menuOptions()
+    public function categoryOptions()
     {
         return $this->pluck('name', 'id')->toArray();
     }

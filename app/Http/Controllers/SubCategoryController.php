@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Menu;
-use App\SubMenu;
+use App\Models\Categogy;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
-class SubMenuController extends Controller
+class SubCategoryController extends Controller
 {
     private $data = [];
 
@@ -15,19 +15,19 @@ class SubMenuController extends Controller
     }
     public function getList()
     {
-        $modelSubMenu = new SubMenu();
-        $subMenus = $modelSubMenu->getList();
-        $this->data['list'] = $subMenus;
-        return view('admin/sub-menu/list',$this->data);
+        $modelSubCategory = new SubCategory();
+        $subCategories = $modelSubCategory->getList();
+        $this->data['list'] = $subCategories;
+        return view('admin/sub-category/list',$this->data);
     }
 
     public function getAdd()
     {
-        $modelMenu = new Menu();
-        $menuOptions = $modelMenu->menuOptions();
+        $modelCategory = new Categogy();
+        $categoryOptions = $modelCategory->categoryOptions();
         $this->data['menu_active'] = 'sub-menu-add';
-        $this->data['menuOptions'] = $menuOptions;
-        return view('admin/sub-menu/add',$this->data);
+        $this->data['menuOptions'] = $categoryOptions;
+        return view('admin/sub-category/add',$this->data);
     }
 
     public function postAdd(Request $request)
@@ -40,8 +40,8 @@ class SubMenuController extends Controller
             ]
         );
         $input = $request->all();
-        $modelSubMenu = new SubMenu();
-        $modelSubMenu->insertSubMenu($input);
+        $modelSubCategory = new SubCategory();
+        $modelSubCategory->insertSubCategory($input);
 
         $request->session()->flash('message_success', 'Thêm mới sub menu thành công');
         return redirect(route('list_sub_menu'));
@@ -53,27 +53,27 @@ class SubMenuController extends Controller
             'id' => 'required',
         ]);
         $id = (int)$request->input('id');
-        $modelSubMenu = new SubMenu();
-        $subMenu = $modelSubMenu->find($id);
-        if(!$subMenu){
+        $modelSubCategory = new SubCategory();
+        $subCategory = $modelSubCategory->find($id);
+        if(!$subCategory){
             return response()->json(['error' => 1, 'message' => 'Sub menu không tồn tại']);
         }
-        $modelSubMenu->deleteSubMenu($id);
+        $modelSubCategory->deleteSubCategory($id);
         return response()->json(['error' => 0, 'message' => 'Xóa sub menu thành công']);
     }
 
     public function getEdit($id)
     {
-        $modelMenu = new Menu();
-        $menuOptions = $modelMenu->menuOptions();
-        $modelSubMenu = new SubMenu();
-        $subMenu = $modelSubMenu->find($id);
-        if(!$subMenu){
+        $modelCategory = new Categogy();
+        $categoryOptions = $modelCategory->categoryOptions();
+        $modelSubCategory = new SubCategory();
+        $subCategory = $modelSubCategory->find($id);
+        if(!$subCategory){
             return abort(404);
         }
-        $this->data['subMenu'] = $subMenu;
-        $this->data['menuOptions'] = $menuOptions;
-        return view('admin/sub-menu/edit',$this->data);
+        $this->data['subMenu'] = $subCategory;
+        $this->data['menuOptions'] = $categoryOptions;
+        return view('admin/sub-category/edit',$this->data);
     }
 
     public function postEdit(Request $request, $id)
@@ -84,13 +84,13 @@ class SubMenuController extends Controller
                 "category_id" => "required",
             ]
         );
-        $modelSubMenu = new SubMenu();
-        $subMenu = $modelSubMenu->find($id);
-        if(!$subMenu){
+        $modelSubCategory = new SubCategory();
+        $subCategory = $modelSubCategory->find($id);
+        if(!$subCategory){
             return abort(404);
         }
         $input = $request->all();
-        $modelSubMenu->editSubMenu($subMenu, $input);
+        $modelSubCategory->editSubCategory($subCategory, $input);
         $request->session()->flash('message_success', 'Cập nhật sub menu thành công');
         return redirect(route('list_sub_menu'));
     }

@@ -22,27 +22,27 @@ Route::group(['prefix' => '/admin',], function()
         Route::post('add','ProductController@postAdd');
         Route::post('delete','ProductController@delete')->name('delete_product');
         Route::get('edit/{id}', 'ProductController@getEdit')->name('edit_product');
-        Route::post('edit/{id}','ProductController@postEdit');
+        Route::post('edit/{id}','ProductController@postEdit')->name('edit_product');
     });
 
     Route::group(['prefix' => '/menu',], function()
     {
-        Route::get('/list','MenuController@getList')->name('list_menu');
-        Route::get('add','MenuController@getAdd')->name('add_menu');
-        Route::post('add','MenuController@postAdd');
-        Route::post('delete','MenuController@delete')->name('delete_menu');
-        Route::get('edit/{id}', 'MenuController@getEdit')->name('edit_menu');
-        Route::post('edit/{id}','MenuController@postEdit');
+        Route::get('/list','CategoryController@getList')->name('list_menu');
+        Route::get('add','CategoryController@getAdd')->name('add_menu');
+        Route::post('add','CategoryController@postAdd');
+        Route::post('delete','CategoryController@delete')->name('delete_menu');
+        Route::get('edit/{id}', 'CategoryController@getEdit')->name('edit_menu');
+        Route::post('edit/{id}','CategoryController@postEdit')->name('edit_menu');
     });
 
     Route::group(['prefix' => '/sub-menu',], function()
     {
-        Route::get('/list','SubMenuController@getList')->name('list_sub_menu');
-        Route::get('add','SubMenuController@getAdd')->name('add_sub_menu');
-        Route::post('add','SubMenuController@postAdd');
-        Route::post('delete','SubMenuController@delete')->name('delete_sub_menu');
-        Route::get('edit/{id}', 'SubMenuController@getEdit')->name('edit_sub_menu');
-        Route::post('edit/{id}','SubMenuController@postEdit');
+        Route::get('/list','SubCategoryController@getList')->name('list_sub_menu');
+        Route::get('add','SubCategoryController@getAdd')->name('add_sub_menu');
+        Route::post('add','SubCategoryController@postAdd');
+        Route::post('delete','SubCategoryController@delete')->name('delete_sub_menu');
+        Route::get('edit/{id}', 'SubCategoryController@getEdit')->name('edit_sub_menu');
+        Route::post('edit/{id}','SubCategoryController@postEdit')->name('edit_sub_menu');
     });
 });
 

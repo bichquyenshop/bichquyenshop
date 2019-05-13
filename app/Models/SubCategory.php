@@ -19,24 +19,24 @@ class SubCategory extends Model
 
     }
 
-    public function insertSubMenu($params=[])
+    public function insertSubCategory($params=[])
     {
-        $modelSubMenu = new SubMenu();
-        $modelSubMenu->name = $params['name'];
-        $modelSubMenu->category_id = $params['category_id'];
-        $modelSubMenu->save();
+        $modelSubCategory = new SubCategory();
+        $modelSubCategory->name = $params['name'];
+        $modelSubCategory->category_id = $params['category_id'];
+        $modelSubCategory->save();
     }
 
-    public function deleteSubMenu($id)
+    public function deleteSubCategory($id)
     {
-        $modelSubMenu = SubMenu::find($id);
-        $modelSubMenu->delete();
+        $modelSubCategory = SubCategory::find($id);
+        $modelSubCategory->delete();
     }
 
-    public function editSubMenu($modelSubMenu,$params=[])
+    public function editSubCategory($modelSubCategory,$params=[])
     {
-        $modelSubMenu->name = $params['name'];
-        $modelSubMenu->category_id = $params['category_id'];
-        $modelSubMenu->save();
+        $modelSubCategory->name = $params['name'];
+        $modelSubCategory->category_id = $params['category_id'];
+        $modelSubCategory->save();
     }
 }
