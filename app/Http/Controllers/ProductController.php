@@ -1,16 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Product;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    // public function __construct()
+    // {
+       
+
+    //     // Your constructor code here..
+    // }
     private $data = [];
 
     public function __construct()
     {
         $this->data['menu_active'] = 'product';
+        parent::__construct();
     }
     public function getList()
     {
@@ -86,4 +93,16 @@ class ProductController extends Controller
         $modelProduct->editProduct($product, $input);
         return redirect('admin/product')->with("message","Cập nhật thành công");
     }
+
+    // Font-end
+    public function detailProduct(Request $request){
+        $idProduct = $request->idProduct;
+        $detailProduct = Product::getListFollowId($idProduct);
+        return view("fontend/product/detail_product", 
+            [
+                "detailProduct"=> $detailProduct
+        ]);
+      
+    }
+
 }

@@ -1,18 +1,29 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class Product extends Model
 {
     public $table = 'product';
     public $timestamps = false;
 
-    public function getList() {
+    public static function getList() {
         return DB::table('product')->orderBy('id','desc')->get();
+    }
+    public static function getListFollowId($idProduct){
+        $query = DB::table('product as pd');
+        $query->join('sub_category as sc', 'pd.sub_category_id', '=', 'sc.id');
+        $query->select('pd.code','pd.description','pd.name',
+            'pd.color','pd.image','pd.size','pd.weight','pd.style','sc.name as name_sc');
+        $query->where('pd.id',$idProduct);
+        $query->orderBy('pd.id','desc');
+
+        return $query->get();
+        // return DB::table('product')->where('id',$idProduct)->get();
     }
 
     public function insertProduct($params=[])
