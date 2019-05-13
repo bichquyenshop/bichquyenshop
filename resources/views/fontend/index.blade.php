@@ -29,15 +29,19 @@
     	 	@foreach ($product as $pd)
 	    	
             <div class="col-md-3 box">
-            	<a href="detail-product/{{$pd->id}}">		
+            	<a href="{{ url('detail-product/' . $pd->id) }} ">		
 	                <div class="product">
-			    		<img src="{{$pd->image}}">
-			    		<div class="title">
-			    			{{$pd->name}}
+			    		<div class="image_box">
+			    			<img src="{{$pd->image}}">
 			    		</div>
-			    		<div class="code">
-			    			{{$pd->code}}
-			    		</div>
+			    		<div class="content_box">
+				    		<div class="title">
+				    			{{$pd->name}}
+				    		</div>
+				    		<div class="code">
+				    			{{$pd->code}}
+				    		</div>
+				    	</div>
 			    	</div>
 		    	</a>
             </div> 

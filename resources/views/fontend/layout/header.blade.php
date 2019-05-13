@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="dropdown-content">
                                     @foreach ($categogy as $ct)
-                                        <a href="{{$ct->id}}">{{$ct->name}}</a>
+                                        <a href="{{url('product-category/'.$ct->id)}}">{{$ct->name}}</a>
                                     @endforeach
 
                                     

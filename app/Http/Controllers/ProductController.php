@@ -104,5 +104,13 @@ class ProductController extends Controller
         ]);
       
     }
+    public function productCategory(Request $request){
+        $idCate = $request->idCate;
+        $listProduct = Product::getListProductFollowCate($idCate);
+        return view("fontend/product/category_product", 
+            [
+                "listProduct"=> $listProduct
+        ]);
+    }
 
 }

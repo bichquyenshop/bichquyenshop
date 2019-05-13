@@ -4,15 +4,15 @@
 			<div class="info">
 				@foreach ($setting as $st)
 	    			<div>
-	    				<span>Địa chỉ : </span>
+	    				<span><i class="fa fa-map-marker-alt"></i> Địa chỉ : </span>
 	    				<span>{{$st->address}}</span>
 	    			</div>
 					<div>
-						<span>Điện thoại :</span>
+						<span><i class="fa fa-mobile"></i> Điện thoại :</span>
 						<span>{{$st->tel}}</span>
 					</div>
 					<div>
-						<span>Email :</span>
+						<span><i class="fa fa-envelope"></i> Email :</span>
 						<span>{{$st->email}}</span>
 					</div>
 	    		@endforeach
