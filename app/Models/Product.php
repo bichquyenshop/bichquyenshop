@@ -23,8 +23,27 @@ class Product extends Model
         $query->orderBy('pd.id','desc');
 
         return $query->get();
-        // return DB::table('product')->where('id',$idProduct)->get();
+    
     }
+     public static function getListProductFollowCate($idCate){
+        $query = DB::table('product as pd');
+        $query->select('pd.code','pd.description','pd.name',
+            'pd.color','pd.image','pd.size','pd.weight','pd.style','sc.name as name_sc','pd.id');
+        $query->join('sub_category as sc', 'pd.sub_category_id', '=', 'sc.id');
+        $query->join('category as ct', 'sc.category_id', '=', 'ct.id');
+     
+        $query->where('pd.sub_category_id',$idCate);
+      
+
+        // $query = DB::table('sub_category');
+        
+        // $query->select('sub_category.*','category.name as category_name');
+        $query->orderBy('pd.id','desc');
+    
+        return $query->get();
+    
+    }
+
 
     public function insertProduct($params=[])
     {
