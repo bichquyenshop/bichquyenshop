@@ -1,12 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-class SubMenu extends Model
+use Illuminate\Http\Request;
+class SubCategory extends Model
 {
     public $table = 'sub_category';
     public $timestamps = false;

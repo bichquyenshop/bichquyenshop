@@ -1,6 +1,9 @@
 <?php
 
+Route::get('/','IndexController@menu');
 
+// Route::get('people/{lastName}/{firstName}', 'PeopleController@show');
+Route::get('detail-product/{idProduct}','ProductController@detailProduct');
 
 Route::group(['prefix' => '/admin',], function()
 {

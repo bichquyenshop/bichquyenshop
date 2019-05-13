@@ -1,30 +1,30 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
-class Menu extends Model
+class Categogy extends Model
 {
     public $table = 'category';
     public $timestamps = false;
 
-    public function getList() {
+    public static function getList() {
         return DB::table('category')->orderBy('id','desc')->get();
     }
 
     public function insertMenu($params=[])
     {
-        $modelMenu = new Menu();
+        $modelMenu = new Categogy();
         $modelMenu->name = $params['name'];
         $modelMenu->save();
     }
 
     public function deleteMenu($id)
     {
-        $menu = Menu::find($id);
+        $menu = Categogy::find($id);
         $menu->delete();
     }
 
