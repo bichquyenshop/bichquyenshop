@@ -19,6 +19,15 @@ class SubCategory extends Model
 
     }
 
+    public function getSubCategoryOptionsByCategoryId($category_id) {
+        $query = DB::table('sub_category');
+        $query->where('sub_category.category_id', $category_id);
+        $query->select('sub_category.id','sub_category.name');
+        $query->orderBy('id','desc');
+        return $query->get();
+
+    }
+
     public function insertSubCategory($params=[])
     {
         $modelSubCategory = new SubCategory();

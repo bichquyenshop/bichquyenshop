@@ -94,4 +94,19 @@ class SubCategoryController extends Controller
         $request->session()->flash('message_success', 'Cập nhật sub menu thành công');
         return redirect(route('list_sub_menu'));
     }
+
+    public function getSubCategory(Request $request)
+    {
+        $this->validate($request,
+            [
+                "category_id" => "required",
+            ]
+        );
+        $input = $request->all();
+
+        $modelSubCategory = new SubCategory();
+        return $subCategory = $modelSubCategory->getSubCategoryOptionsByCategoryId($input['category_id']);
+
+    }
+
 }

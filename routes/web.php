@@ -44,6 +44,8 @@ Route::group(['prefix' => '/admin',], function()
         Route::post('delete','SubCategoryController@delete')->name('delete_sub_menu');
         Route::get('edit/{id}', 'SubCategoryController@getEdit')->name('edit_sub_menu');
         Route::post('edit/{id}','SubCategoryController@postEdit')->name('edit_sub_menu');
+        Route::post('/getSubCategory','SubCategoryController@getSubCategory')->name('getSubCategory');
+
     });
 });
 

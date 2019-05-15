@@ -67,6 +67,13 @@
 <!-- /.content -->
 @section('script')
 <script>
-    $('#example1').DataTable();
+    $('#example1').DataTable({
+        'paging'      : true,
+        'lengthChange': true,
+        'searching'   : true,
+        'ordering'    : false,
+        'info'        : true,
+        'autoWidth'   : true
+    })
 </script>
 @stop

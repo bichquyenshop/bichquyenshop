@@ -47,6 +47,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li {{ (isset($menu_active) && ($menu_active == 'product')) ? 'class=active': '' }}><a href="{{route('list_product')}}"><i class="fa fa-circle-o"></i>Danh sách sản phẩm</a></li>
+                    <li {{ (isset($menu_active) && ($menu_active == 'product-add')) ? 'class=active': '' }}><a href="{{route('add_product')}}"><i class="fa fa-circle-o"></i>Thêm sản phẩm</a></li>
                 </ul>
             </li>
         </ul>
