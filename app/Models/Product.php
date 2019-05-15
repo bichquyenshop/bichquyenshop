@@ -52,11 +52,12 @@ class Product extends Model
         $modelProduct->code = $params['code'];
         $modelProduct->description = $params['description'];
         $modelProduct->image = $params['image'];
-        $modelProduct->image = $params['sub_category_id'];
-        $modelProduct->image = $params['color'];
-        $modelProduct->image = $params['size'];
-        $modelProduct->image = $params['weight'];
-        $modelProduct->image = $params['style'];
+        $modelProduct->category_id = $params['category_id'];
+        $modelProduct->sub_category_id = $params['sub_category_id'];
+        $modelProduct->color = $params['color'];
+        $modelProduct->size = $params['size'];
+        $modelProduct->weight = $params['weight'];
+        $modelProduct->style = $params['style'];
         $modelProduct->save();
     }
 
@@ -66,17 +67,18 @@ class Product extends Model
         $product->delete();
     }
 
-    public function editProduct($modelProduct,$params=[])
+    public function updateProduct($modelProduct, $params=[])
     {
         $modelProduct->name = $params['name'];
         $modelProduct->code = $params['code'];
         $modelProduct->description = $params['description'];
         $modelProduct->image = $params['image'];
-        $modelProduct->image = $params['sub_category_id'];
-        $modelProduct->image = $params['color'];
-        $modelProduct->image = $params['size'];
-        $modelProduct->image = $params['weight'];
-        $modelProduct->image = $params['style'];
+        $modelProduct->category_id = $params['category_id'];
+        $modelProduct->sub_category_id = $params['sub_category_id'];
+        $modelProduct->color = $params['color'];
+        $modelProduct->size = $params['size'];
+        $modelProduct->weight = $params['weight'];
+        $modelProduct->style = $params['style'];
         $modelProduct->save();
     }
 }
