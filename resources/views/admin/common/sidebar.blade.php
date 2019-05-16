@@ -16,7 +16,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="treeview {{ (isset($menu_active) &&  in_array($menu_active,['menu','menu-add'])) ? 'active menu-open': '' }}">
                 <a href="javascript:;">
-                    <i class="fa fa-cogs"></i> <span>Quản lý menu</span>
+                    <i class="fa fa-th"></i> <span>Quản lý menu</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -28,7 +28,7 @@
             </li>
             <li class="treeview {{ (isset($menu_active) &&  in_array($menu_active,['sub-menu','sub-menu-add'])) ? 'active menu-open': '' }}">
                 <a href="javascript:;">
-                    <i class="fa fa-cogs"></i> <span>Quản lý sub menu</span>
+                    <i class="fa fa-table"></i> <span>Quản lý sub menu</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -38,9 +38,9 @@
                     <li {{ (isset($menu_active) && ($menu_active == 'sub-menu-add')) ? 'class=active': '' }}><a href="{{route('add_sub_menu')}}"><i class="fa fa-circle-o"></i>Thêm mới sub menu</a></li>
                 </ul>
             </li>
-            <li class="treeview {{ (isset($menu_active) &&  in_array($menu_active,['product'])) ? 'active menu-open': '' }}">
+            <li class="treeview {{ (isset($menu_active) &&  in_array($menu_active,['product', 'product-add'])) ? 'active menu-open': '' }}">
                 <a href="javascript:;">
-                    <i class="fa fa-cogs"></i> <span>Quản lý sản phẩm</span>
+                    <i class="fa fa-files-o"></i> <span>Quản lý sản phẩm</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -49,6 +49,23 @@
                     <li {{ (isset($menu_active) && ($menu_active == 'product')) ? 'class=active': '' }}><a href="{{route('list_product')}}"><i class="fa fa-circle-o"></i>Danh sách sản phẩm</a></li>
                     <li {{ (isset($menu_active) && ($menu_active == 'product-add')) ? 'class=active': '' }}><a href="{{route('add_product')}}"><i class="fa fa-circle-o"></i>Thêm sản phẩm</a></li>
                 </ul>
+            </li>
+            <li class="treeview {{ (isset($menu_active) &&  in_array($menu_active,['banner', 'banner-add'])) ? 'active menu-open': '' }}">
+                <a href="javascript:;">
+                    <i class="fa fa-laptop"></i> <span>Quản lý banner</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li {{ (isset($menu_active) && ($menu_active == 'banner')) ? 'class=active': '' }}><a href="{{route('list_banner')}}"><i class="fa fa-circle-o"></i>Danh sách banner</a></li>
+                    <li {{ (isset($menu_active) && ($menu_active == 'banner-add')) ? 'class=active': '' }}><a href="{{route('add_banner')}}"><i class="fa fa-circle-o"></i>Thêm banner</a></li>
+                </ul>
+            </li>
+            <li {{ (isset($menu_active) && ($menu_active == 'setting')) ? 'class=active': '' }}>
+                <a href="">
+                    <i class="fa fa-cogs"></i> <span>Cài đặt</span>
+                </a>
             </li>
         </ul>
     </section>

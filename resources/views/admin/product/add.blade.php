@@ -152,10 +152,7 @@
                             $.each(data, function (i, data) {
                                 $("#sub_category_id").append($("<option />").val(data.id).text(data.name));
                             });
-                            if(sub_category_id != ''){
-                                $('#sub_category_id').val(sub_category_id);
-                            }
-
+                            $('#sub_category_id').val(sub_category_id);
                         }
                     });
                 }
