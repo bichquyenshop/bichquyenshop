@@ -6,7 +6,7 @@ Route::get('/','IndexController@menu');
 Route::get('detail-product/{idProduct}','ProductController@detailProduct');
 Route::get('product-category/{idCate}','ProductController@productCategory');
 Route::post('searchInputProduct','ProductController@searchInputProduct')->name('searchInputProduct');
-Route::get('searchButtonProduct/{stringSearch}','ProductController@searchButtonProduct')->name('searchButtonProduct');
+Route::get('searchButtonProduct','ProductController@searchButtonProduct')->name('searchButtonProduct');
 
 Route::group(['prefix' => '/admin',], function()
 {
@@ -47,7 +47,6 @@ Route::group(['prefix' => '/admin',], function()
         Route::get('edit/{id}', 'SubCategoryController@getEdit')->name('edit_sub_menu');
         Route::post('edit/{id}','SubCategoryController@postEdit')->name('edit_sub_menu');
         Route::post('/getSubCategory','SubCategoryController@getSubCategory')->name('getSubCategory');
-
     });
     Route::group(['prefix' => '/banner',], function()
     {
