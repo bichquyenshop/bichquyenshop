@@ -17,6 +17,9 @@ a:hover{
 	padding-left:5px;
 	color:white;
 }
+#top_header .top-phone{
+	text-align: right
+}
 .box_search{
 	position:relative;
 
@@ -263,7 +266,9 @@ input[name=search] {
 	font-size: 35px
 	
 }
-
+.closebtn{
+	opacity: 0
+}
 @media (max-width: 576px) { 
 	.logo{
 		text-align: center
@@ -277,13 +282,97 @@ input[name=search] {
 	.translate{
 		transform: translate(0% ,0%);
 	}
+	#top_header .top-phone{
+		text-align: left
+	}
+	#mySidenav{
+		position: fixed;
+	    top: 0px;
+	    right: -97%;
+	    z-index: 10;
+	}
+	.mymenu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+		#mySidenav a {
+  position: absolute;
+  left: 0px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+.width{
+	width:0px;
+}
+.mymenu {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    transition: 0.5s;
+}
+#mySidenav span:hover a {
+  left: -50px;
+}
+
+#about {
+  top: 20px;
+  background-color: #4CAF50;
+}
+
+#blog {
+  top: 80px;
+  background-color: #2196F3;
+}
+
+#projects {
+  top: 140px;
+  background-color: #f44336;
+}
+
+#contact {
+  top: 200px;
+  background-color: #555
 }
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) { ... }
-
+	
+}
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { ... }
 
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) { ... }
+
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:-6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+} 
+.dropdown-menu{
+	top:75%;
+}

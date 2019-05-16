@@ -207,7 +207,7 @@ class ProductController extends Controller
 
         $listProduct = Product::getListSearchProduct($stringSearch,10);
 
-        return view("fontend/product/search_input_product", 
+        return view("fontend/product/search_button_product", 
             [
                 "listProduct"=> $listProduct
         ]);;

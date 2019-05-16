@@ -50,7 +50,7 @@ html[xmlns] .slides {display: block;}
 /*-----------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 1000px) {
-.slider_container{ width:90%; margin:0 0 0 2%; clear:both; background:none; padding:30px 0 0 0;}
+.slider_container{ width:100%; clear:both; background:none; padding:0px 0 0 0;}
 .flexslider {width: 100%; margin: 0; padding:0 0 30px 0;background:none;}
 .flex-direction-nav li a {width:45px; height:42px; margin:0; display: block; position: absolute; right:-10px; cursor: pointer; text-indent: -9999px;}
 .flex-direction-nav li a.next {background:url(../../image/slider/next.png) no-repeat center; bottom:85px;}

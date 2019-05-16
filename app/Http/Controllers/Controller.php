@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categogy;
+use App\Models\SubCategory;
 use App\Models\Setting;
 use App\Models\Banner;
 use App\Models\Product;
@@ -21,9 +22,11 @@ class Controller extends BaseController
        $setting     = Setting::getList();
        $banner      = Banner::getList();
        $categogy    = Categogy::getList();
+       $subCategory = SubCategory::getList();
 
        View::share ( 'setting'  , $setting );
        View::share ( 'banner'   , $banner  );
        View::share ( 'categogy'   , $categogy  );
+       View::share ( 'subCategory'   , $subCategory  );
     } 
 }
