@@ -19,7 +19,9 @@
 
 </head>
 <body>
-    
+    <div id="top_header">
+         @include('fontend.layout.top-header')
+    </div>
     <div id="header" class="container-fluid">
         @include('fontend.layout.header')
 

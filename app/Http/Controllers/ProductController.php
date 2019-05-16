@@ -112,5 +112,26 @@ class ProductController extends Controller
                 "listProduct"=> $listProduct
         ]);
     }
+    public function searchInputProduct(Request $request){
+        $stringSearch =  $request->stringSearch;
+
+        $listProduct = Product::getListSearchProduct($stringSearch,3);
+
+        return view("fontend/product/search_input_product", 
+            [
+                "listProduct"=> $listProduct
+        ]);;
+    }
+    public function searchButtonProduct(Request $request){
+        $stringSearch =  $request->stringSearch;
+
+        $listProduct = Product::getListSearchProduct($stringSearch,10);
+
+        return view("fontend/product/search_input_product", 
+            [
+                "listProduct"=> $listProduct
+        ]);;
+    }
+
 
 }
