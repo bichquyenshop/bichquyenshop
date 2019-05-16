@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class Setting extends Model
 {
-    // public $table = 'category';
-    // public $timestamps = false;
+     public $table = 'setting';
+     public $timestamps = false;
 
     public static function getList() {
         return DB::table('setting')->get();

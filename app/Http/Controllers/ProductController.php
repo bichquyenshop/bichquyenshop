@@ -76,7 +76,7 @@ class ProductController extends Controller
             $input['image'] = 'storage/product_images/thumbnail/' . $filenametostore;
             //Resize image here
             $thumbnailpath = public_path('storage/product_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(400, 400, function ($constraint) {
+            $img = Image::make($thumbnailpath)->resize(800, 600, function ($constraint) {
                 $constraint->aspectRatio();
             });
             $watermark =  Image::make(public_path('logo.png'));
@@ -161,7 +161,7 @@ class ProductController extends Controller
             $input['image'] = 'storage/product_images/thumbnail/' . $filenametostore;
             //Resize image here
             $thumbnailpath = public_path('storage/product_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(400, 400, function ($constraint) {
+            $img = Image::make($thumbnailpath)->resize(800, 600, function ($constraint) {
                 $constraint->aspectRatio();
             });
             $watermark =  Image::make(public_path('logo.png'));

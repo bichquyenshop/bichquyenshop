@@ -152,6 +152,7 @@
 
 @section('script')
     <script>
+        var num = 0;
         $(function () {
             $('.remove_image').click(function(){
                 $('#image').val('');
@@ -176,10 +177,10 @@
                             $.each(data, function (i, data) {
                                 $("#sub_category_id").append($("<option />").val(data.id).text(data.name));
                             });
-                            if(sub_category_id != ''){
+                            if(num == 0){
                                 $('#sub_category_id').val(sub_category_id);
+                                num = 1;
                             }
-
                         }
                     });
                 }
