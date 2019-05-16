@@ -32,7 +32,7 @@
             	<a href="{{ url('detail-product/' . $pd->id) }} ">		
 	                <div class="product">
 			    		<div class="image_box">
-			    			<img src="{{$pd->image}}">
+			    			<img src="{{url($pd->image)}}">
 			    		</div>
 			    		<div class="content_box">
 				    		<div class="title">

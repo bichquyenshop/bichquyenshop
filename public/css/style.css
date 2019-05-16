@@ -5,7 +5,55 @@ a:hover{
 	text-decoration: none;
 	color:black;
 }
+#top_header{
+	background-color: black;
+	padding:10px 0px;
+}
+#top_header i{
+	 color: #d5ac63;
+    font-size: 1.2em;
+}
+#top_header span{
+	padding-left:5px;
+	color:white;
+}
+.box_search{
+	position:relative;
 
+}
+.result_search{
+	border: 1px solid #c7c7c7;
+    top: 100%;
+    position: absolute;
+    width: 100%;
+
+    background-color: white;
+    /*display: none;*/
+}
+.result_search .product .image_box img{
+	width:100px;
+}
+.result_search .product{
+    padding: 8px;
+    border: 1px solid #f7f7f7;
+}
+.result_search .product .content_box{
+	padding-left:10px;
+} 
+.result_search .product .content_box .title{
+	font-size: 1.2em;
+	font-weight:bold;
+}
+.result_search .product .content_box .code{
+	font-style: italic;
+}
+.result_search .product:hover{
+	background-color:black;
+	color:white;
+}
+.logo{
+	text-align: center
+}
 .menu:first-child{
 	/*padding-left:0px;*/
 	border-radius:7px 0 0 7px;
@@ -40,7 +88,7 @@ input[name=search] {
    
 }
 .social.facebook a{
-	padding: 5px 5px 5px 10px;
+	padding: 5px 9px 5px 14px;
 	background-color:blue;
 	
 	border: 1px solid blue;
@@ -203,3 +251,39 @@ input[name=search] {
 	color:#00e278;
 	padding-right:3px;
 }
+.row{
+	margin:0px;
+}
+.translate{
+	transform: translate(0% ,30%);
+}
+.mess i{
+	padding-left:20px;
+	color:blue;
+	font-size: 35px
+	
+}
+
+@media (max-width: 576px) { 
+	.logo{
+		text-align: center
+	}
+	.mess{
+		 position: fixed;
+	    left: 80%;
+	    top: 10%;
+	    z-index: 999;
+	}
+	.translate{
+		transform: translate(0% ,0%);
+	}
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { ... }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { ... }
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { ... }
