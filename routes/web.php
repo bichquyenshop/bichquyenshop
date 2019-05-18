@@ -60,6 +60,13 @@ Route::group(['prefix' => '/admin',], function()
             Route::get('edit/{id}', 'BannerController@getEdit')->name('edit_banner');
             Route::post('edit/{id}','BannerController@postEdit')->name('edit_banner');
         });
+
+        Route::group(['prefix' => '/setting',], function()
+        {
+            Route::get('edit', 'SettingController@getEdit')->name('edit_setting');
+            Route::post('edit','SettingController@postEdit')->name('edit_setting');
+            Route::post('/uploadImg', 'SettingController@uploadImg')->name('upload_img');
+        });
     });
 });
 
