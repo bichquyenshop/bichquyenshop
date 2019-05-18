@@ -10,7 +10,7 @@ class SubCategory extends Model
     public $table = 'sub_category';
     public $timestamps = false;
 
-    public function getList() {
+    public static function getList() {
         $query = DB::table('sub_category');
         $query->join('category', 'sub_category.category_id', '=', 'category.id');
         $query->select('sub_category.*','category.name as category_name');
@@ -22,7 +22,7 @@ class SubCategory extends Model
     public function getSubCategoryOptionsByCategoryId($category_id) {
         $query = DB::table('sub_category');
         $query->where('sub_category.category_id', $category_id);
-        $query->select('sub_category.id','sub_category.name');
+        $query->select('sub_category.id','sub_category.name','sub_category.category_id');
         $query->orderBy('id','desc');
         return $query->get();
 
