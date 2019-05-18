@@ -3,17 +3,14 @@
 namespace App\Http\Controllers;
 use App\Models\Categogy;
 use App\Models\Product;
+use App\Models\Setting;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use Image;
 
 class ProductController extends Controller
 {
-    // public function __construct()
-    // {
-       
 
-    //     // Your constructor code here..
-    // }
     private $data = [];
 
     public function __construct()
@@ -25,6 +22,7 @@ class ProductController extends Controller
     {
         $modelProduct = new Product();
         $products = $modelProduct->getList();
+        $products = $this->buildItems($products);
         $this->data['list'] = $products;
 
         return view('admin/product/list',$this->data);
@@ -77,13 +75,19 @@ class ProductController extends Controller
             $img = Image::make($thumbnailpath)->resize(800, 600, function ($constraint) {
                 $constraint->aspectRatio();
             });
-            $watermark =  Image::make(public_path('logo.png'));
-            $img->insert($watermark, 'bottom-right', 10, 10);
-            $img->save($thumbnailpath);
+            $modelSetting = new Setting();
+            $setting = $modelSetting->getSetting();
+            if(!empty($setting->logo)){
+                $watermark =  Image::make(public_path($setting->logo));
+                $img->insert($watermark, 'bottom-right', 10, 10);
+            }
 
+            $img->save($thumbnailpath);
         }
 
         $modelProduct->insertProduct($input);
+        $request->session()->flash('message_success', 'Thêm sản phẩm thành công');
+
         return redirect(route('list_product'));
     }
 
@@ -96,10 +100,10 @@ class ProductController extends Controller
         $modelProduct = new Product();
         $product = Product::find($id);
         if(!$product){
-            return response()->json(['error' => 1, 'message' => 'Product không tồn tại']);
+            return response()->json(['error' => 1, 'message' => 'Sản phẩm không tồn tại']);
         }
         $modelProduct->deleteProduct($id);
-        return response()->json(['error' => 0, 'message' => 'Xóa product thành công']);
+        return response()->json(['error' => 0, 'message' => 'Xóa sản phẩm thành công']);
     }
 
 
@@ -160,14 +164,50 @@ class ProductController extends Controller
             $img = Image::make($thumbnailpath)->resize(800, 600, function ($constraint) {
                 $constraint->aspectRatio();
             });
-            $watermark =  Image::make(public_path('logo.png'));
-            $img->insert($watermark, 'bottom-right', 10, 10);
+
+            $modelSetting = new Setting();
+            $setting = $modelSetting->getSetting();
+            if(!empty($setting->logo)){
+                $watermark =  Image::make(public_path($setting->logo));
+                $img->insert($watermark, 'bottom-right', 10, 10);
+            }
+
             $img->save($thumbnailpath);
 
         }
 
         $modelProduct->updateProduct($product, $input);
+        $request->session()->flash('message_success', 'Cập nhật sản phẩm thành công');
+
         return redirect(route('list_product'));
+    }
+
+
+    public function buildItem($item) {
+        $item->category_name = 'Khác';
+        if (!empty($item->category_id)) {
+            $modelCategogy = new Categogy();
+            $category = $modelCategogy->find($item->category_id);
+            $item->category_name = $category->name;
+        }
+        $item->sub_category_name = 'Khác';
+        if (!empty($item->sub_category_id)) {
+            $modelSubCategogy = new SubCategory();
+            $subCategory = $modelSubCategogy->find($item->sub_category_id);
+            $item->sub_category_name = $subCategory->name;
+        }
+        return $item;
+    }
+
+    /**
+     * @param $items
+     * @return mixed
+     */
+    public function buildItems($items) {
+        foreach ($items as $key => $item) {
+            $items[$key] = $this->buildItem($item);
+        }
+        return $items;
     }
 
     // Font-end
