@@ -42,6 +42,13 @@ class SubCategory extends Model
         $modelSubCategory->delete();
     }
 
+    public function deleteSubCategoryByCategoryId($category_id)
+    {
+        $query = DB::table('sub_category');
+        $query->where('category_id', $category_id);
+        $query->delete();
+    }
+
     public function editSubCategory($modelSubCategory,$params=[])
     {
         $modelSubCategory->name = $params['name'];

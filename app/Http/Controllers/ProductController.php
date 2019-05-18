@@ -49,8 +49,6 @@ class ProductController extends Controller
                 "color"           => "max:100",
                 "weight"          => "max:100",
                 "size"            => "max:100",
-                "category_id"     => "required",
-                "sub_category_id" => "required",
                 "product_image"   =>'mimes:jpeg,jpg,png|max:1024'
             ]
         );
@@ -134,8 +132,6 @@ class ProductController extends Controller
                 "color"           => "max:100",
                 "weight"          => "max:100",
                 "size"            => "max:100",
-                "category_id"     => "required",
-                "sub_category_id" => "required",
                 "product_image"   =>'mimes:jpeg,jpg,png|max:1024'
             ]
         );

@@ -7,11 +7,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Danh sách menu
+        Danh sách sub menu
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{route('index')}}"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
-        <li class="active">Danh sách menu</li>
+        <li class="active">Danh sách sub menu</li>
     </ol>
 </section>
 

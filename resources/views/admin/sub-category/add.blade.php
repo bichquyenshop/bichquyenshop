@@ -23,7 +23,7 @@
             @csrf
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Thông tin menu</h3>
+                    <h3 class="box-title">Thông tin sub menu</h3>
                 </div>
                 
                 <div class="box-body">
