@@ -82,7 +82,7 @@ class SettingController extends Controller
             $input['logo'] = 'storage/logo_images/thumbnail/' . $filenametostore;
             //Resize image here
             $thumbnailpath = public_path('storage/logo_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(1000, 750, function ($constraint) {
+            $img = Image::make($thumbnailpath)->resize(100, 100, function ($constraint) {
                 $constraint->aspectRatio();
             });
             $img->save($thumbnailpath);

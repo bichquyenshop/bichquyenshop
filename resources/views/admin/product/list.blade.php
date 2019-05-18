@@ -47,8 +47,8 @@
                                 <tr>
                                     <td>{{$product->name}}</td>
                                     <td>{{$product->code}}</td>
-                                    <td>{{$product->name}}</td>
-                                    <td>{{$product->name}}</td>
+                                    <td>{{$product->category_name}}</td>
+                                    <td>{{$product->sub_category_name}}</td>
                                     <td>{{$product->color}}</td>
                                     <td>{{$product->size}}</td>
                                     <td>{{$product->weight}}</td>
