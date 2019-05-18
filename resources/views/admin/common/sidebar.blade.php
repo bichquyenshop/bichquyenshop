@@ -63,7 +63,7 @@
                 </ul>
             </li>
             <li {{ (isset($menu_active) && ($menu_active == 'setting')) ? 'class=active': '' }}>
-                <a href="">
+                <a href="{{route('edit_setting')}}">
                     <i class="fa fa-cogs"></i> <span>Cài đặt</span>
                 </a>
             </li>

@@ -129,7 +129,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
     <!-- CK Editor -->
-    {{--<script src="/static/components/ckeditor/ckeditor.js"></script>--}}
+    <script src="/static/components/ckeditor/ckeditor.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="/static/js/common.js"></script>
 
