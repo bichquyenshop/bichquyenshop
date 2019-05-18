@@ -37,6 +37,20 @@ class Product extends Model
         $product->delete();
     }
 
+    public function updateByCategoryId($category_id)
+    {
+        return DB::table('product')
+            ->where('category_id', $category_id)
+            ->update(['category_id' => null, 'sub_category_id' => null]);
+    }
+
+    public function updateBySubCategoryId($sub_category_id)
+    {
+        return DB::table('product')
+            ->where('sub_category_id', $sub_category_id)
+            ->update(['category_id' => null, 'sub_category_id' => null]);
+    }
+
     public function updateProduct($modelProduct, $params=[])
     {
         $modelProduct->name = $params['name'];

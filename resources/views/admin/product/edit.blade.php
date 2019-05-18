@@ -46,7 +46,7 @@
                         <div class="col-md-6 form-group {!! $errors->first('category_id','has-error') !!}">
                             <label class="col-sm-4 control-label">Menu</label>
                             <div class="col-sm-8">
-                                <select required class="form-control" id="category_id" name="category_id">
+                                <select class="form-control" id="category_id" name="category_id">
                                     <option value="" >{{'Chọn menu'}}</option>
                                     @foreach($menuOptions as $key => $value)
                                         <option {{ (!empty(old('category_id')) ? old('category_id') : $product->category_id)  == $key ? 'selected' : '' }} value="{{ $key }}" {{ (old('category_id') == $key ) ? 'selected':''}}> {{ $value }}</option>
@@ -58,7 +58,7 @@
                         <div class="col-md-6 form-group {!! $errors->first('sub_category_id','has-error') !!}">
                             <label class="col-sm-4 control-label">Sub menu</label>
                             <div class="col-sm-8">
-                                <select required class="form-control" id="sub_category_id" name="sub_category_id">
+                                <select class="form-control" id="sub_category_id" name="sub_category_id">
                                     <option value="" >{{'Chọn sub menu'}}</option>
                                 </select>
                                 {!! $errors->first('sub_category_id','<span class="help-block">:message</span>') !!}

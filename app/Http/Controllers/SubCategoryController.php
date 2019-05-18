@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Categogy;
+use App\Models\Product;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
@@ -59,6 +60,10 @@ class SubCategoryController extends Controller
             return response()->json(['error' => 1, 'message' => 'Sub menu không tồn tại']);
         }
         $modelSubCategory->deleteSubCategory($id);
+
+        $modelProduct = new Product();
+        $modelProduct->updateBySubCategoryId($id);
+
         return response()->json(['error' => 0, 'message' => 'Xóa sub menu thành công']);
     }
 

@@ -20,7 +20,7 @@ Route::group(['prefix' => '/admin',], function()
 
 
     Route::group(['middleware' => ['web','auth'], 'prefix' => '/',], function() {
-        
+
         Route::group(['prefix' => '/product',], function()
         {
             Route::get('/list','ProductController@getList')->name('list_product');
