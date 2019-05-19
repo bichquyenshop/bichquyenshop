@@ -27,7 +27,7 @@
 
                 <div class="form-group has-feedback ">
 
-                    <input id="password" placeholder="Mật khẩu mới" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                    <input maxlength="30" minlength="8" id="password" placeholder="Mật khẩu mới" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                     @if ($errors->has('password'))
