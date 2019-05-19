@@ -22,7 +22,7 @@ class Controller extends BaseController
        $setting     = Setting::getList();
        $banner      = Banner::getList();
        $categogy    = Categogy::getList();
-       $subCategory = SubCategory::getList();
+       $subCategory = SubCategory::getListSub();
 
        View::share ( 'setting'  , $setting );
        View::share ( 'banner'   , $banner  );
