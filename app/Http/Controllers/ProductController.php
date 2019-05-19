@@ -71,14 +71,14 @@ class ProductController extends Controller
             $request->file('product_image')->storeAs('public/product_images/thumbnail', $filenametostore);
             $input['image'] = 'storage/product_images/thumbnail/' . $filenametostore;
             //Resize image here
-            $thumbnailpath = public_path('storage/product_images/thumbnail/' . $filenametostore);
+            $thumbnailpath = ('storage/product_images/thumbnail/' . $filenametostore);
             $img = Image::make($thumbnailpath)->resize(800, 600, function ($constraint) {
                 $constraint->aspectRatio();
             });
             $modelSetting = new Setting();
             $setting = $modelSetting->getSetting();
             if(!empty($setting->logo)){
-                $watermark =  Image::make(public_path($setting->logo));
+                $watermark =  Image::make(($setting->logo));
                 $img->insert($watermark, 'bottom-right', 10, 10);
             }
 
@@ -117,7 +117,6 @@ class ProductController extends Controller
         }
         $this->data['menuOptions'] = $categoryOptions;
         $this->data['product'] = $product;
-        $this->data['urlImg'] = public_path($product->image);
 
         return view('admin/product/edit',$this->data);
     }
@@ -160,7 +159,7 @@ class ProductController extends Controller
             $request->file('product_image')->storeAs('public/product_images/thumbnail', $filenametostore);
             $input['image'] = 'storage/product_images/thumbnail/' . $filenametostore;
             //Resize image here
-            $thumbnailpath = public_path('storage/product_images/thumbnail/' . $filenametostore);
+            $thumbnailpath = ('storage/product_images/thumbnail/' . $filenametostore);
             $img = Image::make($thumbnailpath)->resize(800, 600, function ($constraint) {
                 $constraint->aspectRatio();
             });
@@ -168,7 +167,7 @@ class ProductController extends Controller
             $modelSetting = new Setting();
             $setting = $modelSetting->getSetting();
             if(!empty($setting->logo)){
-                $watermark =  Image::make(public_path($setting->logo));
+                $watermark =  Image::make(($setting->logo));
                 $img->insert($watermark, 'bottom-right', 10, 10);
             }
 

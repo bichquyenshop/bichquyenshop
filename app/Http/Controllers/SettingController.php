@@ -25,7 +25,6 @@ class SettingController extends Controller
         }
 
         $this->data['setting'] = $setting;
-        $this->data['urlImg'] = public_path($setting->logo);
 
         return view('admin/setting/edit',$this->data);
     }
@@ -81,7 +80,7 @@ class SettingController extends Controller
             $request->file('logo_image')->storeAs('public/logo_images/thumbnail', $filenametostore);
             $input['logo'] = 'storage/logo_images/thumbnail/' . $filenametostore;
             //Resize image here
-            $thumbnailpath = public_path('storage/logo_images/thumbnail/' . $filenametostore);
+            $thumbnailpath = ('storage/logo_images/thumbnail/' . $filenametostore);
             $img = Image::make($thumbnailpath)->resize(100, 100, function ($constraint) {
                 $constraint->aspectRatio();
             });
@@ -112,8 +111,8 @@ class SettingController extends Controller
 
         //Upload File
         $request->file('upload')->storeAs('public/upload', $filenametostore);
-        $url = '/storage/upload/' . $filenametostore;
-        $thumbnailpath = public_path('storage/upload/' . $filenametostore);
+        $url = 'storage/upload/' . $filenametostore;
+        $thumbnailpath = ('storage/upload/' . $filenametostore);
         $img = Image::make($thumbnailpath);
         $img->save($thumbnailpath);
 

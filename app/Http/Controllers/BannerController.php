@@ -60,12 +60,11 @@ class BannerController extends Controller
             $request->file('banner_image')->storeAs('public/banner_images/thumbnail', $filenametostore);
             $input['image'] = 'storage/banner_images/thumbnail/' . $filenametostore;
             //Resize image here
-            $thumbnailpath = public_path('storage/banner_images/thumbnail/' . $filenametostore);
+            $thumbnailpath = ('storage/banner_images/thumbnail/' . $filenametostore);
             $img = Image::make($thumbnailpath)->resize(1000, 750, function ($constraint) {
                 $constraint->aspectRatio();
             });
-//            $watermark =  Image::make(public_path('logo.png'));
-//            $img->insert($watermark, 'bottom-right', 10, 10);
+
             $img->save($thumbnailpath);
 
         }
@@ -97,7 +96,6 @@ class BannerController extends Controller
             return abort(404);
         }
         $this->data['banner'] = $banner;
-        $this->data['urlImg'] = public_path($banner->image);
 
         return view('admin/banner/edit',$this->data);
     }
@@ -136,12 +134,11 @@ class BannerController extends Controller
             $request->file('banner_image')->storeAs('public/banner_images/thumbnail', $filenametostore);
             $input['image'] = 'storage/banner_images/thumbnail/' . $filenametostore;
             //Resize image here
-            $thumbnailpath = public_path('storage/banner_images/thumbnail/' . $filenametostore);
+            $thumbnailpath = ('storage/banner_images/thumbnail/' . $filenametostore);
             $img = Image::make($thumbnailpath)->resize(1000, 750, function ($constraint) {
                 $constraint->aspectRatio();
             });
-//            $watermark =  Image::make(public_path('logo.png'));
-//            $img->insert($watermark, 'bottom-right', 10, 10);
+
             $img->save($thumbnailpath);
 
         }
