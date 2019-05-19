@@ -11,9 +11,15 @@ class Categogy extends Model
     public $table = 'category';
     public $timestamps = false;
 
+    
     public static function getList() {
-        return DB::table('category')->orderBy('id','desc')->get();
+        $query = DB::table('category as ct');
+        $query->join('sub_category as sc', 'sc.category_id', '=', 'ct.id');
+        $query->distinct('ct.id');
+        $query->select('ct.name','ct.id');
+        return $query->get();
     }
+
 
     public function insertCategory($params=[])
     {

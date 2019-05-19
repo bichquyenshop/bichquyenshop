@@ -10,6 +10,11 @@ class SubCategory extends Model
     public $table = 'sub_category';
     public $timestamps = false;
 
+    public static function getListSub() {
+         return DB::table('sub_category')->get();
+    }
+
+
     public static function getList() {
         $query = DB::table('sub_category');
         $query->join('category', 'sub_category.category_id', '=', 'category.id');
@@ -56,3 +61,4 @@ class SubCategory extends Model
         $modelSubCategory->save();
     }
 }
+
