@@ -1,5 +1,17 @@
 @extends('fontend.layout.master')
 @section('content')
+  @section('title', 'Chi Tiết Sản Phẩm')
+  @foreach ($detailProduct as $dp)
+
+
+  
+  <meta property="og:url" content="{{ url('detail-product/' . $dp->id) }}" />
+  <meta property="og:type" content="Detail Product" />
+  <meta property="og:title" content="{{$dp->name}}" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="{{url($dp->image)}}" />
+      
+  @endforeach
   <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
@@ -27,26 +39,20 @@
            	<div>Kiểu dáng : {{$dp->style}}</div>
            	<div>Trọng lượng : {{$dp->weight}}</div>
            	<div>Mô tả chi tiết : {{$dp->description}}</div>
-        </div>
-        @endforeach
-        
-    </div>
-    <html>
-      @foreach ($detailProduct as $dp)
-      
-      <body>
-
-   
-        <div id="fb-root"></div>
+            <span id="fb-root"></span>
         
 
      
-        <div class="fb-share-button" 
-          data-href="{{url('detail-product/'$dp->id)}}" 
-          data-layout="button_count">
+            <span class="fb-share-button" 
+
+              data-href="{{ ('http://bichquyenjewelry.com/detail-product/' . $dp->id) }}" 
+              data-layout="button_count">
+            </span>
         </div>
 
-      </body>
-      </html>
-      @endforeach
+        @endforeach
+        
+    </div>
+
+      
 @endsection

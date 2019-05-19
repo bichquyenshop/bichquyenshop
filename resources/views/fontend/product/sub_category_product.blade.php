@@ -28,7 +28,7 @@
         </div>
         <div style="text-align: center;margin-top:20px">
 		  	<div class="text"></div>
-		  	<input type="hidden" name="cate_id" value= "{{$idCate}}">
+		  	<input type="hidden" name="sub_cate_id" value= "{{$idSubCate}}">
 		  	<input type="hidden" name="offset" value="0">
 		  	<button type="button" class="btn btn-primary load_more">XEM TIẾP</button>
 		 
@@ -41,11 +41,11 @@ $( document ).ready(function() {
 	$('.load_more').click(function(){
 		var offset = parseInt($('input[name="offset"]').val()) + 4;
 		var loadMore = 1 //Nếu loadMore = 1 thì sẽ render view loadMore 
-		var idCate = $('input[name="cate_id"]').val()
+		var idSubCate = $('input[name="sub_cate_id"]').val()
 		$.ajax({
 	        type: "GET",
-	        url: '{{route("product-category-load-more")}}',
-	        data: {idCate:idCate,offset:offset,loadMore:loadMore},
+	        url: '{{route("product-sub-category-load-more")}}',
+	        data: {idSubCate:idSubCate,offset:offset,loadMore:loadMore},
 	        headers: {
 	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	        },

@@ -1,6 +1,10 @@
 @extends('fontend.layout.master')
 
-@section('title', 'Page Title')
+@section('title', 'Trang chủ')
+@section('keywords', 'Trang sức , vòng cẩm thạch')
+@section('description', $setting['0']->description)
+
+
 
 
 @section('content')
@@ -9,9 +13,7 @@
 	<div class="col-md-12">
 	    <div id="introduction">
 	    	<div class="title">
-	    	
 	    		<span>Giới Thiệu</span>
-	    		
 	    	</div>
 	    	<div class="content">
 	    		@foreach ($setting as $st)
@@ -27,7 +29,6 @@
     <div id="new_product">
     	 <div class="row">
     	 	@foreach ($product as $pd)
-	    	
             <div class="col-md-3 box">
             	<a href="{{ url('detail-product/' . $pd->id) }} ">		
 	                <div class="product">
@@ -45,9 +46,7 @@
 			    	</div>
 		    	</a>
             </div> 
-        	<!-- </a> -->
             @endforeach 
-            
         </div>
     </div>
 </div>
