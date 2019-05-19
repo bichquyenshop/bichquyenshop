@@ -18,19 +18,10 @@ class IndexController extends Controller
     }
     public function menu()
     {
-        $modelCategogy = new Categogy();
-       
-        
-        $menu = $modelCategogy->getList();
-        // $setting = Setting::getList();
-        // $banner = Banner::getList();
-        $banner = Banner::getList();
-        $product = Product::getList();
+        $product = Product::getListIndex();
         return view("fontend/index", 
             [
-                // "categogy"=> $menu,
-                // "setting"=> $setting,
-                // "banner"=> $banner,
+
                 "product"=> $product,
 
             ]

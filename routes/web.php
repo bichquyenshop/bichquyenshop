@@ -3,10 +3,16 @@
 Route::get('/','IndexController@menu');
 
 // Route::get('people/{lastName}/{firstName}', 'PeopleController@show');
-Route::get('detail-product/{idProduct}','ProductController@detailProduct');
-Route::get('product-category/{idCate}','ProductController@productCategory');
+Route::get('product-category/{idCate}','ProductController@productCategory')->name('product-category');
+Route::get('product-category-load-more','ProductController@productCategory')->name('product-category-load-more');
+
+Route::get('product-sub-category/{idSubCate}','ProductController@productSubCategory')->name('product-sub-category');
+Route::get('product-sub-category-load-more','ProductController@productSubCategory')->name('product-sub-category-load-more');
+
+
 Route::post('searchInputProduct','ProductController@searchInputProduct')->name('searchInputProduct');
 Route::get('searchButtonProduct','ProductController@searchButtonProduct')->name('searchButtonProduct');
+
 
 Route::group(['prefix' => '/admin',], function()
 {
@@ -75,5 +81,10 @@ Route::group(['prefix' => '/admin',], function()
         });
     });
 });
+
+
+
+
+
 
 
