@@ -112,7 +112,7 @@
                             </span>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 @foreach ($categogy as $ct) 
-                                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle">{{$ct->name}}</a>
+                                <li class="dropdown-submenu"><a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle">{{$ct->name}}</a>
                                     <ul class="dropdown-menu">
                                     @foreach ($subCategory as $sc)
                                     
@@ -120,7 +120,7 @@
 
                                         
                                         <li>
-                                            <a class="dropdown-item" href="#">{{$sc->name}}</a>
+                                            <a class="dropdown-item" href="{{ url('product-sub-category/' . $sc->id) }} ">{{$sc->name}}</a>
                                         </li>
                                           
                                           

@@ -6,11 +6,11 @@ a:hover{
 	color:black;
 }
 #top_header{
-	background-color: black;
+	background-color: green;
 	padding:10px 0px;
 }
 #top_header i{
-	 color: #d5ac63;
+	 color: white;
     font-size: 1.2em;
 }
 #top_header span{

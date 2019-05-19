@@ -221,17 +221,67 @@ class ProductController extends Controller
       
     }
     public function productCategory(Request $request){
+        $offset = 0; // Load vị trí thứ 0
         $idCate = $request->idCate;
-        $listProduct = Product::getListProductFollowCate($idCate);
-        return view("fontend/product/category_product", 
+        if(isset($request->offset)){
+            $offset = $request->offset; 
+
+        }
+         // echo $offset;
+        $limit = 4; // 4 sản phẩm
+        $listProduct = Product::getListProductFollowCate($idCate,$offset,$limit);
+
+        if(isset($request->loadMore)){
+            // return"dsfs";
+            return view("fontend/product/load_more", 
             [
-                "listProduct"=> $listProduct
-        ]);
+                "listProduct"=> $listProduct,
+                // "idCate" => $idCate,
+            ]);
+        }
+        else{
+
+            return view("fontend/product/category_product", 
+            [
+                "listProduct"=> $listProduct,
+                "idCate" => $idCate,
+            ]);
+        }
+        
+    }
+    public function productSubCategory(Request $request){
+        $offset = 0; // Load vị trí thứ 0
+        $idSubCate = $request->idSubCate;
+        if(isset($request->offset)){
+            $offset = $request->offset; 
+
+        }
+         // echo $offset;
+        $limit = 4; // 4 sản phẩm
+        $listProduct = Product::getListProductFollowSubCate($idSubCate,$offset,$limit);
+
+        if(isset($request->loadMore)){
+            // return"dsfs";
+            return view("fontend/product/load_more", 
+            [
+                "listProduct"=> $listProduct,
+                // "idCate" => $idCate,
+            ]);
+        }
+        else{
+
+            return view("fontend/product/sub_category_product", 
+            [
+                "listProduct"=> $listProduct,
+                "idSubCate" => $idSubCate,
+            ]);
+        }
+        
     }
     public function searchInputProduct(Request $request){
         $stringSearch =  $request->stringSearch;
 
-        $listProduct = Product::getListSearchProduct($stringSearch,3);
+        $listProduct = Product::getListSearchProduct($stringSearch,"",3);
 
         return view("fontend/product/search_input_product", 
             [
@@ -239,15 +289,28 @@ class ProductController extends Controller
         ]);;
     }
     public function searchButtonProduct(Request $request){
+        $offset = 0; // Load vị trí thứ 0
+        if(isset($request->offset)){
+            $offset = $request->offset; 
+        }
+        $limit = 4; // 4 sản phẩm
         $stringSearch =  $request->stringSearch;
-
-        $listProduct = Product::getListSearchProduct($stringSearch,10);
-
-        return view("fontend/product/search_button_product", 
+        $listProduct = Product::getListSearchProduct($stringSearch,$offset,$limit);
+        if(isset($request->loadMore)){
+            return view("fontend/product/load_more", 
             [
-                "listProduct"=> $listProduct
-        ]);;
+                "listProduct"=> $listProduct,
+                'stringSearch'=>$stringSearch,
+            ]);
+        }
+        else{
+            return view("fontend/product/search_button_product", 
+            [
+                "listProduct"=> $listProduct,
+                'stringSearch'=>$stringSearch,
+            ]);
+        }
+        
     }
-
 
 }
