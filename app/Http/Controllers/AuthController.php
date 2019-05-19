@@ -37,7 +37,7 @@ class AuthController extends Controller
     {
         $request->validate([
             'email'    => 'required|email|max:255',
-            'password' => 'required'
+            'password' => 'required|max:30|min:8'
         ]);
         $email = $request->input('email');
         $password = $request->input('password');
@@ -58,8 +58,8 @@ class AuthController extends Controller
         $modelUser = new User();
         $request->validate([
             'oldPassword'      => 'required|max:30',
-            'password'         => 'required|max:30',
-            'confirm_password' => 'required|same:password|max:30',
+            'password'         => 'required|max:30|min8',
+            'confirm_password' => 'required|same:password|max:30|min:8',
         ]);
 
         $input = $request->all();
