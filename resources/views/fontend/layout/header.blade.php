@@ -1,4 +1,26 @@
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.3'
+    });
+  };
 
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="429999077779521">
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -45,29 +67,29 @@
                 <div class="col-md-2 align-self-center sidenav" id="mySidenav">
                     
                     <span class="social facebook">
-                        <a href="" id="about">
+                        <a href="" id="facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </span>
                     <span class="social youtube">
-                        <a href="" id="blog">
+                        <a href="" id="youtube">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </span>
                     <span class="social twitter">
-                        <a href="" id="projects">
+                        <a href="" id="twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </span>
                     <span class="social twitter">
-                         <a href="" id="contact">
+                         <a href="" id="as">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </span>
                 </div>
                 <div class="col-md-10 add width">
                      
-                    <nav class="navbar navbar-expand-md navbar-light bg-light">
+                    <nav class="navbar navbar-expand-md navbar-light">
                        
                       
                       <button id="openMenu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,7 +119,9 @@
                                         @if($ct->id == $sc->category_id)
 
                                         
-                                          <li><a class="dropdown-item" href="#">{{$sc->name}}</a></li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">{{$sc->name}}</a>
+                                        </li>
                                           
                                           
                                         
