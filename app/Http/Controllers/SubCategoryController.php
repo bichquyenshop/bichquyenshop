@@ -95,7 +95,7 @@ class SubCategoryController extends Controller
             return abort(404);
         }
         $input = $request->all();
-        $modelSubCategory->editSubCategory($subCategory, $input);
+        $modelSubCategory->updateSubCategory($subCategory, $input);
         $request->session()->flash('message_success', 'Cập nhật sub menu thành công');
         return redirect(route('list_sub_menu'));
     }

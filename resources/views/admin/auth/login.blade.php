@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <a href="#">Quên mật khẩu</a>
+                    <a href="{{route('password.reset')}}">Quên mật khẩu</a>
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-5 pull-right">

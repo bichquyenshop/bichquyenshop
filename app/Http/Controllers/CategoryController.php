@@ -90,7 +90,7 @@ class CategoryController extends Controller
             return abort(404);
         }
         $input = $request->all();
-        $modelCategogy->editCategory($category, $input);
+        $modelCategogy->updateCategory($category, $input);
         $request->session()->flash('message_success', 'Cập nhật menu thành công');
         return redirect(route('list_menu'));
     }
