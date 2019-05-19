@@ -54,7 +54,7 @@ class SubCategory extends Model
         $query->delete();
     }
 
-    public function editSubCategory($modelSubCategory,$params=[])
+    public function updateSubCategory($modelSubCategory,$params=[])
     {
         $modelSubCategory->name = $params['name'];
         $modelSubCategory->category_id = $params['category_id'];

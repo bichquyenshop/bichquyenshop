@@ -34,7 +34,7 @@ class Categogy extends Model
         $category->delete();
     }
 
-    public function editCategory($modelCategory,$params=[])
+    public function updateCategory($modelCategory,$params=[])
     {
         $modelCategory->name = $params['name'];
         $modelCategory->save();
