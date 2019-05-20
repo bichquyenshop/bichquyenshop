@@ -32,7 +32,7 @@
                         <div class="col-md-6 form-group {!! $errors->first('name','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Tên</label>
                             <div class="col-sm-8">
-                                <input required maxlength="100" type="text" class="form-control" name="name" value="{{ !empty(old('name')) ? old('name') : $product->name }}" placeholder="Tên">
+                                <input maxlength="100" type="text" class="form-control" name="name" value="{{ !empty(old('name')) ? old('name') : $product->name }}" placeholder="Tên">
                                 {!! $errors->first('name','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
