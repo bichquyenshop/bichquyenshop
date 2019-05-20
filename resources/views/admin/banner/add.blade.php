@@ -31,14 +31,14 @@
                         <div class="form-group {!! $errors->first('title','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-3 control-label">Tên</label>
                             <div class="col-sm-6">
-                                <input required maxlength="50" type="text" class="form-control" name="title" value="{{ old('title')}}" placeholder="Tiêu đề">
+                                <input maxlength="50" type="text" class="form-control" name="title" value="{{ old('title')}}" placeholder="Tiêu đề">
                                 {!! $errors->first('title','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="form-group {!! $errors->first('ordering','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-3 control-label">Thứ tự</label>
                             <div class="col-sm-6">
-                                <input required type="number" class="form-control" name="ordering" value="{{ old('ordering')}}" placeholder="Thứ tự">
+                                <input type="number" class="form-control" name="ordering" value="{{ old('ordering')}}" placeholder="Thứ tự">
                                 {!! $errors->first('ordering','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
