@@ -14,10 +14,15 @@ Route::get('product-sub-category-load-more','ProductController@productSubCategor
 Route::post('searchInputProduct','ProductController@searchInputProduct')->name('searchInputProduct');
 Route::get('searchButtonProduct','ProductController@searchButtonProduct')->name('searchButtonProduct');
 
+Route::get('/clear-cache', function () {
+    \Artisan::call('view:clear');
+    \Artisan::call('cache:clear');
+    \Artisan::call('config:cache');
+});
+
 
 Route::group(['prefix' => '/admin',], function()
 {
-    Route::get('/', 'AuthController@index')->name('index');
     Route::get('/login', 'AuthController@login')->name('login');
     Route::post('/postLogin', 'AuthController@postLogin')->name('postLogin');
     Route::get('/logout', 'AuthController@logout')->name('logout');
@@ -36,6 +41,7 @@ Route::group(['prefix' => '/admin',], function()
 
         Route::group(['prefix' => '/product',], function()
         {
+            Route::get('/', 'ProductController@getList')->name('index');
             Route::get('/list','ProductController@getList')->name('list_product');
             Route::get('add','ProductController@getAdd')->name('add_product');
             Route::post('add','ProductController@postAdd')->name('add_product');

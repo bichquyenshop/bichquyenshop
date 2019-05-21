@@ -32,14 +32,14 @@
                         <div class="col-md-6 form-group {!! $errors->first('name','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Tên</label>
                             <div class="col-sm-8">
-                                <input  maxlength="100" type="text" class="form-control" name="name" value="{{ old('name')}}" placeholder="Tên">
+                                <input type="text" class="form-control" name="name" value="{{ old('name')}}" placeholder="Tên">
                                 {!! $errors->first('name','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('code','has-error') !!}">
-                            <label for="exampleInputName" class="col-sm-4 control-label">Mã sản phẩm</label>
+                            <label for="exampleInputName" class="col-sm-4 control-label">Mã sản phẩm <span class="required">*</span></label>
                             <div class="col-sm-8">
-                                <input required maxlength="20" type="text" class="form-control" name="code" value="{{ old('code')}}" placeholder="Mã sản phẩm">
+                                <input type="text" class="form-control" name="code" value="{{ old('code')}}" placeholder="Mã sản phẩm">
                                 {!! $errors->first('code','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
@@ -67,28 +67,28 @@
                         <div class="col-md-6 form-group {!! $errors->first('color','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Màu sắc</label>
                             <div class="col-sm-8">
-                                <input  maxlength="20" type="text" class="form-control" name="color" value="{{ old('color')}}" placeholder="Màu sắc">
+                                <input type="text" class="form-control" name="color" value="{{ old('color')}}" placeholder="Màu sắc">
                                 {!! $errors->first('color','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('size','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Kích thước</label>
                             <div class="col-sm-8">
-                                <input  maxlength="20" type="text" class="form-control" name="size" value="{{ old('size')}}" placeholder="Kích thước">
+                                <input type="text" class="form-control" name="size" value="{{ old('size')}}" placeholder="Kích thước">
                                 {!! $errors->first('size','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('weight','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Cân nặng</label>
                             <div class="col-sm-8">
-                                <input  maxlength="20" type="text" class="form-control" name="weight" value="{{ old('weight')}}" placeholder="Cân nặng">
+                                <input type="text" class="form-control" name="weight" value="{{ old('weight')}}" placeholder="Cân nặng">
                                 {!! $errors->first('weight','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('style','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Kiểu dáng</label>
                             <div class="col-sm-8">
-                                <input  maxlength="20" type="text" class="form-control" name="style" value="{{ old('style')}}" placeholder="Kiểu dáng">
+                                <input type="text" class="form-control" name="style" value="{{ old('style')}}" placeholder="Kiểu dáng">
                                 {!! $errors->first('style','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>

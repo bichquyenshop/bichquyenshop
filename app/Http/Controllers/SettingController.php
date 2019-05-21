@@ -32,27 +32,14 @@ class SettingController extends Controller
     public function postEdit(Request $request){
         $this->validate($request,
             [
-                "address"    => "max:150",
-                "logo_image" =>'mimes:jpeg,jpg,png|max:1024'
+                "address"    => "sometimes|nullable|max:150",
+                "logo_image" =>'sometimes|nullable|mimes:jpeg,jpg,png|max:1024',
+                "tel" => "sometimes|nullable|numeric|digits:10",
+                "email" => "sometimes|nullable|email|max:100"
             ]
         );
 
         $input = $request->all();
-
-        if(!empty($input['tel'])){
-            $this->validate($request,
-                [
-                    "tel" => "numeric|digits:10",
-                ]
-            );
-        }
-        if(!empty($input['email'])){
-            $this->validate($request,
-                [
-                    "email" => "email|max:100",
-                ]
-            );
-        }
 
         $modelSetting = new Setting();
         $setting = $modelSetting->find($input['id']);

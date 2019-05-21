@@ -30,34 +30,38 @@
                     <div class="col-md-6">
                         <div class="form-group {!! $errors->first('title','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-3 control-label">Tên</label>
-                            <div class="col-sm-6">
-                                <input maxlength="50" type="text" class="form-control" name="title" value="{{ old('title')}}" placeholder="Tiêu đề">
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="title" value="{{ old('title')}}" placeholder="Tiêu đề">
                                 {!! $errors->first('title','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="form-group {!! $errors->first('ordering','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-3 control-label">Thứ tự</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-9">
                                 <input type="number" class="form-control" name="ordering" value="{{ old('ordering')}}" placeholder="Thứ tự">
                                 {!! $errors->first('ordering','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="form-group {!! $errors->first('description','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-3 control-label">Ghi chú</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-9">
                                 <textarea rows="4" placeholder="Ghi chú" class="form-control" name="description">{{ old('description')}}</textarea>
                                 {!! $errors->first('description','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="form-group {!! $errors->first('banner_image','has-error') !!}">
-                            <label for="exampleInputName" class="col-sm-3 control-label">Hình ảnh</label>
-                            <div class="col-sm-6">
-                                <input required type="file" value="{{ old('banner_image')}}" name="banner_image" >
+                            <label for="exampleInputName" class="col-sm-3 control-label">Hình ảnh <span class="required">*</span></label>
+                            <div class="col-sm-9">
+                                <input type="file" value="{{ old('banner_image')}}" name="banner_image" >
                                 {!! $errors->first('banner_image','<span class="help-block">:message</span>') !!}
+                                <p style="margin-top: 20px;">Kích thước 740 x 380</p>
+
                             </div>
+
                         </div>
+
                         <div class="form-group">
-                            <label class="col-sm-1"></label>
+                            <label class="col-sm-3"></label>
                             <div class="col-sm-6">
                                 <button type="submit" class="btn btn-primary">
                                     Thêm mới
