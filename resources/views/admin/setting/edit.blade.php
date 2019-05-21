@@ -87,10 +87,10 @@
                                     </div>
                                 </div>
                                 @if($setting->logo)
-                                    <div style="padding-top: 30px;" class="col-md-12">
+                                    <div style="padding-top: 30px;" class="col-md-12 no-padding">
                                         <label for="exampleInputName" class="col-sm-2 control-label"></label>
                                         <div  class="form-group show_image">
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-3 ">
                                                 <div>
                                                     <img class="img-responsive" src="/{{ $setting->logo}}">
                                                 </div>

@@ -66,15 +66,18 @@ class ProductController extends Controller
             //filename to store
             $filenametostore = $filename . '_' . time() . '.' . $extension;
 
-            //Upload File
-            $request->file('product_image')->storeAs('public/product_images', $filenametostore);
-            $request->file('product_image')->storeAs('public/product_images/thumbnail', $filenametostore);
-            $input['image'] = 'storage/product_images/thumbnail/' . $filenametostore;
+           //Upload File
+
+            $request->file('product_image')->storeAs('upload/product_images', $filenametostore);
+            $request->file('product_image')->storeAs('upload/product_images/thumbnail', $filenametostore);
+            $input['image'] = 'upload/product_images/thumbnail/' . $filenametostore;
             //Resize image here
-            $thumbnailpath = ('storage/product_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(800, 600, function ($constraint) {
+            $thumbnailpath = ('upload/product_images/thumbnail/' . $filenametostore);
+            $img = Image::make($thumbnailpath)->resize(270, 270, function ($constraint) {
                 $constraint->aspectRatio();
             });
+
+
             $modelSetting = new Setting();
             $setting = $modelSetting->getSetting();
             if(!empty($setting->logo)){
@@ -130,7 +133,7 @@ class ProductController extends Controller
         $this->validate($request,
             [
                 "name"            => "sometimes|nullable|max:100",
-                "code"            => "unique:product|required|max:20",
+                "code"            => 'required|max:20|unique:product,code, '. $productId.',id',
                 "style"           => "sometimes|nullable|max:100",
                 "color"           => "sometimes|nullable|max:100",
                 "weight"          => "sometimes|nullable|max:100",
@@ -154,15 +157,19 @@ class ProductController extends Controller
             //filename to store
             $filenametostore = $filename . '_' . time() . '.' . $extension;
 
-            //Upload File
-            $request->file('product_image')->storeAs('public/product_images', $filenametostore);
-            $request->file('product_image')->storeAs('public/product_images/thumbnail', $filenametostore);
-            $input['image'] = 'storage/product_images/thumbnail/' . $filenametostore;
+           //Upload File
+            $request->file('product_image')->storeAs('upload/product_images', $filenametostore);
+            $request->file('product_image')->storeAs('upload/product_images/thumbnail', $filenametostore);
+            $input['image'] = 'upload/product_images/thumbnail/' . $filenametostore;
             //Resize image here
-            $thumbnailpath = ('storage/product_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(800, 600, function ($constraint) {
+            $thumbnailpath = ('upload/product_images/thumbnail/' . $filenametostore);
+            $img = Image::make($thumbnailpath)->resize(270, 270, function ($constraint) {
                 $constraint->aspectRatio();
             });
+
+
+
+
 
             $modelSetting = new Setting();
             $setting = $modelSetting->getSetting();
