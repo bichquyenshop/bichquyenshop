@@ -13,6 +13,12 @@ Route::get('product-sub-category-load-more','ProductController@productSubCategor
 Route::post('searchInputProduct','ProductController@searchInputProduct')->name('searchInputProduct');
 Route::get('searchButtonProduct','ProductController@searchButtonProduct')->name('searchButtonProduct');
 
+Route::get('/clear-cache', function () {
+    \Artisan::call('view:clear');
+    \Artisan::call('cache:clear');
+    \Artisan::call('config:cache');
+});
+
 
 Route::group(['prefix' => '/admin',], function()
 {
