@@ -63,11 +63,11 @@ class SettingController extends Controller
             $filenametostore = $filename . '_' . time() . '.' . $extension;
 
             //Upload File
-            $request->file('logo_image')->storeAs('public/logo_images', $filenametostore);
-            $request->file('logo_image')->storeAs('public/logo_images/thumbnail', $filenametostore);
-            $input['logo'] = 'storage/logo_images/thumbnail/' . $filenametostore;
+            $request->file('logo_image')->storeAs('upload/logo_images', $filenametostore);
+            $request->file('logo_image')->storeAs('upload/logo_images/thumbnail', $filenametostore);
+            $input['logo'] = 'upload/logo_images/thumbnail/' . $filenametostore;
             //Resize image here
-            $thumbnailpath = ('storage/logo_images/thumbnail/' . $filenametostore);
+            $thumbnailpath = ('upload/logo_images/thumbnail/' . $filenametostore);
             $img = Image::make($thumbnailpath)->resize(100, 100, function ($constraint) {
                 $constraint->aspectRatio();
             });
@@ -97,9 +97,9 @@ class SettingController extends Controller
         $filenametostore = $filename . '_' . time() . '.' . $extension;
 
         //Upload File
-        $request->file('upload')->storeAs('public/upload', $filenametostore);
-        $url = 'storage/upload/' . $filenametostore;
-        $thumbnailpath = ('storage/upload/' . $filenametostore);
+        $request->file('upload')->storeAs('upload/images', $filenametostore);
+        $url = 'upload/images/' . $filenametostore;
+        $thumbnailpath = ('upload/images/' . $filenametostore);
         $img = Image::make($thumbnailpath);
         $img->save($thumbnailpath);
 

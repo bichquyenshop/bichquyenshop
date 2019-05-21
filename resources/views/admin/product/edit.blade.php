@@ -99,6 +99,8 @@
                                 <input type="hidden" name="product_image_old" value="{{$product->image}}" >
                                 <input type="file" name="product_image" >
                                 {!! $errors->first('product_image','<span class="help-block">:message</span>') !!}
+                                <p style="margin-top: 20px;">Kích thước 270 x 270</p>
+
                             </div>
 
                             @if($product->image)
