@@ -43,31 +43,36 @@
   </div>
 <script>
 $( document ).ready(function() {
+    if($('#new_product').hasClass('box') == true){
+        $('.load_more').fadeOut();
+    }
+    
 	$('.load_more').click(function(){
 		var offset = parseInt($('input[name="offset"]').val()) + 4;
 		var urlParams = new URLSearchParams(window.location.search);
 		var stringSearch = urlParams.get('stringSearch');
 		var loadMore = 1 //Nếu loadMore = 1 thì sẽ render view loadMore 
 		$.ajax({
-        type: "GET",
-        url: '{{route("searchButtonProduct")}}',
-        data: {stringSearch: stringSearch,offset:offset,loadMore:loadMore},
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        success: function (data) {
-        	if(data == ""){
-        		$( ".text" ).text("Đã hết sản phẩm bạn muốn tìm kiếm").fadeIn(5000);
-        		$('#load_more').attr('disabled','disabled');
-        	}
-        	else{
-        		$('input[name="offset"]').val(offset);
-          		$( ".a" ).append(data).fadeIn(5000);
-        	}
-        	
-        }
-    });
+            type: "GET",
+            url: '{{route("searchButtonProduct")}}',
+            data: {stringSearch: stringSearch,offset:offset,loadMore:loadMore},
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function (data) {
+            	if(data == ""){
+            		$( ".text" ).text("Đã hết sản phẩm bạn muốn tìm kiếm").fadeIn(5000);
+            		$('#load_more').attr('disabled','disabled');
+            	}
+            	else{
+            		$('input[name="offset"]').val(offset);
+              		$( ".a" ).append(data).fadeIn(5000);
+            	}
+            	
+            }
+        });
 	})
+  
 	
 	
 	

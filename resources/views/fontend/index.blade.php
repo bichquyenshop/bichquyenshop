@@ -2,7 +2,7 @@
 
 @section('title', 'Trang chủ')
 @section('keywords', 'Trang sức , vòng cẩm thạch')
-@section('description', $setting['0']->description)
+@section('description','description')
 
 
 
