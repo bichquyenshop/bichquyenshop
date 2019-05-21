@@ -42,6 +42,8 @@ class ProductController extends Controller
         $this->validate($request,
             [
                 "name"            => "sometimes|nullable|max:100",
+                'category_id'     => 'required',
+                'sub_category_id' => 'required',
                 "code"            => "unique:product|required|max:20",
                 "style"           => "sometimes|nullable|max:100",
                 "color"           => "sometimes|nullable|max:100",
@@ -133,6 +135,8 @@ class ProductController extends Controller
         $this->validate($request,
             [
                 "name"            => "sometimes|nullable|max:100",
+                'category_id'     => 'required',
+                'sub_category_id' => 'required',
                 "code"            => 'required|max:20|unique:product,code, '. $productId.',id',
                 "style"           => "sometimes|nullable|max:100",
                 "color"           => "sometimes|nullable|max:100",

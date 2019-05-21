@@ -33,7 +33,7 @@ class SettingController extends Controller
         $this->validate($request,
             [
                 "address"    => "sometimes|nullable|max:150",
-                "logo_image" =>'sometimes|nullable|mimes:jpeg,jpg,png|max:1024',
+                "logo_image" =>'sometimes|nullable|mimes:jpeg,jpg,png|max:2048',
                 "tel" => "sometimes|nullable|numeric|digits:10",
                 "email" => "sometimes|nullable|email|max:100"
             ]

@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('category_id','has-error') !!}">
-                            <label class="col-sm-4 control-label">Menu</label>
+                            <label class="col-sm-4 control-label">Menu <span class="required">*</span></label>
                             <div class="col-sm-8">
                                 <select class="form-control" id="category_id" name="category_id">
                                     <option value="" >{{'Chọn menu'}}</option>
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('sub_category_id','has-error') !!}">
-                            <label class="col-sm-4 control-label">Sub menu</label>
+                            <label class="col-sm-4 control-label">Sub menu <span class="required">*</span></label>
                             <div class="col-sm-8">
                                 <select class="form-control" id="sub_category_id" name="sub_category_id">
                                     <option value="" >{{'Chọn sub menu'}}</option>
