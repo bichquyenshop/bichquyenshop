@@ -20,6 +20,10 @@ class Categogy extends Model
         return $query->get();
     }
 
+    public function getListCategory() {
+        return DB::table('category')->orderBy('id','desc')->get();
+
+    }
 
     public function insertCategory($params=[])
     {

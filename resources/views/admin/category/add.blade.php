@@ -29,14 +29,14 @@
                 <div class="box-body">
                     <div class="col-md-5">
                         <div class="form-group {!! $errors->first('name','has-error') !!}">
-                            <label for="exampleInputName" class="col-sm-1 control-label">Tên</label>
-                            <div class="col-sm-6">
-                                <input required maxlength="50" type="text" id="title" class="form-control" name="name" value="{{ old('name')}}" placeholder="Tên">
+                            <label for="exampleInputName" class="col-sm-2 control-label">Tên <span class="required">*</span></label>
+                            <div class="col-sm-10">
+                                <input type="text" id="title" class="form-control" name="name" value="{{ old('name')}}" placeholder="Tên">
                                 {!! $errors->first('name','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-1"></label>
+                            <label class="col-sm-2"></label>
                             <div class="col-sm-6">
                                 <button type="submit" class="btn btn-primary">
                                     Thêm mới

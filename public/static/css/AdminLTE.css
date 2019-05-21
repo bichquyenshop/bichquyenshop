@@ -9,6 +9,10 @@
  * Core: General Layout Style
  * -------------------------
  */
+.required
+{
+  color: red;
+}
 html,
 body {
   height: 100%;

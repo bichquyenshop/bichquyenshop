@@ -34,8 +34,8 @@ class BannerController extends Controller
     {
         $this->validate($request,
             [
-                "title"        => "max:50",
-                "ordering"     => "numeric",
+                "title"        => "sometimes|nullable|max:50",
+                "ordering"     => "sometimes|nullable|numeric",
                 "banner_image" =>'required|mimes:jpeg,jpg,png|max:1024'
             ]
         );
@@ -108,9 +108,9 @@ class BannerController extends Controller
         }
         $this->validate($request,
             [
-                "title"        => "max:50",
-                "ordering"     => "numeric",
-                "banner_image" =>'required|mimes:jpeg,jpg,png|max:1024'
+                "title"        => "sometimes|nullable|max:50",
+                "ordering"     => "sometimes|nullable|numeric",
+                "banner_image" =>'nullable|mimes:jpeg,jpg,png|max:1024'
             ]
         );
         $input = $request->all();
