@@ -105,6 +105,8 @@
                             <div class="col-sm-8">
                                 <input type="file" value="{{ old('product_image')}}" name="product_image" >
                                 {!! $errors->first('product_image','<span class="help-block">:message</span>') !!}
+                                <p style="margin-top: 20px;">Kích thước 270 x 270</p>
+
                             </div>
                         </div>
 
