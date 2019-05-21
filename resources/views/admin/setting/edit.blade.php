@@ -31,21 +31,21 @@
                                 <div class="form-group {!! $errors->first('address','has-error') !!}">
                                     <label for="exampleInputName" class="col-sm-2 control-label">Địa chỉ</label>
                                     <div class="col-sm-8">
-                                        <input maxlength="150" type="text" class="form-control" name="address" value="{{!empty(old('address')) ? old('address') : $setting->address}}" placeholder="Địa chỉ">
+                                        <input type="text" class="form-control" name="address" value="{{!empty(old('address')) ? old('address') : $setting->address}}" placeholder="Địa chỉ">
                                         {!! $errors->first('address','<span class="help-block">:message</span>') !!}
                                     </div>
                                 </div>
                                 <div class="form-group {!! $errors->first('tel','has-error') !!}">
                                     <label for="exampleInputName" class="col-sm-2 control-label">Điện thoại</label>
                                     <div class="col-sm-8">
-                                        <input maxlength="10" type="number" class="form-control" name="tel" value="{{!empty(old('tel')) ? old('tel') : $setting->tel}}" placeholder="Điện thoại">
+                                        <input type="number" class="form-control" name="tel" value="{{!empty(old('tel')) ? old('tel') : $setting->tel}}" placeholder="Điện thoại">
                                         {!! $errors->first('tel','<span class="help-block">:message</span>') !!}
                                     </div>
                                 </div>
                                 <div class="form-group {!! $errors->first('email','has-error') !!}">
                                     <label for="exampleInputName" class="col-sm-2 control-label">Email</label>
                                     <div class="col-sm-8">
-                                        <input maxlength="100" type="email" class="form-control" name="email" value="{{!empty(old('email')) ? old('email') : $setting->email}}" placeholder="Email">
+                                        <input type="email" class="form-control" name="email" value="{{!empty(old('email')) ? old('email') : $setting->email}}" placeholder="Email">
                                         {!! $errors->first('email','<span class="help-block">:message</span>') !!}
                                     </div>
                                 </div>

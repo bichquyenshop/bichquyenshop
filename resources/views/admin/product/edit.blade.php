@@ -32,14 +32,14 @@
                         <div class="col-md-6 form-group {!! $errors->first('name','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Tên</label>
                             <div class="col-sm-8">
-                                <input maxlength="100" type="text" class="form-control" name="name" value="{{ !empty(old('name')) ? old('name') : $product->name }}" placeholder="Tên">
+                                <input type="text" class="form-control" name="name" value="{{ !empty(old('name')) ? old('name') : $product->name }}" placeholder="Tên">
                                 {!! $errors->first('name','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('code','has-error') !!}">
-                            <label for="exampleInputName" class="col-sm-4 control-label">Mã sản phẩm</label>
+                            <label for="exampleInputName" class="col-sm-4 control-label">Mã sản phẩm <span class="required">*</span></label>
                             <div class="col-sm-8">
-                                <input required maxlength="20" type="text" class="form-control" name="code" value="{{ !empty(old('code')) ? old('code') : $product->code }}" placeholder="Mã sản phẩm">
+                                <input type="text" class="form-control" name="code" value="{{ !empty(old('code')) ? old('code') : $product->code }}" placeholder="Mã sản phẩm">
                                 {!! $errors->first('code','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
@@ -67,28 +67,28 @@
                         <div class="col-md-6 form-group {!! $errors->first('color','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Màu sắc</label>
                             <div class="col-sm-8">
-                                <input  maxlength="20" type="text" class="form-control" name="color" value="{{ !empty(old('color')) ? old('color') : $product->color }}" placeholder="Màu sắc">
+                                <input type="text" class="form-control" name="color" value="{{ !empty(old('color')) ? old('color') : $product->color }}" placeholder="Màu sắc">
                                 {!! $errors->first('color','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('size','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Kích thước</label>
                             <div class="col-sm-8">
-                                <input  maxlength="20" type="text" class="form-control" name="size" value="{{ !empty(old('size')) ? old('size') : $product->size }}" placeholder="Kích thước">
+                                <input type="text" class="form-control" name="size" value="{{ !empty(old('size')) ? old('size') : $product->size }}" placeholder="Kích thước">
                                 {!! $errors->first('size','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('weight','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Cân nặng</label>
                             <div class="col-sm-8">
-                                <input  maxlength="20" type="text" class="form-control" name="weight" value="{{ !empty(old('weight')) ? old('weight') : $product->weight }}" placeholder="Cân nặng">
+                                <input type="text" class="form-control" name="weight" value="{{ !empty(old('weight')) ? old('weight') : $product->weight }}" placeholder="Cân nặng">
                                 {!! $errors->first('weight','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('style','has-error') !!}">
                             <label for="exampleInputName" class="col-sm-4 control-label">Kiểu dáng</label>
                             <div class="col-sm-8">
-                                <input  maxlength="20" type="text" class="form-control" name="style" value="{{ !empty(old('style')) ? old('style') : $product->style }}" placeholder="Kiểu dáng">
+                                <input type="text" class="form-control" name="style" value="{{ !empty(old('style')) ? old('style') : $product->style }}" placeholder="Kiểu dáng">
                                 {!! $errors->first('style','<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             </div>
 
                             @if($product->image)
-                                <div style="padding-top: 30px;" class="col-md-12">
+                                <div style="padding-top: 50px;" class="col-md-12">
                                     <label for="exampleInputName" class="col-sm-2 control-label"></label>
                                     <div  class="form-group show_image">
                                         <div class="col-sm-6">

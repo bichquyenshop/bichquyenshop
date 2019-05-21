@@ -29,16 +29,16 @@
                         <div class="box-body">
                             <div class="col-md-5">
                                 <div class="form-group {!! $errors->first('name','has-error') !!}">
-                                    <label for="exampleInputName" class="col-sm-2 control-label">Tên</label>
-                                    <div class="col-sm-6">
-                                        <input required maxlength="50" type="text" id="title" class="form-control" name="name" value="{{!empty(old('name')) ? old('name') : $subMenu->name}}" placeholder="Tên">
+                                    <label for="exampleInputName" class="col-sm-3 control-label">Tên <span class="required">*</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="title" class="form-control" name="name" value="{{!empty(old('name')) ? old('name') : $subMenu->name}}" placeholder="Tên">
                                         {!! $errors->first('name','<span class="help-block">:message</span>') !!}
                                     </div>
                                 </div>
                                 <div class="form-group {!! $errors->first('category_id','has-error') !!}">
-                                    <label class="col-sm-2 control-label">Menu</label>
-                                    <div class="col-sm-6">
-                                        <select required class="form-control" name="category_id">
+                                    <label class="col-sm-3 control-label">Menu <span class="required">*</span></label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="category_id">
                                             <option value="" >{{'Chọn menu'}}</option>
                                             @foreach($menuOptions as $key => $value)
                                                 <option value="{{ $key }}" {{ ((!empty(old('category_id')) ? old('category_id') : $subMenu->category_id)  == $key ) ? 'selected':''}}> {{ $value }}</option>

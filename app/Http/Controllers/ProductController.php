@@ -41,13 +41,13 @@ class ProductController extends Controller
     {
         $this->validate($request,
             [
-                "name"            => "max:100",
+                "name"            => "sometimes|nullable|max:100",
                 "code"            => "unique:product|required|max:20",
-                "style"           => "max:100",
-                "color"           => "max:100",
-                "weight"          => "max:100",
-                "size"            => "max:100",
-                "product_image"   =>'mimes:jpeg,jpg,png|max:1024'
+                "style"           => "sometimes|nullable|max:100",
+                "color"           => "sometimes|nullable|max:100",
+                "weight"          => "sometimes|nullable|max:100",
+                "size"            => "sometimes|nullable|max:100",
+                "product_image"   =>'sometimes|nullable|mimes:jpeg,jpg,png|max:1024'
             ]
         );
         $input = $request->all();
@@ -129,13 +129,13 @@ class ProductController extends Controller
         }
         $this->validate($request,
             [
-                "name"            => "max:100",
-                "code"            => 'required|max:20|unique:product,code, '. $productId.',id',
-                "style"           => "max:100",
-                "color"           => "max:100",
-                "weight"          => "max:100",
-                "size"            => "max:100",
-                "product_image"   =>'mimes:jpeg,jpg,png|max:1024'
+                "name"            => "sometimes|nullable|max:100",
+                "code"            => "unique:product|required|max:20",
+                "style"           => "sometimes|nullable|max:100",
+                "color"           => "sometimes|nullable|max:100",
+                "weight"          => "sometimes|nullable|max:100",
+                "size"            => "sometimes|nullable|max:100",
+                "product_image"   =>'sometimes|nullable|mimes:jpeg,jpg,png|max:1024'
             ]
         );
         $input = $request->all();

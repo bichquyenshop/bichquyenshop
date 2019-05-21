@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function getList()
     {
         $modelCategogy = new Categogy();
-        $category = $modelCategogy->getList();
+        $category = $modelCategogy->getListCategory();
         $this->data['list'] = $category;
         return view('admin/category/list',$this->data);
     }
