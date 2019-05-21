@@ -19,6 +19,14 @@
 <!-- Your customer chat code -->
 <div class="fb-customerchat"
   attribution=setup_tool
+  page_id="151133041704175"
+  logged_in_greeting="Shop có thể giúp gì cho bạn không?"
+  logged_out_greeting="Shop có thể giúp gì cho bạn không?">
+</div>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
   page_id="429999077779521">
 </div>
 <div class="container">
@@ -27,7 +35,13 @@
             <div class="row">
                 <div class="col-md-2 logo">
                     @forelse($setting as $st)
-                        <a href="/"><img src="{{url($st->logo)}}"></a>
+                        @if($st->logo != "")
+                            <a href="/"><img src="{{url($st->logo)}}"></a>
+                        @else
+                            <a href="/"><img src="{{url('image/logo/logo.png')}}"></a>
+                        @endif
+
+                        
                     @empty
                         <a href="/"><img src="{{url('image/logo/logo.png')}}"></a>
                         
@@ -65,27 +79,28 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-2 align-self-center sidenav" id="mySidenav">
-                    
+                    @foreach($setting as $st)
                     <span class="social facebook">
-                        <a href="" id="facebook">
+                        <a target="blank" href="{{$st->link_fb}}" id="facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </span>
-                    <span class="social youtube">
-                        <a href="" id="youtube">
+                    <span target="blank" class="social youtube">
+                        <a href="{{$st->link_youtube}}" id="youtube">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </span>
-                    <span class="social twitter">
-                        <a href="" id="twitter">
+                    <span target="blank" class="social twitter">
+                        <a href="{{$st->link_ins}}" id="twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </span>
-                    <span class="social twitter">
+                    <span target="blank" class="social twitter">
                          <a href="" id="as">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </span>
+                    @endforeach
                 </div>
                 <div class="col-md-10 add width">
                      
@@ -107,7 +122,7 @@
                             <a class="nav-link" href="/"> Giới Thiệu</i></a>
                           </li>
                           <li class="nav-item dropdown">
-                            <span class="nav-link dropdown-toggle">
+                            <span class="nav-link dropdown-toggle" onclick="void(0)">
                               Sản Phẩm
                             </span>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
