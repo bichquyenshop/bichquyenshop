@@ -12,7 +12,10 @@ class Product extends Model
     public $timestamps = false;
 
     public static function getListIndex() {
-        return DB::table('product')->orderBy('id','desc')->limit(4)->get();
+        return DB::table('product')->orderBy('id','desc')
+        ->where('sub_category_id','<>', '')
+        ->where('category_id','<>' ,'')
+        ->limit(4)->get();
     }
     public static function getList() {
         return DB::table('product')->orderBy('id','desc')->get();
@@ -75,6 +78,7 @@ class Product extends Model
         $query->select('pd.id','pd.code','pd.description','pd.name',
             'pd.color','pd.image','pd.size','pd.weight','pd.style','sc.name as name_sc');
         $query->where('pd.id',$idProduct);
+
         $query->orderBy('pd.id','desc');
 
         return $query->get();
@@ -104,7 +108,11 @@ class Product extends Model
         $query = DB::table('product as pd');
         $query->select('pd.id','pd.name','pd.image','pd.code');
         $query->where('pd.name', 'like', '%'.$stringSearch.'%');
+        $query->where('sub_category_id','<>', '');
+        $query->where('category_id','<>' ,'');
         $query->orWhere('pd.code', 'like', '%'.$stringSearch.'%');
+        $query->where('sub_category_id','<>', '');
+        $query->where('category_id','<>' ,'');
         $query->offset($offset); // từ vị trí 20
         $query->limit($limit);
         $query->orderBy('pd.id','desc');
