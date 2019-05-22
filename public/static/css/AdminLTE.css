@@ -166,7 +166,7 @@ h6,
 }
 /* General Links */
 a {
-  color: #3c8dbc;
+  color: #00a65a;
 }
 a:hover,
 a:active,
@@ -1242,7 +1242,7 @@ a:focus {
   border-color: #d2d6de;
 }
 .form-control:focus {
-  border-color: #3c8dbc;
+  border-color: #008d4c;
   box-shadow: none;
 }
 .form-control::-moz-placeholder,
