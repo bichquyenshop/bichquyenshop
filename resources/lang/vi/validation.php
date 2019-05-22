@@ -180,7 +180,25 @@ return [
         'available'             => 'có sẵn',
         'size'                  => 'kích thước',
         'from_date'             => 'từ ngày',
-        'to_date'               => 'đến ngày'
+        'to_date'               => 'đến ngày',
+        'category_id'           => 'menu',
+        'code'                 => 'mã sản phẩm',
+        'sub_category_id'       => 'sub menu',
+        'color'                 => 'màu sắc',
+        'size'                  => 'kích thước',
+        'weight'                => 'cân nặng',
+        'style'                 => 'kiểu dáng',
+        'description'           => 'ghi chú',
+        'product_image'         => 'hình sản phẩm',
+        'banner_image'          => 'hình banner',
+        'ordering'              => 'thứ tự',
+        'address'               => 'địa chỉ',
+        'tel'                   => 'điện thoại',
+        'link_fb'               => 'link Facebook',
+        'link_ins'              => 'link Instagram',
+        'link_youtube'          => 'link Youtube',
+        'logo_image'            => 'hình logo'
+
         
         
     ],

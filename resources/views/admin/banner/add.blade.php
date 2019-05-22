@@ -29,7 +29,7 @@
                 <div class="box-body">
                     <div class="col-md-6">
                         <div class="form-group {!! $errors->first('title','has-error') !!}">
-                            <label for="exampleInputName" class="col-sm-3 control-label">Tên</label>
+                            <label for="exampleInputName" class="col-sm-3 control-label">Tiêu đề</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="title" value="{{ old('title')}}" placeholder="Tiêu đề">
                                 {!! $errors->first('title','<span class="help-block">:message</span>') !!}
