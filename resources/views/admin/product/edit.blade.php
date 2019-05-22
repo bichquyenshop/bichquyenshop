@@ -21,7 +21,7 @@
         <div class="col-md-12">
             <form role="form" method="POST" enctype="multipart/form-data" class="form-horizontal" action="{{ route('edit_product', $product->id) }}">
             @csrf
-            <div class="box box-primary">
+            <div class="box box-success">
                 <div class="box-header with-border">
                     <h3 class="box-title">Thông tin sản phẩm</h3>
                 </div>
@@ -131,7 +131,7 @@
                         <div class="col-md-12 form-group ">
                             <label class="col-sm-1"></label>
                             <div class="col-sm-6">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     Cập nhật
                                 </button>
                                 <a type="submit" class="btn btn-default margin" href="{{ route('list_product') }}">

@@ -34,7 +34,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-5 pull-right">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng nhập</button>
+                    <button type="submit" class="btn btn-success btn-block btn-flat">Đăng nhập</button>
                 </div>
                 <!-- /.col -->
             </div>

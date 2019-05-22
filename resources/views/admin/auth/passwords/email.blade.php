@@ -34,7 +34,7 @@
 
                 <div class="row">
                     <div class="col-xs-6">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-success">
                             Gủi liên kết đổi mật khẩu
                         </button>
                     </div>

@@ -33,8 +33,13 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="/static/css/AdminLTE.css">
 </head>
-
-<body class="hold-transition skin-blue sidebar-mini">
+<style>
+    .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+        background-color: #00a65a;
+        border-color: #008d4c;
+    }
+</style>
+<body class="hold-transition skin-green-light sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
 
@@ -60,13 +65,13 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="/static/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <img src="/logo.jpg" class="user-image" alt="User Image">
                                 <span class="hidden-xs">{{ Auth::user()->email }}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="/static/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <img src="/logo.jpg" class="img-circle" alt="User Image">
                                     <p>
                                         {{ Auth::user()->email }}
                                     </p>

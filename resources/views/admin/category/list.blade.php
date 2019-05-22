@@ -19,9 +19,9 @@
 <section class="content">
     <div class="row">
         <div class="col-md-12">
-            <div class="box box-primary">
+            <div class="box box-success">
                 <div class="box-header">
-                    <a class="btn btn-primary" href="{{ route('add_menu') }}">
+                    <a class="btn btn-success" href="{{ route('add_menu') }}">
                         <i class="fa fa-plus"></i> Thêm mới
                     </a>
                 </div>
