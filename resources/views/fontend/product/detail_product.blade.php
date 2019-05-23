@@ -1,17 +1,21 @@
 @extends('fontend.layout.master')
 @section('content')
   @section('title', 'Chi Tiết Sản Phẩm')
-  @foreach ($detailProduct as $dp)
+  @section('meta')
+    @foreach ($detailProduct as $dp)
 
 
-  
-  <meta property="og:url" content="{{ url('detail-product/' . $dp->id) }}" />
-  <meta property="og:type" content="Detail Product" />
-  <meta property="og:title" content="{{$dp->name}}" />
-  <meta property="og:description" content="" />
-  <meta property="og:image" content="{{url($dp->image)}}" />
-      
-  @endforeach
+    
+    <meta property="og:url" content="{{ url('detail-product/' . $dp->id) }}" />
+    <!-- <meta property="og:type" content="Detail Product" /> -->
+    <meta property="og:title" content="{{$dp->name}}" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="{{url($dp->image)}}" />
+        
+    @endforeach
+   @endsection
+
+
   <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
@@ -32,7 +36,7 @@
     	@foreach ($detailProduct as $dp)
         <div class="col-md-6  d-inline-block">
             
-            <img src="{{url($dp->image)}}">
+            <img src="{{url($dp->image)}}" alt="">
            
         </div>
         <div class="col-md-6  d-inline-block content">
@@ -45,13 +49,13 @@
            	<div>Trọng lượng : {{$dp->weight}}</div>
            	<div>Mô tả chi tiết : {{$dp->description}}</div>
             <span id="fb-root"></span>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=145140442980988&autoLogAppEvents=1"></script>
         
 
-     
-            <span class="fb-share-button" 
-
-              data-href="{{ ('http://bichquyenjewelry.com/detail-product/' . $dp->id) }}" 
-              data-layout="button_count">
+            <span class="fb-share-button" data-href="{{ url('/detail-product/' . $dp->id) }}" data-layout="button_count" data-size="small">
+                
+                    Chia sẻ
+                
             </span>
         </div>
 
