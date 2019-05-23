@@ -1,9 +1,14 @@
 @extends('fontend.layout.master')
 @section('content')
 
-<div class="">
-	Kết quả tìm kiếm sản phẩm : {{$stringSearch}}
+<div class="detail_content">
+    <h3 class="tde">
+          <span>Kết quả tìm kiếm sản phẩm : {{$stringSearch}}</span>
+    </h3> 
+    <hr>
 </div>
+	
+
 <div class="row">
     <div id="new_product">
     	 <div class="row a">
@@ -38,7 +43,7 @@
   <div style="text-align: center;margin-top:20px">
   	<div class="text"></div>
   	<input type="hidden" name="offset" value="0">
-  	<button type="button"class="btn btn-primary load_more">XEM TIẾP</button>
+  	<button type="button"class="btn btn-success load_more">XEM TIẾP</button>
  
   </div>
 <script>
