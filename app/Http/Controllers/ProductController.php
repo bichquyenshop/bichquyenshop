@@ -233,6 +233,7 @@ class ProductController extends Controller
     public function productCategory(Request $request){
         $offset = 0; // Load vị trí thứ 0
         $idCate = $request->idCate;
+        $categoryDetail = Categogy::find($idCate);
         if(isset($request->offset)){
             $offset = $request->offset; 
 
@@ -246,6 +247,7 @@ class ProductController extends Controller
             return view("fontend/product/load_more", 
             [
                 "listProduct"=> $listProduct,
+                'categoryDetail' => $categoryDetail,
                 // "idCate" => $idCate,
             ]);
         }
@@ -255,6 +257,7 @@ class ProductController extends Controller
             [
                 "listProduct"=> $listProduct,
                 "idCate" => $idCate,
+                'categoryDetail' => $categoryDetail,
             ]);
         }
         
@@ -262,6 +265,7 @@ class ProductController extends Controller
     public function productSubCategory(Request $request){
         $offset = 0; // Load vị trí thứ 0
         $idSubCate = $request->idSubCate;
+        $subCategoryDetail = SubCategory::find($idSubCate);
         if(isset($request->offset)){
             $offset = $request->offset; 
 
@@ -275,6 +279,7 @@ class ProductController extends Controller
             return view("fontend/product/load_more", 
             [
                 "listProduct"=> $listProduct,
+                'subCategoryDetail' => $subCategoryDetail,
                 // "idCate" => $idCate,
             ]);
         }
@@ -284,6 +289,7 @@ class ProductController extends Controller
             [
                 "listProduct"=> $listProduct,
                 "idSubCate" => $idSubCate,
+                'subCategoryDetail' => $subCategoryDetail,
             ]);
         }
         

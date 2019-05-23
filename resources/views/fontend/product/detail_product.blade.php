@@ -20,7 +20,12 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
   </script>
-	<div>Chi Tiết Sản Phẩm</div>
+	<div class="detail_content">
+    <h3 class="tde">
+          <span>Chi Tiết Sản Phẩm</span>
+    </h3> 
+    <hr>
+  </div>
     <div class="row detail_product">
         
         
