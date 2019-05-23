@@ -21,7 +21,7 @@
         <div class="col-md-12">
             <form role="form" method="POST" enctype="multipart/form-data" class="form-horizontal" action="{{ route('add_product') }}">
             @csrf
-            <div class="box box-primary">
+            <div class="box box-success">
                 <div class="box-header with-border">
                     <h3 class="box-title">Thông tin sản phẩm</h3>
                 </div>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('category_id','has-error') !!}">
-                            <label class="col-sm-4 control-label">Menu</label>
+                            <label class="col-sm-4 control-label">Menu <span class="required">*</span></label>
                             <div class="col-sm-8">
                                 <select class="form-control" id="category_id" name="category_id">
                                     <option value="" >{{'Chọn menu'}}</option>
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 form-group {!! $errors->first('sub_category_id','has-error') !!}">
-                            <label class="col-sm-4 control-label">Sub menu</label>
+                            <label class="col-sm-4 control-label">Sub menu <span class="required">*</span></label>
                             <div class="col-sm-8">
                                 <select class="form-control" id="sub_category_id" name="sub_category_id">
                                     <option value="" >{{'Chọn sub menu'}}</option>
@@ -113,7 +113,7 @@
                         <div class="col-md-12 form-group ">
                             <label class="col-sm-2"></label>
                             <div class="col-sm-6">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     Thêm mới
                                 </button>
                                 <a type="submit" class="btn btn-default margin" href="{{ route('list_product') }}">

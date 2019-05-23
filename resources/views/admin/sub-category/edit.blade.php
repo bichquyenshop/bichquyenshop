@@ -21,7 +21,7 @@
             <div class="col-md-12">
                 <form role="form" method="POST" enctype="multipart/form-data" class="form-horizontal" action="{{ route('edit_sub_menu', $subMenu->id) }}">
                     @csrf
-                    <div class="box box-primary">
+                    <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title">Thông tin sub menu</h3>
                         </div>

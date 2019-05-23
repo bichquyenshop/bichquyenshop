@@ -20,7 +20,7 @@
         <div class="col-md-12">
             <form role="form" method="POST" class="form-horizontal" action="{{ route('users_edit_password',$id) }}">
             @csrf
-            <div class="box box-primary">
+            <div class="box box-success">
                 <div class="box-header with-border">
                     <h3 class="box-title">Đổi mật khẩu</h3>
                 </div>
@@ -54,7 +54,7 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label"></label>
                             <div class="col-sm-6">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     Cập nhật
                                 </button>
                                 <a type="submit" class="btn btn-default margin" href="{{ route('list_product') }}">

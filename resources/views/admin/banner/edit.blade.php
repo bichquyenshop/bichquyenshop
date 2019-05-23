@@ -21,7 +21,7 @@
             <div class="col-md-12">
                 <form role="form" method="POST" enctype="multipart/form-data" class="form-horizontal" action="{{ route('edit_banner', $banner->id) }}">
                     @csrf
-                    <div class="box box-primary">
+                    <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title">Thông tin banner</h3>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="box-body">
                             <div class="col-md-6">
                                 <div class="form-group {!! $errors->first('title','has-error') !!}">
-                                    <label for="exampleInputName" class="col-sm-3 control-label">Tên</label>
+                                    <label for="exampleInputName" class="col-sm-3 control-label">Tiêu đề</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="title" value="{{!empty(old('title')) ? old('title') : $banner->title}}" placeholder="Tiêu đề">
                                         {!! $errors->first('title','<span class="help-block">:message</span>') !!}
@@ -81,7 +81,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3"></label>
                                     <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-success">
                                             Cập nhật
                                         </button>
                                         <a type="submit" class="btn btn-default margin" href="{{ route('list_banner') }}">
