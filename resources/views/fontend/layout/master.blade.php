@@ -11,8 +11,8 @@
     <meta name="keywords" content="@yield('keywords')">
     <meta name="description" content="@yield('description')">
    
-   
-   
+    @yield('meta')
+    
 
     <link rel="stylesheet" type="text/css" href="/css/app.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
