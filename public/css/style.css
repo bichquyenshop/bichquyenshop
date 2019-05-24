@@ -28,7 +28,6 @@ a:hover{
 
 }
 .result_search{
-	border: 1px solid #c7c7c7;
     top: 100%;
     position: absolute;
     width: 100%;
@@ -392,14 +391,14 @@ h3.tde span {
 	border: 1px solid;
 }
 .navbar-nav  li:hover a{
-    background-color: #c7eac0;
+    background-color: #008000c7;
     color:white;
 
     
   
 }
 .navbar-nav  li:hover span{
-	background-color: #c7eac0;
+	background-color: #008000c7;
     color:white;
 	
 }
@@ -542,7 +541,7 @@ h3.tde span {
 }
 .dropdown-menu{
 	border:0px;
-	background-color:#c7eac0;
+	background-color:#008000c7;
 }
 .dropdown-submenu:hover a{
   background-color:green !important;
