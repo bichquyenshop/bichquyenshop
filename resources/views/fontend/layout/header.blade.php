@@ -91,7 +91,7 @@
                         </a>
                     </span>
                 </div>
-                <div class="col-md-10 add width fadeInDown animated">
+                <div class="col-md-10 add width ">
                      
                     <nav class="navbar navbar-expand-md navbar-light">
                        
