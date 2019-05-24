@@ -54,7 +54,7 @@ a:hover{
 	font-style: italic;
 }
 .result_search .product:hover{
-	background-color:black;
+	background-color:#008000c7;
 	color:white;
 }
 .logo{
@@ -205,6 +205,7 @@ input[name=search] {
 #new_product .box .title{
 	text-align: center;
 	padding:10px 0px;
+  border-top: 1px solid #e0e0e0;
 }
 #new_product .box .code{
 	text-align: center

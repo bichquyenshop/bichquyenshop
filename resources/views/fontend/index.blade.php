@@ -45,7 +45,7 @@
             	<a href="{{ url('detail-product/' . $pd->id) }} ">
 	                <div class="product">
 			    		<div class="image_box">
-			    			<img src="{{!empty($pd->image) ? url($pd->image) : '' }}">
+			    			<img style="height:265px" src="{{!empty($pd->image) ? url($pd->image) : url('image/product/default.jpg') }}">
 			    		</div>
 			    		<div class="content_box">
 				    		<div class="title">
