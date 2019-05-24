@@ -12,7 +12,7 @@ class Setting extends Model
      public $timestamps = false;
 
     public static function getList() {
-        return DB::table('setting')->get();
+        return DB::table('setting')->first();
     }
 
     public function getSetting() {

@@ -34,18 +34,12 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-2 logo">
-                    @forelse($setting as $st)
-                        @if($st->logo != "")
-                            <a href="/"><img src="{{url($st->logo)}}"></a>
-                        @else
-                            <a href="/"><img src="{{url('image/logo/logo.png')}}"></a>
-                        @endif
-
-                        
-                    @empty
+                    @if(!empty($st->logo))
+                        <a href="/"><img src="{{url($st->logo)}}"></a>
+                    @else
                         <a href="/"><img src="{{url('image/logo/logo.png')}}"></a>
-                        
-                    @endforelse
+                    @endif
+
                 </div>
                 <div class="col-md-7 translate box_search">
                    <div class="input-group mb-3">
@@ -79,19 +73,18 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-2 align-self-center sidenav" id="mySidenav">
-                    @foreach($setting as $st)
                     <span class="social facebook">
-                        <a target="blank" href="{{$st->link_fb}}" id="facebook">
+                        <a target="blank" href="{{!empty($st->link_fb) ? $st->link_fb : ''}}" id="facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </span>
                     <span target="blank" class="social youtube">
-                        <a href="{{$st->link_youtube}}" id="youtube">
+                        <a href="{{!empty($st->link_youtube) ? $st->link_youtube : ''}}" id="youtube">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </span>
                     <span target="blank" class="social twitter">
-                        <a href="{{$st->link_ins}}" id="twitter">
+                        <a href="{{!empty($st->link_ins) ? $st->link_ins : ''}}" id="twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </span>
@@ -100,7 +93,6 @@
                             <i class="fab fa-twitter"></i>
                         </a>
                     </span>
-                    @endforeach
                 </div>
                 <div class="col-md-10 add width">
                      
