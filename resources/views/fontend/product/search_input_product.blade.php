@@ -4,7 +4,8 @@
         <div class="product">
     		<div class="image_box d-inline">
     			
-    			<img src="{{url($lp->image)}}">
+    			<!-- <img src="{{url($lp->image)}}"> -->
+    			<img src="{{!empty($lp->image) ? url($lp->image) : url('image/product/default.jpg') }}">
     		</div>
     		<div class="content_box d-inline-block">
 	    		<div class="title">

@@ -62,9 +62,6 @@
                         </div>
                     </div>
                 </div>
-               <!--  <div class="col-md-3 translate mess">
-                    <i class="fab fa-facebook-messenger"></i>
-                </div> -->
             </div>
             
         </div>
@@ -108,39 +105,33 @@
                       <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                           <li class="nav-item active">
-                            <a class="nav-link" href="/"><i class="fa fa-home"> Trang chủ </i></a>
+                          
+                            <a style="    height: 100%;line-height: 31px;padding: 8px 16px;" class="nav-link" href="/"><i class="fa fa-home"> Trang chủ </i></a>
+                        
                           </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="/"> Giới Thiệu</i></a>
-                          </li>
+                          @foreach ($categogy as $ct) 
                           <li class="nav-item dropdown">
+                            
                             <span class="nav-link dropdown-toggle" onclick="void(0)">
-                              Sản Phẩm
+                              <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle">{{$ct->name}}</a>
                             </span>
+                            
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                @foreach ($categogy as $ct) 
-                                <li class="dropdown-submenu"><a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle">{{$ct->name}}</a>
-                                    <ul class="dropdown-menu">
-                                    @foreach ($subCategory as $sc)
+                                @foreach ($subCategory as $sc)
+                                @if($ct->id == $sc->category_id)
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item" href="{{ url('product-sub-category/' . $sc->id) }} ">{{$sc->name}}
+                                    </a>
                                     
-                                        @if($ct->id == $sc->category_id)
 
-                                        
-                                        <li>
-                                            <a class="dropdown-item" href="{{ url('product-sub-category/' . $sc->id) }} ">{{$sc->name}}</a>
-                                        </li>
-                                          
-                                          
-                                        
-                                        @endif
-                                        
-                                    @endforeach
-                                    </ul>
-                                    </li>
+                                </li>
+                                @endif
                                 @endforeach
                              
                             </ul>
+                            
                           </li>
+                           @endforeach
                         </ul>
                       </div>
                     </nav>
