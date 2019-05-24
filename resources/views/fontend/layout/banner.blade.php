@@ -30,7 +30,7 @@ $(function() {
 
 
 
- <div class="slider_container">
+ <div class="slider_container fadeInLeft animated">
 	<div class="flexslider">
       <ul class="slides">
 
