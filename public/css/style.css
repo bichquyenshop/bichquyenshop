@@ -6,10 +6,10 @@ a:hover{
 	color:black;
 }
 .btn-success{
-  background-color: #008000;
+  background-color: #00e278;
 }
 #top_header{
-	background-color: green;
+	background-color: #00a65a;
 	padding:10px 0px;
 }
 #top_header i{
@@ -28,6 +28,7 @@ a:hover{
 
 }
 .result_search{
+
     top: 100%;
     position: absolute;
     width: 100%;
@@ -53,7 +54,7 @@ a:hover{
 	font-style: italic;
 }
 .result_search .product:hover{
-	background-color:#008000c7;
+	background-color:#00e278;
 	color:white;
 }
 .logo{
@@ -252,7 +253,7 @@ h3.title-comm:before {
 .title-comm .title-holder {
     min-width: 350px;
     height: 45px;
-    background-color:#008000;
+    background-color:#00e278;
     height: auto;
     line-height: 45px;
     padding: 0 20px;
@@ -269,13 +270,13 @@ h3.title-comm:before {
     border-width: 0;
     bottom: 0;
     border-style: solid;
-    border-color: #008000 transparent;
+    border-color: #00e278 transparent;
     display: block;
     width: 0;
     height: 0;
     border-top: 23px solid transparent;
     border-bottom: 22px solid transparent;
-    border-left: 15px solid #008000;
+    border-left: 15px solid #00e278;
 }
 .title-holder:after {
     content: "";
@@ -284,16 +285,16 @@ h3.title-comm:before {
     border-width: 0;
     bottom: 0;
     border-style: solid;
-    border-color: #008000 transparent;
+    border-color: #00e278 transparent;
     display: block;
     width: 0;
     height: 0;
     border-top: 23px solid transparent;
     border-bottom: 22px solid transparent;
-    border-right: 15px solid #008000;
+    border-right: 15px solid #00e278;
 }
 h3.tde span {
-    background:#008000;
+    background:#00e278;
     padding: 10px 20px 8px;
     color: #fff;
     position: relative;
@@ -305,7 +306,7 @@ h3.tde span {
     width: 0;
     height: 0;
     border-top: 19px solid transparent;
-    border-left: 15px solid #008000;
+    border-left: 15px solid #00e278;
     border-bottom: 19px solid transparent;
     border-right: 0 solid transparent;
     position: absolute;
@@ -320,7 +321,7 @@ h3.tde span {
 }
 .detail_content hr {
     margin: -34px 0 54px;
-    border: 1px solid #008000;
+    border: 1px solid #00e278;
 }
 .detail_product img{
 	width:100%;
@@ -380,7 +381,7 @@ h3.tde span {
 }
 .navbar-nav{
 	border:1px solid ;
-	background-color: green;
+	background-color: #00a65a;
 }
 .navbar-nav  li.nav-item  a,
 .navbar-nav  li.nav-item span{
@@ -391,14 +392,14 @@ h3.tde span {
 	border: 1px solid;
 }
 .navbar-nav  li:hover a{
-    background-color: #008000c7;
+    background-color: #00a65a;
     color:white;
 
     
   
 }
 .navbar-nav  li:hover span{
-	background-color: #008000c7;
+	background-color:#00a65a;
     color:white;
 	
 }
@@ -541,8 +542,8 @@ h3.tde span {
 }
 .dropdown-menu{
 	border:0px;
-	background-color:#008000c7;
+	background-color:#00a65a;
 }
 .dropdown-submenu:hover a{
-  background-color:green !important;
+  background-color:#00a65a !important;
 }

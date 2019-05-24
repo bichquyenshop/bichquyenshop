@@ -37,7 +37,7 @@
 		  	<div class="text"></div>
 		  	<input type="hidden" name="cate_id" value= "{{$idCate}}">
 		  	<input type="hidden" name="offset" value="0">
-		  	<button type="button" class="btn btn-primary load_more">XEM TIẾP</button>
+		  	<button type="button" class="btn btn-success load_more">XEM TIẾP</button>
 		 
 		  </div>
     </div>
