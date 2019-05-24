@@ -10,12 +10,12 @@
 		 </div>
     	 <div class="row a">
     	 	@foreach ($listProduct as $lp)
-	    	
+
             <div class="col-md-3 box">
-            	<a href="{{ url('detail-product/' . $lp->id) }} ">		
+            	<a href="{{ url('detail-product/' . $lp->id) }} ">
 	                <div class="product">
 			    		<div class="image_box">
-			    			<img src="{{url($lp->image)}}">
+			    			<img src="{{!empty($lp->image) ? url($lp->image) : ''}}">
 			    		</div>
 			    		<div class="content_box">
 				    		<div class="title">
@@ -27,9 +27,9 @@
 				    	</div>
 			    	</div>
 		    	</a>
-            </div> 
+            </div>
         	<!-- </a> -->
-            @endforeach 
+            @endforeach
             
         </div>
         <div style="text-align: center;margin-top:20px">

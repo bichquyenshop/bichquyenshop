@@ -24,7 +24,7 @@ class Controller extends BaseController
        $categogy    = Categogy::getList();
        $subCategory = SubCategory::getListSub();
 
-       View::share ( 'setting'  , $setting );
+       View::share ( 'st'  , $setting );
        View::share ( 'banner'   , $banner  );
        View::share ( 'categogy'   , $categogy  );
        View::share ( 'subCategory'   , $subCategory  );

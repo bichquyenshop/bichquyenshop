@@ -8,29 +8,25 @@
 
 
 @section('content')
+@if(!empty($st->description))
+	<div class="row">
+		<div class="col-md-12">
+			<div id="introduction">
+				<div class="title">
+					<h3 class="title-comm">
+						<span class="title-holder">
+						Giới Thiệu
+						</span>
+					</h3>
 
-<div class="row">
-	<div class="col-md-12">
-	    <div id="introduction">
-	    	<div class="title">
-	    		<h3 class="title-comm">
-	    			<span class="title-holder">
-	    			Giới Thiệu
-		    		</span>
-		    	</h3>
-	    		
-	    	</div>
-	    	<div class="content more">
-	    		@foreach ($setting as $st)
-	    			{{$st->description}}
-	    		@endforeach
-
-	          	 
-	    	</div>
-	    </div>
+				</div>
+				<div class="content more">
+						{{$st->description}}
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-
+@endif
 
 <div class="row">
     <div id="new_product">
@@ -45,11 +41,11 @@
 
     	 	@foreach ($product as $pd)
             <div class="col-md-3 box">
-            	
-            	<a href="{{ url('detail-product/' . $pd->id) }} ">		
+
+            	<a href="{{ url('detail-product/' . $pd->id) }} ">
 	                <div class="product">
 			    		<div class="image_box">
-			    			<img src="{{url($pd->image)}}">
+			    			<img src="{{!empty($pd->image) ? url($pd->image) : '' }}">
 			    		</div>
 			    		<div class="content_box">
 				    		<div class="title">
@@ -61,8 +57,8 @@
 				    	</div>
 			    	</div>
 		    	</a>
-            </div> 
-            @endforeach 
+            </div>
+            @endforeach
         </div>
     </div>
 </div>
