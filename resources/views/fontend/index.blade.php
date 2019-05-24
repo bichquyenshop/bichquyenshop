@@ -29,7 +29,7 @@
 @endif
 
 <div class="row">
-    <div id="new_product">
+    <div id="new_product" class="fadeInLeft animated">
     	<div>
     		<h3 class="title-comm">
 				<span class="title-holder">
