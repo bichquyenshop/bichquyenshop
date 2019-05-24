@@ -38,7 +38,9 @@ $(function() {
         <li>
           <img src="{{url($bn->image)}}" alt="" title=""/>
           <div class="flex-caption">
+              @if(!empty($bn->title) && !empty($bn->description))
                <div class="caption_title_line"><h2>{{$bn->title}}</h2><p>{{$bn->description}}</p></div>
+               @endif
           </div>
         </li>
       @empty
