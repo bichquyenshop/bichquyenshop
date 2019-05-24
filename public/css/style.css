@@ -392,14 +392,14 @@ h3.tde span {
 	border: 1px solid;
 }
 .navbar-nav  li:hover a{
-    background-color: black;
+    background-color: #c7eac0;
     color:white;
 
     
   
 }
 .navbar-nav  li:hover span{
-	background-color: black;
+	background-color: #c7eac0;
     color:white;
 	
 }
@@ -538,9 +538,12 @@ h3.tde span {
     transform: rotate(-90deg);
 } 
 .dropdown-menu{
-	top:95%;
+	top:96%;
 }
 .dropdown-menu{
 	border:0px;
-	background-color:black;
+	background-color:#c7eac0;
+}
+.dropdown-submenu:hover a{
+  background-color:green !important;
 }

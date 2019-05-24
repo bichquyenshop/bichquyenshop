@@ -37,7 +37,7 @@
 	    		</span>
     		</h3>
     	</div>
-    	 <div class="row">
+    	 <div class="row fadeInLeft">
 
     	 	@foreach ($product as $pd)
             <div class="col-md-3 box">
