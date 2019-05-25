@@ -27,7 +27,7 @@
 	<div class="detail_content">
     <h3 class="tde">
           <span>Chi Tiết Sản Phẩm</span>
-    </h3> 
+    </h3>
     <hr>
   </div>
     <div class="row detail_product">
@@ -51,7 +51,7 @@
             <span id="fb-root"></span>
             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=145140442980988&autoLogAppEvents=1"></script>
         
-
+            <br>
             <span class="fb-share-button" data-href="{{ url('/detail-product/' . $dp->id) }}" data-layout="button_count" data-size="small">
                 
                     Chia sẻ
