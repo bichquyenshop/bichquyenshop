@@ -41,29 +41,29 @@
                     @endif
 
                 </div>
-                <div class="col-md-7 translate box_search">
+                <div style="padding: 0.5rem 1rem;" class="col-md-7 translate box_search">
                    <div class="input-group mb-3">
-                        
-                        <form style ="width:100%" method="GET" action="{{ url('searchButtonProduct') }}">    
+
+                        <form style ="width:100%" method="GET" action="{{ url('searchButtonProduct') }}">
                             <div class="input-group-prepend">
-                               
-                                
+
+
                                 <input id="search"  type="text" class="form-control" aria-label="Text input with dropdown button" name="stringSearch">
                                 <button id="button_search" class="btn btn-outline-secondary dropdown-toggle" type="submit" ><i class="fas fa-search"></i> Tìm kiếm</button>
                                 </a>
                             </div>
                             <div class="result_search">
                         </form>
-                        
-                        
-                
-                                    
-                            
+
+
+
+
+
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
     <div class="row">
@@ -92,44 +92,44 @@
                     </span>
                 </div>
                 <div class="col-md-10 add width ">
-                     
+
                     <nav class="navbar navbar-expand-md navbar-light">
-                       
-                      
+
+
                       <button id="openMenu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 
                         <span class="navbar-toggler-icon"></span>
                       </button>
-                       <a href="javascript:void(0)" class="closebtn">&times;</a>
+                       <a style="display:none" href="javascript:void(0)" class="closebtn">&times;</a>
 
                       <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
-                          <li class="nav-item active">
-                          
-                            <a style="    height: 100%;line-height: 31px;padding: 8px 16px;" class="nav-link" href="/"><i class="fa fa-home"> Trang chủ </i></a>
-                        
-                          </li>
-                          @foreach ($categogy as $ct) 
+                          <!-- <li class="nav-item active">
+
+                            <a style="height: 100%!important;line-height: 31px!important;padding: 8px 16px!important; " class="nav-link" href="/"><i class="fa fa-home"> Trang chủ </i></a>
+
+                          </li> -->
+                          @foreach ($categogy as $ct)
                           <li class="nav-item dropdown">
                             
                             <span class="nav-link dropdown-toggle" onclick="void(0)">
                               <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle">{{$ct->name}}</a>
                             </span>
-                            
+
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 @foreach ($subCategory as $sc)
                                 @if($ct->id == $sc->category_id)
                                 <li class="dropdown-submenu">
                                     <a class="dropdown-item" href="{{ url('product-sub-category/' . $sc->id) }} ">{{$sc->name}}
                                     </a>
-                                    
+
 
                                 </li>
                                 @endif
                                 @endforeach
-                             
+
                             </ul>
-                            
+
                           </li>
                            @endforeach
                         </ul>
@@ -139,11 +139,11 @@
                 </div>
             </div>
 
-          
-          
+
+
         </div>
     </div>
-        
+
 </div>
 
 <script>
@@ -160,9 +160,9 @@ $( document ).ready(function() {
             success: function (data) {
                 if(data != ""){
                     $('.box_search').css('z-index',10);
-                    $('.result_search').fadeIn(500);  
+                    $('.result_search').fadeIn(500);
                     $( ".result_search" ).html(data);
-                    
+
                 }
                 else{
                     $( ".result_search" ).html("<p> Không có kết quả </p>");
@@ -176,10 +176,10 @@ $( document ).ready(function() {
             $(this).removeClass('.closebtn');
         }
     );
-    
+
     $('#openMenu').click(function(){
         $('.add').addClass('mymenu');
-       
+
         $('#navbarNavDropdown').show();
         if ($('.add').hasClass('mymenu')) {
 
@@ -205,15 +205,15 @@ $( document ).ready(function() {
             $('.closebtn').css('opacity',0);
             $('#navbarNavDropdown').hide();
         }
-        
-            
+
+
     })
 
 
-  
+
  });
 $(window).click(function() {
-    $('.result_search').fadeOut(500);  
+    $('.result_search').fadeOut(500);
     $('.box_search').css('z-index',0);
 });
 

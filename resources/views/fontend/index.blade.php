@@ -4,7 +4,11 @@
 @section('keywords', 'Trang sức , vòng cẩm thạch')
 @section('description','description')
 
-
+<style>
+	.more {
+		overflow: hidden;
+	}
+</style>
 
 
 @section('content')
@@ -20,8 +24,10 @@
 					</h3>
 
 				</div>
-				<div class="content more">
-						{{$st->description}}
+				<div class="more">
+					{!! $st->description !!}
+					{{--{{ $st->description }}--}}
+
 				</div>
 			</div>
 		</div>
@@ -63,45 +69,4 @@
     </div>
 </div>
 
-<style>
-	.text{
-		margin-left:10px;
-	}
-</style>
-<script>
-	$(document).ready(function() {
-	var showChar = 1000;
-
-	$('.more').each(function() {
-		var content = $('#introduction .content').text();
-		var c = content.substr(0, showChar); // 700 kí tự
-		var h = content.substr(showChar-1, content.length - showChar); // số kí tự còn lại
-		var firstContent = '<span class="more">' + c + '</span><span class="less">'+ h +'</span><span class="text"></span>';
-	
-		if(content.length > showChar) {
-			$(this).html(firstContent);
-			$('.less').css('display','none');
-			
-		}
-		
-
-	});
-	if($('.less').is(':visible')){
-		$('.text').html('<button class="btn btn-success">Xem ít hơn</button>')
-	}
-	else{
-		
-		$('.text').html('<button class="btn btn-success">Xem nhiều hơn</button>')
-	}
-	$('.text').click(function(){
-		if($('.less').is(':visible')){
-			$('.text').html('<button class="btn btn-success">Xem nhiều hơn</button>')
-		}
-		else{
-			$('.text').html('<button class="btn btn-success">Xem ít hơn</button>')
-		}
-		$('.less').fadeToggle();
-	})
-});
-</script>
 @endsection
