@@ -1,7 +1,11 @@
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
-    window.fbAsyncInit = function() {
+    $( document ).ready(function() {
+        var menuWidth = $("#menuNav").width();
+        $("#formSearch").width(menuWidth);
+    });
+        window.fbAsyncInit = function() {
         FB.init({
             xfbml            : true,
             version          : 'v3.3'
@@ -41,10 +45,10 @@
                     @endif
 
                 </div>
-                <div class="col-md-10 col-xl-10 translate box_search">
+                <div class="col-md-12 col-xl-10 translate box_search">
                     <div class="input-group mb-3">
 
-                        <form style ="width:100%" method="GET" action="{{ url('searchButtonProduct') }}">
+                        <form id="formSearch"  method="GET" action="{{ url('searchButtonProduct') }}">
                             <div class="input-group-prepend">
 
 
@@ -103,7 +107,7 @@
                     <a href="javascript:void(0)" class="closebtn">&times;</a>
 
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav align-middle">
+                        <ul  id="menuNav" class="navbar-nav align-middle">
                             <li class="nav-item active align-self-center">
                                 <span class="nav-link dropdown-toggle" >
                                 <a class="dropdown-item dropdown-toggle" href="/"><i class="fa fa-home"> Trang chủ </i></a>
