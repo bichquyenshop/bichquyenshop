@@ -1,11 +1,8 @@
-<!-- Load Facebook SDK for JavaScript -->
+
 <div id="fb-root"></div>
 <script>
-    $( document ).ready(function() {
-        var menuWidth = $("#menuNav").width();
-        $("#formSearch").width(menuWidth);
-    });
-        window.fbAsyncInit = function() {
+    
+    window.fbAsyncInit = function() {
         FB.init({
             xfbml            : true,
             version          : 'v3.3'
@@ -18,7 +15,8 @@
         js = d.createElement(s); js.id = id;
         js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <!-- Your customer chat code -->
 <div class="fb-customerchat"
@@ -33,6 +31,7 @@
      attribution=setup_tool
      page_id="429999077779521">
 </div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -48,15 +47,14 @@
                 <div class="col-md-10 col-xl-10 translate box_search">
                     <div class="input-group mb-3">
 
-                        <form id="formSearch"  method="GET" action="{{ url('searchButtonProduct') }}">
+                        <form id="formSearch"  method="GET" action="{{ url('searchButtonProduct') }}" width="100%">
                             <div class="input-group-prepend">
 
 
                                 <input id="search"  type="text" class="form-control" aria-label="Text input with dropdown button" name="stringSearch">
                                 <button id="button_search" class="btn btn-outline-secondary dropdown-toggle" type="submit" ><i class="fas fa-search"></i> Tìm kiếm</button>
-                                </a>
                             </div>
-                            <div class="result_search">
+                            <div class="result_search"></div>
                         </form>
 
 
@@ -69,31 +67,28 @@
         </div>
 
     </div>
-</div>
-<div class="row">
+    <div class="row">
     <div class="col-md-12">
         <div class="row">
-            <div class="col-md-12 col-xl-2 align-self-center sidenav" id="mySidenav">
+            <div class="col-md-12 col-xl-2 align-self-center sidenav">
+                <div id="mySidenav">
                     <span class="social facebook">
                         <a target="blank" href="{{!empty($st->link_fb) ? $st->link_fb : ''}}" id="facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </span>
-                <span target="blank" class="social youtube">
+                    <span target="blank" class="social youtube">
                         <a href="{{!empty($st->link_youtube) ? $st->link_youtube : ''}}" id="youtube">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </span>
-                <span target="blank" class="social twitter">
+                    <span target="blank" class="social twitter">
                         <a href="{{!empty($st->link_ins) ? $st->link_ins : ''}}" id="twitter">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </span>
-              <!--   <span target="blank" class="social twitter">
-                         <a href="" id="as">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </span> -->
+                </div>
+             
             </div>
             <div class="col-md-12  col-xl-10 add width ">
 
@@ -115,27 +110,27 @@
 
                             </li>
                             @foreach ($categogy as $ct)
-                                <li class="nav-item dropdown align-self-center">
+                            <li class="nav-item dropdown align-self-center">
 
-                            <span class="nav-link dropdown-toggle" onclick="void(0)">
-                              <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle">{{$ct->name}}</a>
-                            </span>
+                                <span class="nav-link dropdown-toggle" onclick="void(0)">
+                                  <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle">{{$ct->name}}</a>
+                                </span>
 
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        @foreach ($subCategory as $sc)
-                                            @if($ct->id == $sc->category_id)
-                                                <li class="dropdown-submenu">
-                                                    <a class="dropdown-item" href="{{ url('product-sub-category/' . $sc->id) }} ">{{$sc->name}}
-                                                    </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    @foreach ($subCategory as $sc)
+                                        @if($ct->id == $sc->category_id)
+                                            <li class="dropdown-submenu">
+                                                <a class="dropdown-item" href="{{ url('product-sub-category/' . $sc->id) }} ">{{$sc->name}}
+                                                </a>
 
 
-                                                </li>
-                                            @endif
-                                        @endforeach
+                                            </li>
+                                        @endif
+                                    @endforeach
 
-                                    </ul>
+                                </ul>
 
-                                </li>
+                            </li>
                             @endforeach
                         </ul>
                     </div>
@@ -148,8 +143,9 @@
 
     </div>
 </div>
-
 </div>
+
+
 
 <script>
     $( document ).ready(function() {
@@ -213,16 +209,15 @@
 
 
         })
-
-
-
-    });
-    $(window).click(function() {
-        $('.result_search').fadeOut(500);
-        $('.box_search').css('z-index',0);
     });
 
-
-
+    $( document ).ready(function() {
+        var menuWidth = $("#menuNav").width();
+        $("#formSearch").width(menuWidth);
+        if(navigator.userAgent.match(/iPad/i)){
+            $("#formSearch").width('100%');
+            $("iframe").height('200px');
+        }
+    });
 </script>
 

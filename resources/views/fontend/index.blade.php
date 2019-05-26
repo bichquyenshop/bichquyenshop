@@ -42,7 +42,7 @@
 			<div class="row">
 
 				@foreach ($product as $pd)
-					<div class="col-md-3 box">
+					<div class="col-md-4 col-xl-3 box">
 
 						<a href="{{ url('detail-product/' . $pd->id) }} ">
 							<div class="product">
@@ -98,18 +98,14 @@
 			margin-left:10px;
 		}
 	</style>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <!-- <script src="jquery.mockjax.js"></script> -->
-
-  <script src="readmore.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="{{url('js/readmore.js')}}"></script>
 	<script>
         $(document).ready(function() {
         	$('.content').readmore({
 				  speed: 75,
-				  lessLink: '<a style="font-weight: bold" href="#">Đóng</a>',
-				  moreLink: '<a style="font-weight: bold" href="#">Xem tiếp</a>',
-			});
+				  lessLink: '<a style="font-weight:bold" href="#">Đóng</a>',
+				  moreLink: '<a style="font-weight:bold" href="#">Xem tiếp</a>',			});
          })
 	</script>
 @endsection

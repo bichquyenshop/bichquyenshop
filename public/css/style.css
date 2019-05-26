@@ -127,7 +127,7 @@ input[name=search] {
 }
 
 .social:last-child a{
-	padding: 5px 8px 5px 10px;
+	padding: 5px 10px 5px 12px;
 }
 
 [class*="col-"]
@@ -560,7 +560,8 @@ h3.tde span {
   #mySidenav{
     position: absolute;
     top: -32px;
-    right: -120px;
+    left: 120px;
+
   }
 }
 @media (max-width: 1365px) and (min-width: 1024px){ 
@@ -574,10 +575,12 @@ h3.tde span {
 @media (min-width: 992px) { ... }
 
 /*// Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) { ... }
-#mySidenav{
+@media (min-width: 1366px) { 
+  #mySidenav{
     text-align: center
-  }
+  } 
+}
+
 .navbar-nav li:hover > ul.dropdown-menu,.navbar-nav li:active > ul.dropdown-menu {
     display: block;
 }
