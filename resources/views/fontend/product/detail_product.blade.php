@@ -40,14 +40,14 @@
            
         </div>
         <div class="col-md-8  d-inline-block content">
-           	<div>Tên sản phẩm : {{$dp->name}}</div>
-           	<div>Mã sản phẩm : {{$dp->code}}</div>
-           	<div>Chủng loại : {{$dp->name_sc}}</div>
-           	<div>Kích thước : {{$dp->size}}</div>
-           	<div>Màu sắc : {{$dp->color}}</div>
-           	<div>Kiểu dáng : {{$dp->style}}</div>
-           	<div>Trọng lượng : {{$dp->weight}}</div>
-           	<div>Mô tả chi tiết : {{$dp->description}}</div>
+            <div><b>Tên sản phẩm:</b>  {{$dp->name}}</div>
+           	<div><b>Mã sản phẩm:</b>  {{$dp->code}}</div>
+           	<div><b>Chủng loại:</b>  {{$dp->name_sc}}</div>
+           	<div><b>Kích thước:</b>  {{$dp->size}}</div>
+           	<div><b>Màu sắc:</b> {{$dp->color}}</div>
+           	<div><b>Kiểu dáng:</b>  {{$dp->style}}</div>
+           	<div><b>Trọng lượng:</b>  {{$dp->weight}}</div>
+           	<div><b>Mô tả chi tiết:</b>  {{$dp->description}}</div>
             <span id="fb-root"></span>
             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=145140442980988&autoLogAppEvents=1"></script>
         
