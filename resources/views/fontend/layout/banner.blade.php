@@ -2,13 +2,20 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
  
   <ol class="carousel-indicators">
-   @foreach( $banner as $bn )
+  @if(empty($banner))
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+      
+    </li>
+  @else
+    @foreach( $banner as $bn )
       <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-   @endforeach
+    @endforeach
+  @endif
+   
   </ol>
  
   <div class="carousel-inner" role="listbox">
-    @foreach( $banner as $bn )
+    @forelse( $banner as $bn )
        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
            <img class="d-block img-fluid" src="{{ $bn->image }}" alt="{{ $bn->title }}">
               <div class="carousel-caption d-none d-md-block">
@@ -16,7 +23,15 @@
                  <p>{{$bn->description}}</p>
               </div>
        </div>
-    @endforeach
+    @empty
+      <div class="carousel-item active">
+           <img src="{{url('image/slider/93_2610_03.jpg')}}" alt="" title=""/>
+              <div class="carousel-caption d-none d-md-block">
+                 <h3>....</h3>
+                 <p>.....</p>
+              </div>
+       </div>
+    @endforelse
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
