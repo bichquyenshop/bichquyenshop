@@ -2,13 +2,13 @@
 	<div class="row">
 	        <div class="col-md-12">
 	            <div class="row">
-					<div class="col-md-3">
+					<div class="col-md-4 col-xl-3">
 						<i class="fa fa-building"></i> <span>{{!empty($st->address) ? $st->address : ''}}</span>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-5 col-xl-6">
 						<i class="fa fa-envelope"></i><span>{{!empty($st->email) ? $st->email : ''}}</span>
 					</div>
-					<div class="col-md-3 top-phone">
+					<div class="col-md-3 col-xl-3   top-phone">
 						<i class="fa fa-phone"></i></i><span>{{!empty($st->tel) ? $st->tel : ''}}</span>
 					</div>
 	            </div>

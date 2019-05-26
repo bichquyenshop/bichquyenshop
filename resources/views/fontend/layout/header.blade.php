@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-2 logo">
+                <div class="col-md-2 col-xl-2 logo">
                     @if(!empty($st->logo))
                         <a href="/"><img src="{{url($st->logo)}}"></a>
                     @else
@@ -41,7 +41,7 @@
                     @endif
 
                 </div>
-                <div class="col-md-10 translate box_search">
+                <div class="col-md-10 col-xl-10 translate box_search">
                     <div class="input-group mb-3">
 
                         <form style ="width:100%" method="GET" action="{{ url('searchButtonProduct') }}">
@@ -69,7 +69,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row">
-            <div class="col-md-2 align-self-center sidenav" id="mySidenav">
+            <div class="col-md-12 col-xl-2 align-self-center sidenav" id="mySidenav">
                     <span class="social facebook">
                         <a target="blank" href="{{!empty($st->link_fb) ? $st->link_fb : ''}}" id="facebook">
                             <i class="fab fa-facebook-f"></i>
@@ -91,7 +91,7 @@
                         </a>
                     </span>
             </div>
-            <div class="col-md-10 add width ">
+            <div class="col-md-12  col-xl-10 add width ">
 
                 <nav class="navbar navbar-expand-md navbar-light">
 
@@ -103,14 +103,15 @@
                     <a href="javascript:void(0)" class="closebtn">&times;</a>
 
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-
-                                <a style="    height: 100%;line-height: 31px;padding: 8px 16px;" class="nav-link" href="/"><i class="fa fa-home"> Trang chủ </i></a>
+                        <ul class="navbar-nav align-middle">
+                            <li class="nav-item active align-self-center">
+                                <span class="nav-link dropdown-toggle" >
+                                <a class="dropdown-item dropdown-toggle" href="/"><i class="fa fa-home"> Trang chủ </i></a>
+                                </span>
 
                             </li>
                             @foreach ($categogy as $ct)
-                                <li class="nav-item dropdown">
+                                <li class="nav-item dropdown align-self-center">
 
                             <span class="nav-link dropdown-toggle" onclick="void(0)">
                               <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle">{{$ct->name}}</a>
