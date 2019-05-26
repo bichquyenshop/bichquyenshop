@@ -18,11 +18,9 @@
     <link rel="stylesheet" type="text/css" href="/css/animation.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
     <script type="text/javascript" src="{{url('js/app.js')}}"></script>
-    {{--<script type="text/javascript" src="{{url('js/js.js')}}"></script>--}}
-
-
+    <!-- <script type="text/javascript" src="{{url('js/readmore.js')}}"></script> -->
 
 </head>
 <body>

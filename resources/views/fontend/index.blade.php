@@ -21,8 +21,8 @@
 						</h3>
 
 					</div>
-					<div class="content more">
-						{{$st->description}}
+					<div class="content">
+						{!! $st->description !!} 
 					</div>
 				</div>
 			</div>
@@ -83,9 +83,17 @@
 			margin-left:10px;
 		}
 	</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- <script src="jquery.mockjax.js"></script> -->
+
+  <script src="readmore.js"></script>
+	<script type="text/javascript" src="{{url('js/readmore.js')}}"></script>
 	<script>
         $(document).ready(function() {
-
+        	$('.content').readmore({
+				  speed: 75,
+				  lessLink: '<a href="#">Read less</a>'
+			});
          })
 	</script>
 @endsection
