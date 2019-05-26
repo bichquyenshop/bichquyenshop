@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>BíchQuyênJewelry @yield('title')</title>
-
+    <title>BíchQuyênJewelry-@yield('title')</title>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="keywords" content="@yield('keywords')">
@@ -21,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     <script type="text/javascript" src="{{url('js/app.js')}}"></script>
-    <script type="text/javascript" src="{{url('js/js.js')}}"></script>
+    {{--<script type="text/javascript" src="{{url('js/js.js')}}"></script>--}}
 
 
 
