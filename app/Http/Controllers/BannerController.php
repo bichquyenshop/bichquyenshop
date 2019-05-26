@@ -57,15 +57,7 @@ class BannerController extends Controller
 
             //Upload File
             $request->file('banner_image')->storeAs('upload/banner_images', $filenametostore);
-            $request->file('banner_image')->storeAs('upload/banner_images/thumbnail', $filenametostore);
-            $input['image'] = 'upload/banner_images/thumbnail/' . $filenametostore;
-            //Resize image here
-            $thumbnailpath = ('upload/banner_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(740, 380, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-
-            $img->save($thumbnailpath);
+            $input['image'] = 'upload/banner_images/' . $filenametostore;
 
         }
 
@@ -129,17 +121,9 @@ class BannerController extends Controller
             //filename to store
             $filenametostore = $filename . '_' . time() . '.' . $extension;
 
-            //Upload File
             $request->file('banner_image')->storeAs('upload/banner_images', $filenametostore);
-            $request->file('banner_image')->storeAs('upload/banner_images/thumbnail', $filenametostore);
-            $input['image'] = 'upload/banner_images/thumbnail/' . $filenametostore;
-            //Resize image here
-            $thumbnailpath = ('upload/banner_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(740, 380, function ($constraint) {
-                $constraint->aspectRatio();
-            });
+            $input['image'] = 'upload/banner_images/' . $filenametostore;
 
-            $img->save($thumbnailpath);
 
         }
 
