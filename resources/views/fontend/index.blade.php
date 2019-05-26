@@ -42,7 +42,7 @@
 			<div class="row">
 
 				@foreach ($product as $pd)
-					<div class="col-md-4 col-xl-3 box">
+					<div class="col-md-6 col-xl-3 box">
 
 						<a href="{{ url('detail-product/' . $pd->id) }} ">
 							<div class="product">
