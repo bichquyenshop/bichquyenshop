@@ -9,7 +9,7 @@ a:hover{
   background-color: #00e278;
 }
 #top_header{
-	background-color: #00a65a;
+	background-color: #00e278;
 	padding:10px 0px;
 }
 #top_header i{
@@ -388,8 +388,8 @@ h3.tde span {
   display: none;
 }
 .navbar-nav{
-	border:1px solid ;
-	background-color: #00a65a;
+	border:1px solid #00a65a;
+	background-color: #00e278;
 }
 .navbar-nav  li.nav-item  a,
 .navbar-nav  li.nav-item span{
@@ -400,14 +400,14 @@ h3.tde span {
 	border: 1px solid;
 }
 .navbar-nav  li:hover a{
-    background-color: #00a65a;
+    background-color: #00e278;
     color:white;
 
     
   
 }
 .navbar-nav  li:hover span{
-	background-color:#00a65a;
+	background-color:#00e278;
     color:white;
 	
 }
@@ -598,10 +598,10 @@ h3.tde span {
 }
 .dropdown-menu{
 	border:0px;
-	background-color:#00a65a;
+	background-color:#00e278;
 }
 .dropdown-submenu:hover a{
-  background-color:#00a65a !important;
+  background-color:#00e278 !important;
 }
 .pagination{
   float:right;
