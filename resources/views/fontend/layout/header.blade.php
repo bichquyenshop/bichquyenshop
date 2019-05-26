@@ -45,7 +45,7 @@
                     @endif
 
                 </div>
-                <div class="col-md-12 col-xl-10 translate box_search">
+                <div class="col-md-10 col-xl-10 translate box_search">
                     <div class="input-group mb-3">
 
                         <form id="formSearch"  method="GET" action="{{ url('searchButtonProduct') }}">
@@ -86,14 +86,14 @@
                     </span>
                 <span target="blank" class="social twitter">
                         <a href="{{!empty($st->link_ins) ? $st->link_ins : ''}}" id="twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </span>
-                <span target="blank" class="social twitter">
-                         <a href="" id="as">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </span>
+              <!--   <span target="blank" class="social twitter">
+                         <a href="" id="as">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </span> -->
             </div>
             <div class="col-md-12  col-xl-10 add width ">
 

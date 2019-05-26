@@ -50,12 +50,27 @@
 									<img style="height:265px" src="{{!empty($pd->image) ? url($pd->image) : url('image/product/default.jpg') }}">
 								</div>
 								<div class="content_box">
-									<div class="title">
-										{{$pd->name}}
-									</div>
-									<div class="code">
-										{{$pd->code}}
-									</div>
+									@if(empty($pd->name))
+										<div class="title">
+											-
+										</div>
+									@else
+										<div class="title">
+											{{$pd->name}}
+										</div>
+									@endif
+									@if(empty($pd->code))
+										<div class="code">
+											-
+										</div>
+									@else
+										<div class="code">
+									
+											{{$pd->code}}
+										</div>
+									@endif
+									
+									
 								</div>
 							</div>
 						</a>

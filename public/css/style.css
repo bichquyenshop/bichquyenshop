@@ -575,7 +575,9 @@ h3.tde span {
 
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) { ... }
-
+#mySidenav{
+    text-align: center
+  }
 .navbar-nav li:hover > ul.dropdown-menu,.navbar-nav li:active > ul.dropdown-menu {
     display: block;
 }
