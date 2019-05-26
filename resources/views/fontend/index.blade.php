@@ -107,8 +107,8 @@
         $(document).ready(function() {
         	$('.content').readmore({
 				  speed: 75,
-				  lessLink: '<a style="font-weight:bold" href="#">Đóng</a>',
-				  moreLink: '<a style="font-weight:bold" href="#">Xem tiếp</a>',
+				  lessLink: '<a style="font-weight: bold" href="#">Đóng</a>',
+				  moreLink: '<a style="font-weight: bold" href="#">Xem tiếp</a>',
 			});
          })
 	</script>
