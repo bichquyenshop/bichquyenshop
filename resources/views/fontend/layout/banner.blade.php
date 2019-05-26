@@ -1,62 +1,29 @@
 
-<link rel="stylesheet" type="text/css" href="/css/slider/demo.css" media="all" />
-<link rel="stylesheet" type="text/css" href="/css/slider/style.css" media="all" />
-<!-- jQuery -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-
-<!-- FlexSlider -->
-<script type="text/javascript" src="/js/slider/jquery.flexslider-min.js"></script>
-<script type="text/javascript" charset="utf-8">
-    var $ = jQuery.noConflict();
-    $(window).load(function() {
-        $('.flexslider').flexslider({
-            animation: "fade"
-        });
-
-        $(function() {
-            $('.show_menu').click(function(){
-                $('.menu').fadeIn();
-                $('.show_menu').fadeOut();
-                $('.hide_menu').fadeIn();
-            });
-            $('.hide_menu').click(function(){
-                $('.menu').fadeOut();
-                $('.show_menu').fadeIn();
-                $('.hide_menu').fadeOut();
-            });
-        });
-    });
-</script>
-
-
-
-<div class="slider_container fadeInLeft animated">
-    <div class="flexslider">
-        <ul class="slides">
-
-            @forelse($banner as $bn)
-                <li>
-                    <img src="{{url($bn->image)}}" alt="" title=""/>
-                    <div class="flex-caption">
-                        @if(!empty($bn->title) && !empty($bn->description))
-                            <div class="caption_title_line"><h2>{{$bn->title}}</h2><p>{{$bn->description}}</p></div>
-                        @endif
-                    </div>
-                </li>
-            @empty
-
-                <li>
-                    <img src="{{url('image/slider/93_2610_03.jpg')}}" alt="" title=""/>
-                    <div class="flex-caption">
-                        <div class="caption_title_line">
-                            <h2>How to buy it</h2>
-                            <p>It's make you happier. Change your life. Make life easier</p>
-                        </div>
-                    </div>
-                </li>
-            @endforelse
-
-        </ul>
-
-    </div>
-</div> 
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+ 
+  <ol class="carousel-indicators">
+   @foreach( $banner as $bn )
+      <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+   @endforeach
+  </ol>
+ 
+  <div class="carousel-inner" role="listbox">
+    @foreach( $banner as $bn )
+       <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+           <img class="d-block img-fluid" src="{{ $bn->image }}" alt="{{ $bn->title }}">
+              <div class="carousel-caption d-none d-md-block">
+                 <h3>{{$bn->title}}</h3>
+                 <p>{{$bn->description}}</p>
+              </div>
+       </div>
+    @endforeach
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
