@@ -18,9 +18,8 @@
     <link rel="stylesheet" type="text/css" href="/css/animation.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+
     <script type="text/javascript" src="{{url('js/app.js')}}"></script>
-    <!-- <script type="text/javascript" src="{{url('js/readmore.js')}}"></script> -->
 
 </head>
 <body>
@@ -35,10 +34,10 @@
     <div class="row">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-6 col-xl-8">
                     @include('fontend.layout.banner')
                 </div>
-                <div class="col-md-4 facebook">
+                <div class="col-md-6 col-xl-4 facebook">
                     @include('fontend.layout.fanpage-facebook')
                 </div>
             </div>

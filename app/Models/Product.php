@@ -10,13 +10,13 @@ class Product extends Model
 {
     public $table = 'product';
     public $timestamps = false;
-    protected $perPage = 2;
+ 
     public static function getListIndex() {
         return DB::table('product')
         ->orderBy('id','desc')
         ->where('sub_category_id','<>', '')
         ->where('category_id','<>' ,'')
-
+        ->limit(50)
         ->paginate(4);
         // return $users = DB::table('users')
         // ->where()

@@ -17,7 +17,7 @@
   <div class="carousel-inner" role="listbox">
     @forelse( $banner as $bn )
        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-           <img class="d-block img-fluid" src="{{ $bn->image }}" alt="{{ $bn->title }}">
+           <img style="width:100%" class="d-block img-fluid" src="{{ $bn->image }}" alt="{{ $bn->title }}">
               <div class="carousel-caption d-none d-md-block">
                  <h3>{{$bn->title}}</h3>
                  <p>{{$bn->description}}</p>
@@ -25,7 +25,7 @@
        </div>
     @empty
       <div class="carousel-item active">
-           <img src="{{url('image/slider/93_2610_03.jpg')}}" alt="" title=""/>
+           <img style="width:100%" src="{{url('image/slider/93_2610_03.jpg')}}" alt="" title=""/>
               <div class="carousel-caption d-none d-md-block">
                  <h3>....</h3>
                  <p>.....</p>
