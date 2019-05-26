@@ -87,7 +87,7 @@
                     </span>
                 <span target="blank" class="social twitter">
                          <a href="" id="as">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </span>
             </div>
