@@ -34,12 +34,12 @@
         
         
     	@foreach ($detailProduct as $dp)
-        <div class="col-md-6  d-inline-block">
+        <div class="col-md-4  d-inline-block">
             
             <img src="{{url($dp->image)}}" alt="">
            
         </div>
-        <div class="col-md-6  d-inline-block content">
+        <div class="col-md-8  d-inline-block content">
            	<div>Tên sản phẩm : {{$dp->name}}</div>
            	<div>Mã sản phẩm : {{$dp->code}}</div>
            	<div>Chủng loại : {{$dp->name_sc}}</div>

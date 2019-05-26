@@ -10,12 +10,17 @@ class Product extends Model
 {
     public $table = 'product';
     public $timestamps = false;
-
+    protected $perPage = 2;
     public static function getListIndex() {
-        return DB::table('product')->orderBy('id','desc')
+        return DB::table('product')
+        ->orderBy('id','desc')
         ->where('sub_category_id','<>', '')
         ->where('category_id','<>' ,'')
-        ->limit(4)->get();
+
+        ->paginate(4);
+        // return $users = DB::table('users')
+        // ->where()
+        // ->paginate(15);
     }
     public static function getList() {
         return DB::table('product')->orderBy('id','desc')->get();

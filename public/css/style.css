@@ -603,3 +603,6 @@ h3.tde span {
 .dropdown-submenu:hover a{
   background-color:#00a65a !important;
 }
+.pagination{
+  float:right;
+}
