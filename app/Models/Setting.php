@@ -35,6 +35,7 @@ class Setting extends Model
 
     public function updateSetting($modelSetting,$params=[])
     {
+        $modelSetting->logo_thumbnail = $params['logo_thumbnail'];
         $modelSetting->logo = $params['logo'];
         $modelSetting->address = $params['address'];
         $modelSetting->tel = $params['tel'];

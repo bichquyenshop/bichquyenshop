@@ -82,8 +82,8 @@ class ProductController extends Controller
 
             $modelSetting = new Setting();
             $setting = $modelSetting->getSetting();
-            if(!empty($setting->logo)){
-                $watermark =  Image::make(($setting->logo));
+            if(!empty($setting->logo_thumbnail)){
+                $watermark =  Image::make(($setting->logo_thumbnail));
                 $img->insert($watermark, 'bottom-right', 10, 10);
             }
 
@@ -177,8 +177,8 @@ class ProductController extends Controller
 
             $modelSetting = new Setting();
             $setting = $modelSetting->getSetting();
-            if(!empty($setting->logo)){
-                $watermark =  Image::make(($setting->logo));
+            if(!empty($setting->logo_thumbnail)){
+                $watermark =  Image::make(($setting->logo_thumbnail));
                 $img->insert($watermark, 'bottom-right', 10, 10);
             }
 

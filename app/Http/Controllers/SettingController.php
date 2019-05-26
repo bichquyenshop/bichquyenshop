@@ -47,7 +47,7 @@ class SettingController extends Controller
         if(!$setting){
             return abort(404);
         }
-
+        $input['logo_thumbnail'] = $setting['logo_thumbnail'];
         $input['logo'] = $input['logo_image_old'];
         if ($request->hasFile('logo_image')) {
             //get filename with extension
@@ -65,7 +65,9 @@ class SettingController extends Controller
             //Upload File
             $request->file('logo_image')->storeAs('upload/logo_images', $filenametostore);
             $request->file('logo_image')->storeAs('upload/logo_images/thumbnail', $filenametostore);
-            $input['logo'] = 'upload/logo_images/thumbnail/' . $filenametostore;
+            $input['logo'] = 'upload/logo_images/' . $filenametostore;
+            $input['logo_thumbnail'] = 'upload/logo_images/thumbnail/' . $filenametostore;
+
             //Resize image here
             $thumbnailpath = ('upload/logo_images/thumbnail/' . $filenametostore);
             $img = Image::make($thumbnailpath)->resize(100, 100, function ($constraint) {
