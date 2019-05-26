@@ -36,7 +36,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-2 col-xl-2 logo">
+                <div class="col-md-3 col-xl-2 logo">
                     @if(!empty($st->logo))
                         <a href="/"><img src="{{url($st->logo)}}"></a>
                     @else
@@ -44,7 +44,7 @@
                     @endif
 
                 </div>
-                <div class="col-md-10 col-xl-10 translate box_search">
+                <div class="col-md-9 col-xl-10 translate box_search">
                     <div class="input-group mb-3">
 
                         <form id="formSearch"  method="GET" action="{{ url('searchButtonProduct') }}" width="100%">
@@ -70,7 +70,7 @@
     <div class="row">
     <div class="col-md-12">
         <div class="row">
-            <div class="col-md-12 col-xl-2 align-self-center sidenav">
+            <div class="col-md-3 col-xl-2 align-self-center sidenav">
                 <div id="mySidenav">
                     <span class="social facebook">
                         <a target="blank" href="{{!empty($st->link_fb) ? $st->link_fb : ''}}" id="facebook">
@@ -90,7 +90,7 @@
                 </div>
              
             </div>
-            <div class="col-md-12  col-xl-10 add width ">
+            <div class="col-md-9  col-xl-10 add width ">
 
                 <nav class="navbar navbar-expand-md navbar-light">
 
@@ -214,10 +214,10 @@
     $( document ).ready(function() {
         var menuWidth = $("#menuNav").width();
         $("#formSearch").width(menuWidth);
-        if(navigator.userAgent.match(/iPad/i)){
-            $("#formSearch").width('100%');
-            $("iframe").height('200px');
-        }
+        // if(navigator.userAgent.match(/iPad/i)){
+        //     $("#formSearch").width('100%');
+        //     $("iframe").height('200px');
+        // }
     });
 </script>
 

@@ -558,9 +558,7 @@ h3.tde span {
 }
 @media (max-width: 1024px) and (min-width: 540px){ 
   #mySidenav{
-    position: absolute;
-    top: -32px;
-    left: 120px;
+    text-align: center;
 
   }
 }
