@@ -562,13 +562,13 @@ h3.tde span {
 
   }
 }
-@media (max-width: 1365px) and (min-width: 1024px){ 
+/*@media (max-width: 1365px) and (min-width: 1024px){ 
   #mySidenav{
     position: absolute;
     top: -32px;
     right: -155px;
   }
-}
+}*/
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { ... }
 
