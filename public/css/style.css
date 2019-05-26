@@ -379,6 +379,9 @@ h3.tde span {
 .closebtn{
 	opacity: 0
 }
+.closebtn{
+  display: none;
+}
 .navbar-nav{
 	border:1px solid ;
 	background-color: #00a65a;
@@ -406,12 +409,13 @@ h3.tde span {
 
 .navbar-nav  li {
     transition: 0.4s;
-    /*color: #ffffff;*/
- 
     text-decoration: none;
 
 }
 @media (max-width: 576px) { 
+  .closebtn{
+  display: block;
+}
 	#top_header{
 		background-color:#ff000000;
 	}
@@ -511,7 +515,22 @@ h3.tde span {
 }
 
 /*Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) { ... }
+@media (min-width: 768px) { 
+  .navbar-nav  li {
+        width:20%;
+  }
+  .navbar-nav  li:first-child {
+    width:15%;
+  }
+  .navbar-nav  li:last-child {
+    width:25%;
+  }
+  .navbar-nav{
+    width:100%;
+    text-align: center;
+  }
+
+
 	
 }
 /* Large devices (desktops, 992px and up)*/

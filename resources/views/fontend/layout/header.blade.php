@@ -41,7 +41,7 @@
                     @endif
 
                 </div>
-                <div style="padding: 0.5rem 1rem;" class="col-md-7 translate box_search">
+                <div class="col-md-10 translate box_search">
                     <div class="input-group mb-3">
 
                         <form style ="width:100%" method="GET" action="{{ url('searchButtonProduct') }}">
@@ -100,7 +100,7 @@
 
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a style="display:none" href="javascript:void(0)" class="closebtn">&times;</a>
+                    <a href="javascript:void(0)" class="closebtn">&times;</a>
 
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
