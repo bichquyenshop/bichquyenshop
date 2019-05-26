@@ -214,10 +214,10 @@
     $( document ).ready(function() {
         var menuWidth = $("#menuNav").width();
         $("#formSearch").width(menuWidth);
-        // if(navigator.userAgent.match(/iPad/i)){
+        if(navigator.userAgent.match(/iPad/i)){
         //     $("#formSearch").width('100%');
-        //     $("iframe").height('200px');
-        // }
+            $("iframe").height('200px');
+        }
     });
 </script>
 
