@@ -2,12 +2,14 @@
 @section('content')
 <div class="row">
     <div id="new_product">
-    	<div class="detail_content">
-		    <h3 class="tde">
-		          <span>Sản Phẩm {{$categoryDetail['name']}}</span>
-		    </h3> 
-		    <hr>
-		 </div>
+		 <div class="title">
+			<h3 class="title-comm">
+				<span class="title-holder">
+					{{$categoryDetail['name']}}
+				</span>
+			</h3>
+
+		</div>
     	 <div class="row a">
     	 	@foreach ($listProduct as $lp)
 
