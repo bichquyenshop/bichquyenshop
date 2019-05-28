@@ -99,7 +99,7 @@
 
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a href="javascript:void(0)" class="closebtn">&times;</a>
+                    <a style='color:#fff;' href="javascript:void(0)" class="closebtn">&times;</a>
 
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul  id="menuNav" class="navbar-nav align-middle">
