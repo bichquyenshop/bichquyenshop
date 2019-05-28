@@ -29,6 +29,7 @@ class Categogy extends Model
     {
         $modelCategory = new Categogy();
         $modelCategory->name = $params['name'];
+        $modelCategory->description = $params['description'];
         $modelCategory->save();
     }
 
@@ -41,6 +42,7 @@ class Categogy extends Model
     public function updateCategory($modelCategory,$params=[])
     {
         $modelCategory->name = $params['name'];
+        $modelCategory->description = $params['description'];
         $modelCategory->save();
     }
 
