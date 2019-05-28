@@ -100,10 +100,7 @@ class SettingController extends Controller
 
         //Upload File
         $request->file('upload')->storeAs('upload/images', $filenametostore);
-        $url = 'upload/images/' . $filenametostore;
-        $thumbnailpath = ('upload/images/' . $filenametostore);
-        $img = Image::make($thumbnailpath);
-        $img->save($thumbnailpath);
+        $url =  '/upload/images/' . $filenametostore;
 
         echo "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($function_number, '$url', '$message');</script>";
     }
