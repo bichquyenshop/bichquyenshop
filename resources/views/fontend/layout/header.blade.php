@@ -27,7 +27,7 @@
 </div>
 
 <!-- Your customer chat code -->
-<div class="fb-customerchat"
+<div style="top:10px" class="fb-customerchat"
      attribution=setup_tool
      page_id="429999077779521">
 </div>
@@ -74,19 +74,21 @@
                 <div id="mySidenav">
                     <span class="social facebook">
                         <a target="blank" href="{{!empty($st->link_fb) ? $st->link_fb : ''}}" id="facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </span>
-                    <span target="blank" class="social youtube">
-                        <a href="{{!empty($st->link_youtube) ? $st->link_youtube : ''}}" id="youtube">
-                            <i class="fab fa-youtube"></i>
+                            <img src="{{url('image/icon/facebook.png')}}">
                         </a>
                     </span>
                     <span target="blank" class="social twitter">
                         <a href="{{!empty($st->link_ins) ? $st->link_ins : ''}}" id="twitter">
-                            <i class="fab fa-instagram"></i>
+                            <img src="{{url('image/icon/instagram.png')}}">
+                            
                         </a>
                     </span>
+                    <span target="blank" class="social youtube">
+                        <a href="{{!empty($st->link_youtube) ? $st->link_youtube : ''}}" id="youtube">
+                            <img src="{{url('image/icon/youtube.png')}}">
+                        </a>
+                    </span>
+                    
                 </div>
              
             </div>
@@ -209,14 +211,22 @@
 
 
         })
+        
     });
-
+        $(window).click(function() {
+        $('.result_search').fadeOut(500);
+        $('.box_search').css('z-index',0);
+    });
     $( document ).ready(function() {
         var menuWidth = $("#menuNav").width();
         $("#formSearch").width(menuWidth);
         if(navigator.userAgent.match(/iPad/i)){
         //     $("#formSearch").width('100%');
             $("iframe").height('200px');
+        }
+        var isMobile = /iPhone|iPod|Android/i.test(navigator.userAgent);
+        if(isMobile){
+            $("#formSearch").width('100%');
         }
     });
 </script>
