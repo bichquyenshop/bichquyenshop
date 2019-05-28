@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group {!! $errors->first('description','has-error') !!}">
-                                    <label for="exampleInputName" class="col-sm-2 control-label">Giơi thiệu</label>
+                                    <label for="exampleInputName" class="col-sm-2 control-label">Giới thiệu</label>
                                     <div class="col-sm-8">
                                         <textarea id="editor" class="form-control"  name="description" rows="5">{{!empty(old('description')) ? old('description') : $setting->description}}</textarea>
                                         {!! $errors->first('description','<span class="help-block">:message</span>') !!}

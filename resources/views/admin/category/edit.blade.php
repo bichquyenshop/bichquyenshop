@@ -27,12 +27,19 @@
                         </div>
 
                         <div class="box-body">
-                            <div class="col-md-5">
+                            <div class="col-md-8">
                                 <div class="form-group {!! $errors->first('name','has-error') !!}">
                                     <label for="exampleInputName" class="col-sm-2 control-label">Tên <span class="required">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="text" id="title" class="form-control" name="name" value="{{!empty(old('name')) ? old('name') : $menu->name}}" placeholder="Tên">
                                         {!! $errors->first('name','<span class="help-block">:message</span>') !!}
+                                    </div>
+                                </div>
+                                <div class="form-group {!! $errors->first('description','has-error') !!}">
+                                    <label for="exampleInputName" class="col-sm-2 control-label">Giới thiệu</label>
+                                    <div class="col-sm-10">
+                                        <textarea id="editor" class="form-control"  name="description" rows="5">{{!empty(old('description')) ? old('description') : $menu->description}}</textarea>
+                                        {!! $errors->first('description','<span class="help-block">:message</span>') !!}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -47,6 +54,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
                     </div>
@@ -60,5 +68,13 @@
 @stop
 
 @section('script')
+    <script>
+        $(function () {
+            CKEDITOR.replace( 'editor', {
+                filebrowserUploadUrl: "{{route('upload_img').'?_token='.csrf_token()}}",
+                filebrowserUploadMethod : 'form'
+            });
 
+        });
+    </script>
 @stop
