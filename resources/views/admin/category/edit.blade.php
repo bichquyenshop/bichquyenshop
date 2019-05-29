@@ -72,7 +72,9 @@
         $(function () {
             CKEDITOR.replace( 'editor', {
                 filebrowserUploadUrl: "{{route('upload_img').'?_token='.csrf_token()}}",
-                filebrowserUploadMethod : 'form'
+                filebrowserUploadMethod : 'form',
+                extraPlugins: 'colorbutton,colordialog,font',
+                colorButton_enableAutomatic: false
             });
 
         });
