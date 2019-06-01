@@ -42,12 +42,12 @@
 			<div class="row">
 
 				@foreach ($product as $pd)
-					<div class="col-md-6 col-xl-3 box">
+					<div class="col-md-3 col-xl-3 box">
 
 						<a href="{{ url('detail-product/' . $pd->id) }} ">
 							<div class="product">
 								<div class="image_box">
-									<img style="height:265px" src="{{!empty($pd->image) ? url($pd->image) : url('image/product/default.jpg') }}">
+									<img src="{{!empty($pd->image) ? url($pd->image) : url('image/product/default.jpg') }}">
 								</div>
 								<div class="content_box">
 									@if(empty($pd->name))

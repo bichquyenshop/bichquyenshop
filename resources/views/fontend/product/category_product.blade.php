@@ -22,16 +22,31 @@
             	<a href="{{ url('detail-product/' . $lp->id) }} ">
 	                <div class="product">
 			    		<div class="image_box">
-			    			<img style="height:265px" src="{{!empty($lp->image) ? url($lp->image) : url('image/product/default.jpg') }}">
+			    			<img src="{{!empty($lp->image) ? url($lp->image) : url('image/product/default.jpg') }}">
 			    		</div>
 			    		<div class="content_box">
-				    		<div class="title">
-				    			{{$lp->name}}
-				    		</div>
-				    		<div class="code">
-				    			{{$lp->code}}
-				    		</div>
-				    	</div>
+							@if(empty($lp->name))
+								<div class="title">
+									-
+								</div>
+							@else
+								<div class="title">
+									{{$lp->name}}
+								</div>
+							@endif
+							@if(empty($lp->code))
+								<div class="code">
+									-
+								</div>
+							@else
+								<div class="code">
+							
+									{{$lp->code}}
+								</div>
+							@endif
+							
+							
+						</div>
 			    	</div>
 		    	</a>
             </div>
@@ -60,7 +75,7 @@ $( document ).ready(function() {
     });
 
 	$('.load_more').click(function(){
-		var offset = parseInt($('input[name="offset"]').val()) + 4;
+		var offset = parseInt($('input[name="offset"]').val()) + 8;
 		var loadMore = 1 //Nếu loadMore = 1 thì sẽ render view loadMore 
 		var idCate = $('input[name="cate_id"]').val()
 		$.ajax({

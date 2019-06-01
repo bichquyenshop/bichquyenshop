@@ -239,7 +239,7 @@ class ProductController extends Controller
 
         }
          // echo $offset;
-        $limit = 4; // 4 sản phẩm
+        $limit = 8; // 4 sản phẩm
         $listProduct = Product::getListProductFollowCate($idCate,$offset,$limit);
 
         if(isset($request->loadMore)){
@@ -271,7 +271,7 @@ class ProductController extends Controller
 
         }
          // echo $offset;
-        $limit = 4; // 4 sản phẩm
+        $limit = 8; // 4 sản phẩm
         $listProduct = Product::getListProductFollowSubCate($idSubCate,$offset,$limit);
 
         if(isset($request->loadMore)){
@@ -309,7 +309,7 @@ class ProductController extends Controller
         if(isset($request->offset)){
             $offset = $request->offset; 
         }
-        $limit = 4; // 4 sản phẩm
+        $limit = 8; // 4 sản phẩm
         $stringSearch =  $request->stringSearch;
         $listProduct = Product::getListSearchProduct($stringSearch,$offset,$limit);
         if(isset($request->loadMore)){
