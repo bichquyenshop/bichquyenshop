@@ -62,6 +62,11 @@
                     <li {{ (isset($menu_active) && ($menu_active == 'banner-add')) ? 'class=active': '' }}><a href="{{route('add_banner')}}"><i class="fa fa-circle-o"></i>Thêm banner</a></li>
                 </ul>
             </li>
+            <li {{ (isset($menu_active) && ($menu_active == 'comment')) ? 'class=active': '' }}>
+                <a href="{{route('list_comment')}}">
+                    <i class="fa fa-book"></i> <span>Quản lý bình luận</span>
+                </a>
+            </li>
             <li {{ (isset($menu_active) && ($menu_active == 'setting')) ? 'class=active': '' }}>
                 <a href="{{route('edit_setting')}}">
                     <i class="fa fa-cogs"></i> <span>Cài đặt</span>
