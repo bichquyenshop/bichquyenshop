@@ -7,7 +7,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Cập nhật banner
+            Cài đặt
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{route('index')}}"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
@@ -130,7 +130,9 @@
     $(function () {
         CKEDITOR.replace( 'editor', {
             filebrowserUploadUrl: "{{route('upload_img').'?_token='.csrf_token()}}",
-            filebrowserUploadMethod : 'form'
+            filebrowserUploadMethod : 'form',
+            extraPlugins: 'colorbutton,colordialog,font',
+            colorButton_enableAutomatic: false
         });
 
         $('.remove_image').click(function(){
