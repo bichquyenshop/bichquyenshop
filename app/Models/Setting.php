@@ -46,4 +46,9 @@ class Setting extends Model
         $modelSetting->description = $params['description'];
         $modelSetting->save();
     }
+
+    public static function updateView()
+    {
+        return DB::table('setting')->increment('num_view');
+    }
 }
