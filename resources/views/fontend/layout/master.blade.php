@@ -1,3 +1,10 @@
+<?php
+if (Session::get('LAST_ACTIVITY') && (time() - Session::get('LAST_ACTIVITY') > 1800 )) {
+    \App\Models\Setting::updateView();
+    Session:flush();
+}
+Session::put('LAST_ACTIVITY', time());
+?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>

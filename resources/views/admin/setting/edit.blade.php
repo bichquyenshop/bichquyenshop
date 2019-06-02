@@ -28,6 +28,12 @@
 
                         <div class="box-body">
                             <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputName" class="col-sm-2 control-label">Số lượng người xem</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" disabled name="num_view" value="{{$setting->num_view}}" >
+                                    </div>
+                                </div>
                                 <div class="form-group {!! $errors->first('address','has-error') !!}">
                                     <label for="exampleInputName" class="col-sm-2 control-label">Địa chỉ</label>
                                     <div class="col-sm-8">

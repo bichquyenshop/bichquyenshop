@@ -86,6 +86,14 @@ Route::group(['prefix' => '/admin',], function()
             Route::post('edit','SettingController@postEdit')->name('edit_setting');
             Route::post('/uploadImg', 'SettingController@uploadImg')->name('upload_img');
         });
+
+        Route::group(['prefix' => '/comment',], function()
+        {
+            Route::get('/list','CommentController@getList')->name('list_comment');
+            Route::post('verify','CommentController@verify')->name('verify_comment');
+            Route::get('detail/{id}','CommentController@detail')->name('detail_comment');
+
+        });
     });
 });
 
