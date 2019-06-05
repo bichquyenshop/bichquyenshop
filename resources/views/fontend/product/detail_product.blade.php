@@ -84,7 +84,7 @@
                 @csrf
                 <input type="hidden" name="id_product" value="{{$detailProduct[0]->id}}">
                 <div style="padding-bottom: 10px">
-                <input style="opacity: 0;width:0px" type="text" class="rating" name="rating"/>
+                <input style="opacity: 0;width:0px" type="text" class="rating rating-tooltip" name="rating"/>
                 </div>
                 <div class="form-group">
                  
@@ -104,15 +104,6 @@
                   <button type="submit" class="btn btn-info pull-right">Đánh giá</button>
                 </div>
               </form>
-              @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-              @endif
               
               
             </div>
@@ -196,9 +187,45 @@ body
 <script>
   $(document).ready(function() {
       $('.rating').rating();
-      // $('.rating').on('change', function () {
-      //   // alert('Rating: ' + $(this).val());
-      // });
+      $('.rating-tooltip').rating({
+          extendSymbol: function (rate) {
+            $(this).tooltip({
+              container: 'body',
+              placement: 'bottom',
+              title: 'Rate ' + rate
+            });
+          }
+        });
+      $('.rating-tooltip-manual').rating({
+          extendSymbol: function () {
+            var title;
+            $(this).tooltip({
+              container: 'body',
+              placement: 'bottom',
+              trigger: 'manual',
+              title: function () {
+                return title;
+              }
+            });
+            $(this).on('rating.rateenter', function (e, rate) {
+              title = rate;
+              $(this).tooltip('show');
+            })
+            .on('rating.rateleave', function () {
+              $(this).tooltip('hide');
+            });
+          }
+        });
+        $('.rating').each(function () {
+          $('<span class="label label-default"></span>')
+            .text($(this).val() || ' ')
+            .insertAfter(this);
+        });
+        $('.rating').on('change', function () {
+          if(this.val() == )
+          $(this).next('.label').html('<span class="btn btn-success">Bạn đang đánh giá :' + $(this).val() + '*</span>');
+        });
+
       $("#form").validate({
       rules: {
         user_name: "required",
