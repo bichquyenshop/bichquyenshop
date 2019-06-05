@@ -115,7 +115,7 @@
                             <li class="nav-item dropdown align-self-center">
 
                                 <span class="nav-link dropdown-toggle" onclick="void(0)">
-                                  <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle">{{$ct->name}}</a>
+                                    <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle"><i class="fa">{{$ct->name}}</i></a>
                                 </span>
 
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
