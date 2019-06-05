@@ -56,5 +56,14 @@ class CommentController extends Controller
 
         return response()->json(['error' => 0, 'message' => 'Duyệt comment thành công']);
     }
+    public function addComment(Request $request)
+    {
+        $id_product = $request->id_product ;
+        $input = $request->all();
+        $modelCategogy = new Comment();
+        $modelCategogy->insertComment($input);
+        return redirect('detail-product/'.$id_product);
+     
+    }
 
 }

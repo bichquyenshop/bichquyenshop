@@ -17,7 +17,7 @@ class Product extends Model
         ->where('sub_category_id','<>', '')
         ->where('category_id','<>' ,'')
         ->limit(50)
-        ->paginate(4);
+        ->paginate(8);
         // return $users = DB::table('users')
         // ->where()
         // ->paginate(15);
@@ -93,6 +93,8 @@ class Product extends Model
         $query = DB::table('product as pd');
         $query->select('pd.id','pd.code','pd.name','pd.sub_category_id','pd.image','pd.category_id');
         $query->where('pd.category_id',$idCate);
+        $query->where('sub_category_id','<>', '');
+        $query->where('category_id','<>' ,'');
         $query->limit($limit);
         $query->offset($offset); 
         $query->orderBy('pd.id','desc');
@@ -103,6 +105,8 @@ class Product extends Model
         $query = DB::table('product as pd');
         $query->select('pd.id','pd.code','pd.name','pd.sub_category_id','pd.image','pd.category_id');
         $query->where('pd.sub_category_id',$idSubCate);
+        $query->where('sub_category_id','<>', '');
+        $query->where('category_id','<>' ,'');
         $query->limit($limit);
         $query->offset($offset); 
         $query->orderBy('pd.id','desc');

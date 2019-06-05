@@ -5,6 +5,7 @@ use App\Models\Categogy;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\SubCategory;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Image;
 
@@ -224,10 +225,23 @@ class ProductController extends Controller
     public function detailProduct(Request $request){
         $idProduct = $request->idProduct;
         $detailProduct = Product::getListFollowId($idProduct);
+        $comment = Comment::getCommentByIdStatus($idProduct);
+        $commentCountSum = Comment::getCommentGroupBy($idProduct);
+        $count = 0;
+        foreach ($commentCountSum as $cmcs) {
+            $count = $count + $cmcs->count;
+        }
+        // print_r($count);
+        // die();
         return view("fontend/product/detail_product", 
             [
-                "detailProduct"=> $detailProduct
-        ]);
+                "detailProduct"=> $detailProduct,
+                "comment"=> $comment,
+                "commentCountSum"=> $commentCountSum,
+                'count' => $count,
+                // 'commentCountSuma' => $commentCountSuma,
+            ]
+        );
       
     }
     public function productCategory(Request $request){
@@ -239,7 +253,7 @@ class ProductController extends Controller
 
         }
          // echo $offset;
-        $limit = 4; // 4 sản phẩm
+        $limit = 8; // 4 sản phẩm
         $listProduct = Product::getListProductFollowCate($idCate,$offset,$limit);
 
         if(isset($request->loadMore)){
@@ -271,7 +285,7 @@ class ProductController extends Controller
 
         }
          // echo $offset;
-        $limit = 4; // 4 sản phẩm
+        $limit = 8; // 4 sản phẩm
         $listProduct = Product::getListProductFollowSubCate($idSubCate,$offset,$limit);
 
         if(isset($request->loadMore)){
@@ -309,7 +323,7 @@ class ProductController extends Controller
         if(isset($request->offset)){
             $offset = $request->offset; 
         }
-        $limit = 4; // 4 sản phẩm
+        $limit = 8; // 4 sản phẩm
         $stringSearch =  $request->stringSearch;
         $listProduct = Product::getListSearchProduct($stringSearch,$offset,$limit);
         if(isset($request->loadMore)){

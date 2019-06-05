@@ -2,10 +2,16 @@
 @section('content')
 
 <div class="detail_content">
-    <h3 class="tde">
-          <span>Kết quả tìm kiếm sản phẩm : {{$stringSearch}}</span>
-    </h3> 
-    <hr>
+     <div class="title">
+        <h3 class="title-comm">
+            <span class="title-holder">
+                Kết quả tìm kiếm sản phẩm : {{$stringSearch}}
+            </span>
+        </h3>
+
+    </div>
+ 
+
 </div>
 	
 
@@ -18,16 +24,31 @@
             	<a href="{{ url('detail-product/' . $lp->id) }} ">		
 	                <div class="product">
 			    		<div class="image_box">
-			    			<img src="{{url($lp->image)}}">
+			    			<img src="{{!empty($lp->image) ? url($lp->image) : url('image/product/default.jpg') }}">
 			    		</div>
 			    		<div class="content_box">
-				    		<div class="title">
-				    			{{$lp->name}}
-				    		</div>
-				    		<div class="code">
-				    			{{$lp->code}}
-				    		</div>
-				    	</div>
+                            @if(empty($lp->name))
+                                <div class="title">
+                                    -
+                                </div>
+                            @else
+                                <div class="title">
+                                    {{$lp->name}}
+                                </div>
+                            @endif
+                            @if(empty($lp->code))
+                                <div class="code">
+                                    -
+                                </div>
+                            @else
+                                <div class="code">
+                            
+                                    {{$lp->code}}
+                                </div>
+                            @endif
+                            
+                            
+                        </div>
 			    	</div>
 		    	</a>
             </div> 
@@ -53,7 +74,7 @@ $( document ).ready(function() {
     }
     
 	$('.load_more').click(function(){
-		var offset = parseInt($('input[name="offset"]').val()) + 4;
+		var offset = parseInt($('input[name="offset"]').val()) + 8;
 		var urlParams = new URLSearchParams(window.location.search);
 		var stringSearch = urlParams.get('stringSearch');
 		var loadMore = 1 //Nếu loadMore = 1 thì sẽ render view loadMore 

@@ -5,6 +5,11 @@ a:hover{
   text-decoration: none;
   color:black;
 }
+.error {
+    color: red;
+    padding-top: 10px;
+    font-style: italic;
+}
 .btn-success{
   background-color: #00e278;
 }
@@ -191,6 +196,12 @@ input[name=search] {
   text-align: center;
 
 }
+
+
+.parent.dropdown-item{
+  padding-left:0px;
+  padding-right:0px;
+} 
 #introduction{
   padding-bottom:10px;
 }
@@ -224,7 +235,7 @@ input[name=search] {
 }
 
 .logo img{
-  width:100%;
+  width:60%;
 }
 #footer{
   box-shadow: 1px -4px 3px -1px rgba(0, 0, 0, 0.15);
@@ -420,20 +431,19 @@ h3.tde span {
 
 }
 @media (max-width: 576px) { 
-    #banner .facebook{
-        text-align: center
-    }
-    #navbarNavDropdown .dropdown-toggle{
-        text-align: left !important
-    }
-    .navbar-nav li{
-        width:100%;
-    }
-    .closebtn{
-        display: block;
-    }
-  #top_header{
-    background-color:#ff000000;
+  #banner .facebook{
+      text-align: center
+  }
+  #navbarNavDropdown .dropdown-toggle{
+      text-align: left !important
+  }
+  .navbar-nav li{
+      width:100% !important;
+      padding-left:10px;
+      text-align: left;
+  }
+  .closebtn{
+      display: block;
   }
   .top-content{
     display: none;
@@ -555,7 +565,7 @@ h3.tde span {
 
     white-space: unset;
     text-align: center;
-    padding: 5px 3px;
+    padding: 5px 0px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -572,6 +582,20 @@ h3.tde span {
     text-align: center;
 
   }
+  .navbar-expand-md .navbar-nav{
+    width:100% !important;
+  }
+  .navbar-nav li{
+    width:20%;
+    text-align: center;
+    font-size:1.1em;
+  }
+  /*.navbar-nav li:first-child{
+    width:15%;
+  }*/
+  .navbar-nav li:last-child{
+    width:30%;
+  }
 }
 @media (max-width: 1365px) and (min-width: 1024px){ 
   #navbarNavDropdown .dropdown-toggle{
@@ -585,6 +609,7 @@ h3.tde span {
     overflow: hidden;
 
   }
+  
 }
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { ... }

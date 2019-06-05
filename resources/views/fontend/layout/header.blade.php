@@ -107,7 +107,7 @@
                         <ul  id="menuNav" class="navbar-nav align-middle">
                             <li class="nav-item active align-self-center">
                                 <span class="nav-link dropdown-toggle" >
-                                <a class="dropdown-item dropdown-toggle" href="/"><i class="fa fa-home"> Trang chủ </i></a>
+                                <a class="parent dropdown-item dropdown-toggle" href="/"><i class="fa fa-home"> Trang chủ </i></a>
                                 </span>
 
                             </li>
