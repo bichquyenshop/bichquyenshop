@@ -45,7 +45,7 @@
                                 <td>{{$comment->title}}</td>
                                 <td>{{$comment->content}}</td>
                                 <td>{{$comment->star}}</td>
-                                <td>{{$comment->time}}</td>
+                                <td>{{date('d/m/y H:i:s', $comment->time)}}</td>
                                 <td>
                                     @if($comment->status == 1)
                                         {{'Hiển thị'}}
