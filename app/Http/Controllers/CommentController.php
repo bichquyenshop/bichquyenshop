@@ -62,6 +62,7 @@ class CommentController extends Controller
         $input = $request->all();
         $modelCategogy = new Comment();
         $modelCategogy->insertComment($input);
+        $request->session()->flash('message_success', 'Gửi nhận xét thành công');
         return redirect('detail-product/'.$id_product);
      
     }
