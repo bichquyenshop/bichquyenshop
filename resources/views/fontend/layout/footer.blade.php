@@ -1,21 +1,18 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-12">
 			<div style='padding:10px;' class="info">
-			    <table>
-			        <tr>
-			            <td class="text-center"><i class="fa fa-map-marker-alt"></i></td>
-			            <td>Địa chỉ:</td>
+			    <table style="width: 100%">
+			        <tr >
+			            <td style="width: 5%;" class="text-center"><i class="fa fa-map-marker-alt"></i></td>
 			            <td>&nbsp;{{!empty($st->address) ? $st->address : ''}}</td>
 			        </tr>
 			        <tr>
-			            <td class="text-center"><i class="fa fa-mobile"></i></td>
-			            <td>Điện thoại:</td>
+			            <td  style="width: 5%;" class="text-center"><i class="fa fa-mobile"></i></td>
 			            <td>&nbsp;{{!empty($st->tel) ? $st->tel : ''}}</td>
 			        </tr>
 			        <tr>
-			            <td class="text-center" ><i class="fa fa-envelope"></i></td>
-			            <td>Email:</td>
+			            <td  style="width: 5%;" class="text-center" ><i class="fa fa-envelope"></i></td>
 			            <td>&nbsp;{{!empty($st->email) ? $st->email : ''}}</td>
 			        </tr>
 			    </table>
