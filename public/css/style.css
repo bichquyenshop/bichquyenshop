@@ -565,7 +565,8 @@ h3.tde span {
 
     white-space: unset;
     text-align: center;
-    padding: 5px 0px;
+    padding: 5px 10px;
+      font-size:18px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -650,4 +651,7 @@ h3.tde span {
 }
 .pagination{
   float:right;
+}
+.comment{
+    padding:20px;
 }

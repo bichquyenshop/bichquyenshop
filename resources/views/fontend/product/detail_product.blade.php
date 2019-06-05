@@ -74,8 +74,19 @@
                 
             </div>
           @endforeach
+
+            <div class="col-md-6" style="padding-top:20px;">
+                @if(session('message_success'))
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {{session('message_success')}}
+                    </div>
+                @endif
+            </div>
+
+
           <button style="margin-top:10px" class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Đánh giá và nhận xét cho {{$detailProduct[0]->name}}
+            Đánh giá và nhận xét
           </button>
         
           <div class="collapse" id="collapseExample">
