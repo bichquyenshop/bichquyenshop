@@ -1,8 +1,7 @@
 <?php
 
 Route::get('/','IndexController@menu');
-
-// Route::get('people/{lastName}/{firstName}', 'PeopleController@show');
+Route::post('add-comment','CommentController@addComment')->name('add-comment');
 Route::get('detail-product/{idProduct}','ProductController@detailProduct')->name('detail-product');
 Route::get('product-category/{idCate}','ProductController@productCategory')->name('product-category');
 Route::get('product-category-load-more','ProductController@productCategory')->name('product-category-load-more');

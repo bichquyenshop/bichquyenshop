@@ -5,6 +5,11 @@ a:hover{
   text-decoration: none;
   color:black;
 }
+.error {
+    color: red;
+    padding-top: 10px;
+    font-style: italic;
+}
 .btn-success{
   background-color: #00e278;
 }
