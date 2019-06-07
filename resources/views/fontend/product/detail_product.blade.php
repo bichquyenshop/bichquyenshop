@@ -233,7 +233,7 @@ body
             .insertAfter(this);
         });
         $('.rating').on('change', function () {
-          if(this.val() == )
+         
           $(this).next('.label').html('<span class="btn btn-success">Bạn đang đánh giá :' + $(this).val() + '*</span>');
         });
 
