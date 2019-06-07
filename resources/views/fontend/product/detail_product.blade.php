@@ -132,9 +132,9 @@
                           <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
                       </a>
                       <div class="media-body">
-                        <!--   <span class="text-muted pull-right">
-                              <small class="text-muted">30 min ago</small>
-                          </span> -->
+                          <span class="text-muted pull-right">
+                              <small class="text-muted">{{$cm->time}}</small>
+                          </span>
                           <strong class="text-success">{{$cm->user_name}}</strong>
                           <p>
                             {{$cm->content}}
@@ -233,7 +233,7 @@ body
             .insertAfter(this);
         });
         $('.rating').on('change', function () {
-          if(this.val() == )
+         
           $(this).next('.label').html('<span class="btn btn-success">Bạn đang đánh giá :' + $(this).val() + '*</span>');
         });
 
