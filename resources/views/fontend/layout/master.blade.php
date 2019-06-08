@@ -34,7 +34,7 @@
     <script type="text/javascript" src="{{url('js/jquery.validate.min.js')}}"></script>
 
 </head>
-<body>
+<body >
 <div id="top_header">
     @include('fontend.layout.top-header')
 </div>

@@ -11,7 +11,7 @@
 
 		</div>
 		@if(!empty($categoryDetail['description']))
-			<div class="content">
+			<div style="padding:10px;" class="content">
 				{!! $categoryDetail['description'] !!}
 			</div>
 		@endif
