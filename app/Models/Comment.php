@@ -39,7 +39,7 @@ class Comment extends Model
 
         $query = DB::table('comment');
 
-        $query->select('star','content','title','user_name');
+        $query->select('star','content','title','user_name', DB::raw('FROM_UNIXTIME(time,"%d/%m/%Y") as time'));
         $query->where('product_id',$id);
         $query->where('status',1);
 
@@ -70,6 +70,7 @@ class Comment extends Model
         $model->title = $params['title'];
         $model->user_name = $params['user_name'];
         $model->star = $params['rating'];
+        $model->time = time();
         $model->status =  0;
         $model->save();
     }
