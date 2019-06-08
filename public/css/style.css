@@ -83,7 +83,7 @@ a:hover{
   display: inline-block;
 }
 .read{
-  padding-left:25px;
+  margin-left:10px;
 }
 input[name=search] { 
   width:100%;
@@ -474,7 +474,7 @@ h3.tde span {
   }
   .mymenu .closebtn {
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;

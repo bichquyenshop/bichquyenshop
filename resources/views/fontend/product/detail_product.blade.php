@@ -247,8 +247,8 @@ body
       messages: {
         user_name: "Vui lòng nhập tên của bạn",
         title: "Vui lòng nhập tiêu đề",
-        rating: "Vui lòng rating",
-        description: "Vui lòng nhập description",
+        rating: "Vui lòng đánh giá",
+        description: "Vui lòng nhập nội dung",
         // diachi: {
         //   required: "Vui lòng nhập địa chỉ",
         //   minlength: "Địa chỉ ngắn vậy, chém gió ah?"
