@@ -94,7 +94,7 @@
             </div>
             <div class="col-md-9  col-xl-10 add width ">
 
-                <nav class="navbar navbar-expand-md navbar-light">
+                <nav  class="navbar navbar-expand-md navbar-light">
 
 
                     <button id="openMenu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,7 +103,7 @@
                     </button>
                     <a style='color:#fff;' href="javascript:void(0)" class="closebtn">&times;</a>
 
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div  style='padding-top:20px' class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul  id="menuNav" class="navbar-nav align-middle">
                             <li class="nav-item active align-self-center">
                                 <span class="nav-link dropdown-toggle" >
@@ -115,7 +115,7 @@
                             <li class="nav-item dropdown align-self-center">
 
                                 <span class="nav-link dropdown-toggle" onclick="void(0)">
-                                    <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle"><i class="fa">{{$ct->name}}</i></a>
+                                    <a  href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle"><i onclick="void(0)" class="fa">{{$ct->name}}</i></a>
                                 </span>
 
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
