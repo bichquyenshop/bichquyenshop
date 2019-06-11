@@ -64,16 +64,7 @@ class SettingController extends Controller
 
             //Upload File
             $request->file('logo_image')->storeAs('upload/logo_images', $filenametostore);
-            $request->file('logo_image')->storeAs('upload/logo_images/thumbnail', $filenametostore);
             $input['logo'] = 'upload/logo_images/' . $filenametostore;
-            $input['logo_thumbnail'] = 'upload/logo_images/thumbnail/' . $filenametostore;
-
-            //Resize image here
-            $thumbnailpath = ('upload/logo_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(100, 100, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-            $img->save($thumbnailpath);
 
         }
 

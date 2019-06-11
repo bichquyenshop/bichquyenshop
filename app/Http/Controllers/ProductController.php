@@ -72,23 +72,23 @@ class ProductController extends Controller
            //Upload File
 
             $request->file('product_image')->storeAs('upload/product_images', $filenametostore);
-            $request->file('product_image')->storeAs('upload/product_images/thumbnail', $filenametostore);
-            $input['image'] = 'upload/product_images/thumbnail/' . $filenametostore;
+//            $request->file('product_image')->storeAs('upload/product_images/thumbnail', $filenametostore);
+            $input['image'] = 'upload/product_images/' . $filenametostore;
             //Resize image here
-            $thumbnailpath = ('upload/product_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(270, 270, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-
-
-            $modelSetting = new Setting();
-            $setting = $modelSetting->getSetting();
-            if(!empty($setting->logo_thumbnail)){
-                $watermark =  Image::make(($setting->logo_thumbnail));
-                $img->insert($watermark, 'bottom-right', 10, 10);
-            }
-
-            $img->save($thumbnailpath);
+//            $thumbnailpath = ('upload/product_images/thumbnail/' . $filenametostore);
+//            $img = Image::make($thumbnailpath)->resize(270, 270, function ($constraint) {
+//                $constraint->aspectRatio();
+//            });
+//
+//
+//            $modelSetting = new Setting();
+//            $setting = $modelSetting->getSetting();
+//            if(!empty($setting->logo_thumbnail)){
+//                $watermark =  Image::make(($setting->logo_thumbnail));
+//                $img->insert($watermark, 'bottom-right', 10, 10);
+//            }
+//
+//            $img->save($thumbnailpath);
         }
 
         $modelProduct->insertProduct($input);
@@ -164,26 +164,26 @@ class ProductController extends Controller
 
            //Upload File
             $request->file('product_image')->storeAs('upload/product_images', $filenametostore);
-            $request->file('product_image')->storeAs('upload/product_images/thumbnail', $filenametostore);
-            $input['image'] = 'upload/product_images/thumbnail/' . $filenametostore;
+//            $request->file('product_image')->storeAs('upload/product_images/thumbnail', $filenametostore);
+            $input['image'] = 'upload/product_images/' . $filenametostore;
             //Resize image here
-            $thumbnailpath = ('upload/product_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(270, 270, function ($constraint) {
-                $constraint->aspectRatio();
-            });
+//            $thumbnailpath = ('upload/product_images/thumbnail/' . $filenametostore);
+//            $img = Image::make($thumbnailpath)->resize(270, 270, function ($constraint) {
+//                $constraint->aspectRatio();
+//            });
 
 
 
-
-
-            $modelSetting = new Setting();
-            $setting = $modelSetting->getSetting();
-            if(!empty($setting->logo_thumbnail)){
-                $watermark =  Image::make(($setting->logo_thumbnail));
-                $img->insert($watermark, 'bottom-right', 10, 10);
-            }
-
-            $img->save($thumbnailpath);
+//
+//
+//            $modelSetting = new Setting();
+//            $setting = $modelSetting->getSetting();
+//            if(!empty($setting->logo_thumbnail)){
+//                $watermark =  Image::make(($setting->logo_thumbnail));
+//                $img->insert($watermark, 'bottom-right', 10, 10);
+//            }
+//
+//            $img->save($thumbnailpath);
 
         }
 
