@@ -38,6 +38,7 @@ class SubCategory extends Model
         $modelSubCategory = new SubCategory();
         $modelSubCategory->name = $params['name'];
         $modelSubCategory->category_id = $params['category_id'];
+        $modelSubCategory->description = $params['description'];
         $modelSubCategory->save();
     }
 
@@ -58,6 +59,7 @@ class SubCategory extends Model
     {
         $modelSubCategory->name = $params['name'];
         $modelSubCategory->category_id = $params['category_id'];
+        $modelSubCategory->description = $params['description'];
         $modelSubCategory->save();
     }
 }
