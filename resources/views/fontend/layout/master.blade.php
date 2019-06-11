@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>BíchQuyênJewelry-@yield('title')</title>
+    <title>Bích Quyên Jewelry - @yield('title')</title>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="keywords" content="@yield('keywords')">
@@ -46,10 +46,10 @@
     <div class="row">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-6 col-xl-8">
+                <div class="col-md-7 col-xl-8">
                     @include('fontend.layout.banner')
                 </div>
-                <div class="col-md-6 col-xl-4 facebook">
+                <div class="col-md-5 col-xl-4 facebook">
                     @include('fontend.layout.fanpage-facebook')
                 </div>
             </div>

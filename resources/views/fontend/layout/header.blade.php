@@ -101,11 +101,11 @@
 
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a style='color:#fff;' href="javascript:void(0)" class="closebtn">&times;</a>
+                    <a href="javascript:void(0)" class="closebtn">&times;</a>
 
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul  id="menuNav" class="navbar-nav align-middle">
-                            <li class="nav-item active align-self-center">
+                            <li class="nav-item  align-self-center">
                                 <span class="nav-link dropdown-toggle" >
                                 <a class="parent dropdown-item dropdown-toggle" href="/"><i class="fa fa-home"> Trang chủ </i></a>
                                 </span>
@@ -115,7 +115,7 @@
                             <li class="nav-item dropdown align-self-center">
 
                                 <span class="nav-link dropdown-toggle" onclick="void(0)">
-                                    <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle"><i class="fa">{{$ct->name}}</i></a>
+                                    <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle"><b style="font-family:'Font Awesome 5 Free'">{{$ct->name}}</b></a>
                                 </span>
 
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -218,10 +218,11 @@
         $('.box_search').css('z-index',0);
     });
     $( document ).ready(function() {
-        var menuWidth = $("#menuNav").width();
-        $("#formSearch").width(menuWidth);
+        
+        var search_width = $("#search").width();
+        var menuWidth = $("#menuNav").width(search_width + 2*0.75);
         if(navigator.userAgent.match(/iPad/i)){
-        //     $("#formSearch").width('100%');
+            $("#formSearch").width('100%');
             $("iframe").height('200px');
         }
         var isMobile = /iPhone|iPod|Android/i.test(navigator.userAgent);

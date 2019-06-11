@@ -26,10 +26,13 @@
 
   
 	<div class="detail_content">
-    <h3 class="tde">
+    <div class="title">
+      <h3 class="title-comm">
+        <span class="title-holder">
           <span>Chi Tiết Sản Phẩm</span>
-    </h3>
-    <hr>
+    </span>
+  </h3></div>
+  
   </div>
     <div class="row detail_product">  
     	@foreach ($detailProduct as $dp)
@@ -153,8 +156,6 @@
     </div>
 
 <style>
- body{margin-top:20px;}
-
 .comment-wrapper .panel-body {
     max-height:650px;
     overflow:auto;
