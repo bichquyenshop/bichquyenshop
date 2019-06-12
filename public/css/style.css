@@ -85,6 +85,9 @@ a:hover{
 .read{
   margin-left:10px;
 }
+.dropdown-item:focus{
+      background-color: #00000000;
+}
 input[name=search] { 
   width:100%;
 }

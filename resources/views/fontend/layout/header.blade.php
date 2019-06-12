@@ -96,7 +96,7 @@
             </div>
             <div class="col-md-9  col-xl-10 add width ">
 
-                <nav  class="navbar navbar-expand-md navbar-light">
+                <nav class="navbar navbar-expand-md navbar-light">
 
 
                     <button id="openMenu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,7 +105,7 @@
                     </button>
                     <a href="javascript:void(0)" class="closebtn">&times;</a>
 
-                    <div  style='padding-top:20px' class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul  id="menuNav" class="navbar-nav align-middle">
                             <li class="nav-item  align-self-center">
                                 <span class="nav-link dropdown-toggle" >
@@ -117,9 +117,8 @@
                             <li class="nav-item dropdown align-self-center">
 
                                 <span class="nav-link dropdown-toggle" onclick="void(0)">
-
                                     <a href="{{ url('product-category/' . $ct->id) }}" class="dropdown-item dropdown-toggle"><b style="font-family:'Font Awesome 5 Free'">{{$ct->name}}</b></a>
-
+                                </span>
 
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     @foreach ($subCategory as $sc)
@@ -223,7 +222,7 @@
     $( document ).ready(function() {
         
         var search_width = $("#search").width();
-        var menuWidth = $("#menuNav").width(search_width + 2*0.75);
+        var menuWidth = $("#menuNav").width(search_width);
         if(navigator.userAgent.match(/iPad/i)){
             $("#formSearch").width('100%');
             $("iframe").height('200px');
