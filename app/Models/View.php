@@ -17,7 +17,7 @@ class View extends Model
         $modelSetting->date = date('Y-m-d H:i:s');
         $modelSetting->save();
     }
-    public  function count()
+    public static function count()
     {
         $query = DB::table('view');
         $query->select(\DB::raw('COUNT(*) AS "count"'));
@@ -27,7 +27,7 @@ class View extends Model
         return $result->count;
 
     }
-    public  function countByDate($date)
+    public static function countByDate($date)
     {
         $query = DB::table('view');
         $query->whereDate('date', '=', $date);

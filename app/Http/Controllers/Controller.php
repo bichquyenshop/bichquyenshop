@@ -7,6 +7,7 @@ use App\Models\SubCategory;
 use App\Models\Setting;
 use App\Models\Banner;
 use App\Models\Product;
+use App\Models\View as ViewS;
 use View;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -23,10 +24,14 @@ class Controller extends BaseController
        $banner      = Banner::getList();
        $categogy    = Categogy::getList();
        $subCategory = SubCategory::getListSub();
+       $viewAll     = ViewS::count();
+       $viewDate    = ViewS::countByDate(Date('y-m-d'));
 
        View::share ( 'st'  , $setting );
        View::share ( 'banner'   , $banner  );
        View::share ( 'categogy'   , $categogy  );
        View::share ( 'subCategory'   , $subCategory  );
+       View::share ( 'viewAll'   , $viewAll  );
+       View::share ( 'viewDate'   , $viewDate  );
     } 
 }
