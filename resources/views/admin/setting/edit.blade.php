@@ -29,9 +29,48 @@
                         <div class="box-body">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="exampleInputName" class="col-sm-2 control-label">Số lượng người xem</label>
+                                    <label for="exampleInputName" class="col-sm-2 control-label">Tổng số lượt xem</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" disabled name="num_view" value="{{$setting->num_view}}" >
+                                        <input type="text" class="form-control" disabled value="{{$count_view}}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputName" class="col-sm-2 control-label">Nhập tổng số lượt xem</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="num_view" value="{{$setting->num_view}}" >
+                                        {!! $errors->first('num_view','<span class="help-block">:message</span>') !!}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputName" class="col-sm-2 control-label">Hiển thị tổng số lượt xem</label>
+                                    <div class="col-sm-8">
+                                        <select name="isFakeView" class="form-control">
+                                            <option value="0">Số thật</option>
+                                            <option {{ $setting->isFakeView == 1 ? 'selected' : '' }} value="1">Số giả</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputName" class="col-sm-2 control-label">Số lượt xem hôm nay</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" disabled  value="{{$count_daily_view}}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputName" class="col-sm-2 control-label">Nhập số lượt xem hôm nay</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control"  name="num_daily_view" value="{{$setting->num_daily_view}}" >
+                                        {!! $errors->first('num_daily_view','<span class="help-block">:message</span>') !!}
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputName" class="col-sm-2 control-label">Hiển thị số lượt xem hôm nay</label>
+                                    <div class="col-sm-8">
+                                        <select name="isFakeDailyView" class="form-control">
+                                            <option value="0">Số thật</option>
+                                            <option {{ $setting->isFakeDailyView == 1 ? 'selected' : '' }} value="1">Số giả</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group {!! $errors->first('address','has-error') !!}">

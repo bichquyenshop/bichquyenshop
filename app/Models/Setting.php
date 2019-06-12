@@ -30,6 +30,12 @@ class Setting extends Model
         $modelSetting->link_ins = $params['link_ins'];
         $modelSetting->link_youtube = $params['link_youtube'];
         $modelSetting->description = $params['description'];
+        $modelSetting->num_view = $params['num_view'];
+        $modelSetting->isFakeView = $params['isFakeView'];
+        $modelSetting->num_daily_view = $params['num_daily_view'];
+        $modelSetting->isFakeDailyView = $params['isFakeDailyView'];
+
+
         $modelSetting->save();
     }
 
@@ -44,6 +50,10 @@ class Setting extends Model
         $modelSetting->link_ins = $params['link_ins'];
         $modelSetting->link_youtube = $params['link_youtube'];
         $modelSetting->description = $params['description'];
+        $modelSetting->num_view = $params['num_view'];
+        $modelSetting->isFakeView = $params['isFakeView'];
+        $modelSetting->num_daily_view = $params['num_daily_view'];
+        $modelSetting->isFakeDailyView = $params['isFakeDailyView'];
         $modelSetting->save();
     }
 
