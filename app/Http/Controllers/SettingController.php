@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Setting;
+use App\Models\View;
 use Illuminate\Http\Request;
 use Image;
 
@@ -18,13 +19,15 @@ class SettingController extends Controller
     public function getEdit(){
         $modelSetting = new Setting();
         $setting = $modelSetting->getSetting();
-
+        $modelView = new View();
         if(empty($setting)){
             $modelSetting->insertSetting(['logo' => '', 'email' => '', 'address' => '', 'tel' => '', 'link_fb' => '', 'link_ins' => '', 'link_youtube' => '', 'description' => '']);
             $setting = $modelSetting->getSetting();
         }
 
         $this->data['setting'] = $setting;
+        $this->data['count_view'] = $modelView->count();
+        $this->data['count_daily_view'] = $modelView->countByDate(date('Y-m-d'));
 
         return view('admin/setting/edit',$this->data);
     }
@@ -64,16 +67,7 @@ class SettingController extends Controller
 
             //Upload File
             $request->file('logo_image')->storeAs('upload/logo_images', $filenametostore);
-            $request->file('logo_image')->storeAs('upload/logo_images/thumbnail', $filenametostore);
             $input['logo'] = 'upload/logo_images/' . $filenametostore;
-            $input['logo_thumbnail'] = 'upload/logo_images/thumbnail/' . $filenametostore;
-
-            //Resize image here
-            $thumbnailpath = ('upload/logo_images/thumbnail/' . $filenametostore);
-            $img = Image::make($thumbnailpath)->resize(100, 100, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-            $img->save($thumbnailpath);
 
         }
 

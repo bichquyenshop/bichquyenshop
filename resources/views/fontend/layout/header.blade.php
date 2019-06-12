@@ -1,4 +1,6 @@
-
+<?php
+  \App\Models\View::insertView();
+?>
 <div id="fb-root"></div>
 <script>
     
